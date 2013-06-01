@@ -41,6 +41,9 @@ setup(
         'Plone',
         'setuptools',
         'z3c.jbot',
+        'collective.js.foundation',
+        'webcouturier.dropdownmenu',
+        'plone.app.theming',
     ],
     extras_require={
         'test': [

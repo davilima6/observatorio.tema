@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="observatorio.tema">
+
+<!--<head>-->
+    <!--<link rel="stylesheet" type="text/css"-->
+          <!--tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.cover/galleria-theme/galleria.cover_theme.css" />-->
+    <!--<script type="text/javascript" tal:content="structure view/init_js">-->
+    <!--</script>-->
+<!--</head>-->
+
+<body tal:define="tile_id view/id;
+                  autoplay python:str(view.autoplay()).lower();">
+
+<div id="visualizacoes" class="row">
+    <tal:items repeat="item view/results">
+    <div class="large-6 columns">
+        <h5 tal:content="item/Title">Visualizações de dados</h5><hr />
+        <h5 class="subheader">
+            <span tal:content="item/Description" />
+        </h5>
+        <div class="download">
+            <h6 class="subheader hide-for-small">Dados abertos disponíveis em:</h6>
+            <ul class="button-group hide-for-small">
+                <li>
+                    <a href=""
+                       title="HTML"
+                       class="tiny radius secondary button"
+                       tal:attributes="href string:${item/absolute_url}/download.table">HTML</a>
+                </li>
+                <li>
+                    <a href=""
+                       title="CSV"
+                       class="tiny radius secondary button"
+                       tal:attributes="href string:${item/absolute_url}/download.csv">CSV</a>
+                </li>
+                <li>
+                    <a href=""
+                       title="JSON"
+                       class="tiny radius secondary button"
+                       tal:attributes="href string:${item/absolute_url}/download.json">JSON</a>
+                </li>
+                <li>
+                    <a href=""
+                       title="XML"
+                       class="tiny radius secondary button"
+                       tal:attributes="href string:${item/absolute_url}/download.xml">XML</a>
+                </li>
+                <li>
+                    <a href=""
+                       title="XML com Schema"
+                       class="tiny radius secondary button"
+                       tal:attributes="href string:${item/absolute_url}/download.schema.xml">XML com Schema</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="large-6 columns slideshow-wrapper">
+        <div class="preloader"></div>
+        <div id="daviz" data-orbit data-options="timer_speed: 14000">
+            <a title=""
+               href="">
+                <img tal:define="image python:item.restrictedTraverse('chart_1.png');
+                                 scales image/@@images;
+                                 thumbnail python:scales.scale('image', width=400, height=300);"
+                     tal:attributes="src thumbnail/url;
+                                     width thumbnail/width;
+                                     height thumbnail/height;
+                                     data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
+                                     data-description item/Description;
+                                     data-link string:${item/absolute_url}/view;" />
+            </a>
+        </div>
+        <h6 class="subheader show-for-small"><a href="#">Acesse os dados em formatos abertos →</a></h6>
+    </div>
+    </tal:items>
+    <div class="large-12 columns">
+        <div data-clearing><!-- --></div>
+        <div class="hachuras"><!-- --></div>
+    </div>
+</div>
+</body>
+</html>

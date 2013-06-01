@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="observatorio.tema">
+
+  <plone:tile
+      name="observatorio.tema.daviz"
+      title="Daviz Tile"
+      description="Um tile que exibe um gráfico Daviz."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".daviz.IDavizTile"
+      class=".daviz.DavizTile"
+      permission="zope2.View"
+      for="*"
+      />
+</configure>

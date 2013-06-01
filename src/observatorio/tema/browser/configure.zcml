@@ -10,10 +10,4 @@
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot directory="overrides" layer="..interfaces.IObservatorioTemaLayer" />
 
-  <!-- Publish static files -->
-  <browser:resourceDirectory
-    name="observatorio.tema"
-    directory="static"
-    />
-
 </configure>
