@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <theme href="index.html" css:if-content="#visual-portal-wrapper" />
+
+  <!--Head-->
+  <copy css:content="html" css:theme="html" attributes="lang dir" />
+  <before css:content="head link, head script, head meta" css:theme-children="head" />
+  <replace css:content="head title" css:theme="head title" />
+  <copy css:content="head base" css:theme="head base" />
+  <drop css:content="head link[rel='shortcut icon']" />
+  <drop css:content="head link[rel='apple-touch-icon']" />
+
+  <!-- Portal Top -->
+  <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
+  <replace css:content=".left" css:theme=".left" />
+  <copy attributes="href title" css:content="#portal-logo" css:theme="#logo" />
+
+  <!-- Portal Column Content -->
+  <copy css:content-children="#portal-column-content" css:theme="#column-content" />
+  <replace css:content-children="#portal-column-one" css:theme="#portal-column-one" />
+
+</rules>

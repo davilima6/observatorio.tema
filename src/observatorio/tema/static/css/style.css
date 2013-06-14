@@ -1,0 +1,878 @@
+body {
+    background: url(++theme++observatorio.tema/images/bg.jpg) 48% top no-repeat scroll;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    display: table;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'Arsenal';
+    font-style: normal;
+    font-weight: normal;
+    src: url('++theme++observatorio.tema/fonts/Arsenal-Regular-webfont.eot');
+    src: url('++theme++observatorio.tema/fonts/Arsenal-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('++theme++observatorio.tema/fonts/Arsenal-Regular-webfont.woff') format('woff'),
+    url('++theme++observatorio.tema/fonts/Arsenal-Regular-webfont.ttf') format('truetype'),
+    url('++theme++observatorio.tema/fonts/Arsenal-Regular-webfont.svg#Arsenal') format('svg');
+}
+
+@font-face {
+    font-family: 'Arsenal';
+    font-style: normal;
+    font-weight: bold;
+    src: url('++theme++observatorio.tema/fonts/Arsenal-Bold-webfont.eot');
+    src: url('++theme++observatorio.tema/fonts/Arsenal-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('++theme++observatorio.tema/fonts/Arsenal-Bold-webfont.woff') format('woff'),
+    url('++theme++observatorio.tema/fonts/Arsenal-Bold-webfont.ttf') format('truetype'),
+    url('++theme++observatorio.tema/fonts/Arsenal-Bold-webfont.svg#ArsenalBold') format('svg');
+}
+
+a,
+a:hover,
+a:focus {
+    color: rgb(121, 96, 143);
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+#ultimas-noticias {
+    display: block !important;
+    text-transform: uppercase;
+}
+
+#temas h5,
+#visualizacoes h5:not(.subheader),
+#biblioteca h5,
+#calendario h5.retranca,
+#participe h5,
+section .title,
+#column-one h5,
+footer a {
+    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-size: 1.0625em;
+    /* XXX: is bigger better? font-size: 1.25em;*/
+    font-variant: small-caps;
+    font-weight: bold;
+    text-rendering: inherit;
+}
+
+#biblioteca h5 {
+    display: block;
+    left: -1.25em;
+    position: relative;
+    top: -2em;
+    width: 120%;
+}
+
+#biblioteca h5 + hr {
+    /*top*/
+}
+
+footer.row {
+    margin: 2em auto 1em;
+    padding: 0 0.9375em;
+}
+
+footer > div {
+    border-top: 1px dashed #000;
+    border-bottom: 1px solid #000;
+    padding-top: 0.5em;
+}
+
+footer .inline-list {
+    margin-bottom: 0.5em;
+}
+
+footer .inline-list > li:first-child {
+    margin-left: 0.4375em;
+}
+
+footer a {
+    font-size: 1.2em;
+}
+
+#participe .panel {
+    background: rgb(79, 57, 95);
+    border: 0;
+    /*border-top: 1em solid rgb(121, 96, 143);*/
+    margin-top: 0.75em;
+}
+
+#participe h5 {
+    background: rgb(121, 96, 143);
+    color: rgb(255, 255, 255);
+    /*font-family: 'Arsenal';*/
+    margin: -3.05em 0 1.25em -0.2em;
+    padding: 0.75em 0.5em 0.5em 0.75em;
+    width: 9.8em;
+}
+
+#participe > div > .panel:before {
+    content: "";
+    border-bottom: 1em solid rgb(70, 51, 83);
+    border-left: 1em solid rgba(0, 0, 0, 0);
+    height: 0;
+    left: -1.25em;
+    position: relative;
+    top: -3.4em;
+    width: 0;
+}
+
+#participe > #boletim > .panel:before {
+    left: -1.25em;
+}
+
+#participe p,
+#participe label {
+    color: rgb(231, 226, 235);
+}
+
+#contato h5 {
+    margin: -3.05em 0 0 -0.25em;
+}
+
+#contato div div {
+    border: 0;
+    text-align: center;
+}
+
+#contato .fb_iframe_widget {
+    margin-left: -0.625em;
+}
+
+#contato a {
+    color: rgb(255, 255, 255);
+}
+
+#contato .panel .panel {
+    background: rgb(231, 226, 235);
+}
+
+#contato .panel .panel a {
+    color: rgb(79, 58, 96);
+}
+
+#contato .panel .panel:last-child {
+    background: rgb(157, 113, 171);
+}
+
+#contato .panel .panel:last-child a {
+    color: rgb(255, 255, 255);
+}
+
+#noticias section .title {
+    background: rgb(121, 95, 143);
+}
+
+#noticias section.active .title {
+    background: rgb(79, 58, 96);
+}
+
+#noticias section .title a {
+    color: rgb(255, 255, 255);
+}
+
+#noticias .content {
+    background: rgb(231, 226, 235);
+    border-bottom: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: 0.5em solid rgb(79, 58, 96);
+}
+
+#noticias .content h6,
+#noticias .content p {
+    color: rgb(79, 58, 96);
+}
+
+#noticias .content h6 {
+    font-size: 1.0625em;
+    font-variant: small-caps;
+    margin-bottom: 0;
+}
+
+#noticias .content p {
+    font-size: 0.9375em;
+    /*padding: 10px;*/
+    padding-bottom: 0.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}
+
+#noticias .content p:not(:last-child) {
+    border-bottom: 1px solid rgb(222, 210, 224);
+    margin-bottom: 0.5em;
+}
+
+section .title {
+    font-size: 0.9375em;
+    font-variant: small-caps;
+}
+
+#column-content h5:not(.subheader):not(.retranca) {
+    background: rgb(255, 255, 255);
+    display: inline-block;
+    font-variant: small-caps;
+    padding-right: 0.5em;
+    /*text-rendering: inherit;*/
+}
+
+#column-content h5:not(.subheader) + hr {
+    border-color: #000;
+    margin-top: -1.25em;
+}
+
+.contain-to-grid {
+    opacity: 0.95;
+}
+
+.top-bar-section .right {
+    background: none;
+}
+
+.top-bar-section .left li a {
+    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-size: 1.25em;
+    font-variant: small-caps;
+}
+
+.top-bar-section ul li > a {
+    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    height: 42px;
+}
+
+#search-box {
+    background: rgb(121, 96, 143);
+    border: 0;
+    border-radius: 1em;
+    height: 1.4em;
+    right: 0.5em;
+    top: 0.8em;
+    width: 3.5em;
+}
+
+.search {
+    margin-right: 0.9375em;
+}
+
+.search-box {
+    margin-top: 0.25em;
+    margin-left: 0.5em;
+    position: relative;
+    width: 0.5em;
+    height: 0.25em;
+    background-color: rgb(255, 255, 255);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-bottom-right-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+}
+
+.search-box::before {
+    border: 0.15em solid rgb(255, 255, 255);
+    content: " ";
+    position: absolute;
+    top: -0.2em;
+    left: -0.8em;
+    display: block;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+}
+
+#observatorio-e-voce h5,
+#galeria-de-fotos h5,
+#calendario h5.retranca {
+    background: rgb(79, 58, 96);
+    color: rgb(255, 255, 255);
+    line-height: 1.25em;
+    margin-bottom: 0;
+    padding: 0.4em 0;
+    text-align: center;
+}
+
+#observatorio-e-voce h5 {
+    font-size: 1.25em;
+    font-weight: normal;
+    height: 3.25em;
+    margin: 0 -0.625em;
+}
+
+#observatorio-e-voce h5 span {
+    display: block;
+    font-size: 1.363125em;
+    font-weight: bold;
+}
+
+#galeria-de-fotos h5,
+#calendario h5.retranca {
+    margin: 0 -0.625em 1em;
+}
+
+#galeria-de-fotos {
+    padding: 0 0.1em;
+}
+
+/* XXX: Remove me */
+
+#galeria-de-fotos a {
+    background: rgb(234, 230, 238);
+    display: block;
+    height: 60px;
+    width: 60px;
+}
+
+#calendario .content {
+    padding: 0 1em;
+}
+
+#observatorio-e-voce h5:before,
+#galeria-de-fotos h5:before,
+#calendario h5.retranca:before {
+    border-top: 0.75em solid rgb(70, 51, 83);
+    border-left: 0.75em solid rgba(0, 0, 0, 0);
+    content: "";
+    height: 0;
+    position: relative;
+    width: 0;
+}
+
+#observatorio-e-voce h5:before {
+    left: -3.35em;
+    top: 3.5em;
+}
+
+#galeria-de-fotos h5:before {
+    left: -3.3em;
+    top: 2.25em;
+}
+
+#calendario h5.retranca:before {
+    left: -3.4em;
+    top: 2.25em;
+    z-index: 5;
+}
+
+#observatorio-e-voce h5:after,
+#galeria-de-fotos h5:after,
+#calendario h5.retranca:after {
+    border-top: 0.75em solid rgb(70, 51, 83);
+    border-right: 0.75em solid rgba(0, 0, 0, 0);
+    content: "";
+    height: 0;
+    position: relative;
+    width: 0;
+}
+
+#observatorio-e-voce h5:after {
+    left: 5.75em;
+    top: 1em;
+}
+
+#galeria-de-fotos h5:after {
+    left: 3.25em;
+    top: 2.25em;
+}
+
+#calendario h5.retranca:after {
+    left: 3.4em;
+    top: 2.25em;
+}
+
+#observatorio-e-voce select {
+    background: rgb(242, 235, 243);
+    color: rgb(133, 108, 137);
+    font-size: 0.75em;
+    margin-left: -1.6em;
+    width: 13.4em;
+}
+#observatorio-e-voce > div {
+    background: rgb(231, 226, 235);
+    color: rgb(91, 91, 91);
+    font-size: 0.875em;
+    padding: 1em 0.75em 0.01em;
+}
+
+#observatorio-e-voce .pricing-table .price {
+    background: none;
+    padding-bottom: 0;
+}
+
+#observatorio-e-voce .pricing-table .bullet-item {
+    border-color: rgb(231, 226, 235);
+}
+
+#observatorio-e-voce .pricing-table .title {
+    background: rgb(122, 97, 143);
+    padding: 0.4375em 1.25em;
+    text-transform: uppercase;
+}
+
+#observatorio-e-voce .pricing-table .title label {
+    color: rgb(255, 255, 255);
+    margin-bottom: 0;
+}
+
+#container {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#destaques .orbit-bullets {
+    margin: -2.5em auto 0 0.9375em;
+}
+
+#temas,
+#visualizacoes,
+#biblioteca {
+    margin-bottom: 3em;
+}
+
+#visualizacoes h5.subheader {
+    color: rgb(91, 91, 91);
+    font-size: 0.875em;
+    font-weight: 400;
+}
+
+#visualizacoes h5.subheader span {
+    display: block;
+    font-size: 1.25em;
+    font-variant: small-caps;
+    text-rendering: auto;
+}
+
+#visualizacoes .orbit-bullets {
+    margin: -5px 0 0 15px;
+    top: -20px;
+}
+
+#visualizacoes > div:first-child {
+    height: 17em;
+    position: relative;
+}
+
+#visualizacoes .download {
+    bottom: 0;
+    position: absolute;
+    text-transform: uppercase;
+}
+
+#visualizacoes .download h6 {
+    color: rgb(106, 104, 104);
+    font-size: 0.75em;
+}
+
+#visualizacoes .button.secondary {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(234, 230, 238);
+    color: rgb(160, 145, 168);
+}
+
+#visualizacoes .button.secondary:focus,
+#visualizacoes .button.secondary:hover {
+    text-decoration: none;
+}
+
+#visualizacoes .button.secondary:hover,
+#visualizacoes .button.secondary:focus {
+    background-color: rgb(231, 226, 235);
+    color: rgb(132, 121, 138);
+}
+
+.section-home #menu {
+    margin-bottom: 2.6875em;
+}
+
+#ultimas-noticias .orbit-prev,
+#ultimas-noticias .orbit-next,
+#ultimas-noticias .orbit-slide-number,
+#visualizacoes .orbit-slide-number,
+#biblioteca .orbit-timer {
+    display: none;
+}
+
+#ultimas-noticias h6 {
+    font-size: 0.8125em;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+#ultimas-noticias .large-2 span {
+    background: #000;
+    border-radius: 1em;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-size: 1.25em;
+    line-height: 1em;
+    margin-right: 0.5em;
+    height: 1.3em;
+    text-align: center;
+    width: 1.3em;
+}
+
+.orbit-container {
+    background: none;
+}
+
+.orbit-container .orbit-prev,
+.orbit-container .orbit-next {
+    background: rgb(79, 58, 96);
+    height: 4em;
+    width: 2em;
+}
+
+.orbit-container .orbit-prev>span {
+    right: 0.5em;
+}
+
+.orbit-container .orbit-prev {
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+}
+
+.orbit-container .orbit-next {
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+.orbit-bullets li {
+    background: rgb(79, 58, 96);
+    border: 0;
+}
+
+.orbit-bullets li.active {
+    background: rgb(250, 177, 0);
+}
+
+#ultimas-noticias {
+    border-top: 1px dashed #000;
+    border-bottom: 1px solid #000;
+    padding: 0.375em;
+    /* XXX: Fix me. */
+    /*width: 73%;*/
+}
+
+#column-one > div:not(:last-child) {
+    margin-bottom: 2em;
+}
+
+#apresentacao #logo {
+    display: inline-block;
+    margin-bottom: 1.5em;
+}
+
+#apresentacao li {
+    list-style: none;
+}
+
+/*#apresentacao .orbit-bullets {
+    margin-bottom: 0.625em;
+}
+
+#apresentacao .subheader.show-for-small {
+    margin: 2em 0 0 !important;
+}*/
+
+#temas .has-tip {
+    border: 0;
+    cursor: pointer;
+}
+
+#temas [class*="block-grid-"] {
+    margin: 0 -10px 0 0;
+}
+
+#temas li {
+    display: inline-block;
+    font-variant: small-caps;
+    height: 110px;
+    padding-top: 80px;
+    width: 144px;
+}
+
+#temas li a {
+    color: rgb(255, 255, 255);
+    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
+}
+
+#at-trabalho {
+    background: rgb(96, 77, 112);
+}
+
+#at-educacao {
+    background: rgb(250, 177, 0);
+}
+
+#at-saude {
+    background: rgb(245, 130, 31);
+}
+
+#at-violencia {
+    background: rgb(122, 97, 143);
+}
+
+#at-poder {
+    background: rgb(245, 130, 31);
+}
+
+#at-desenvolvimento {
+    background: rgb(245, 130, 31);
+}
+
+#at-cultura {
+    background: rgb(122, 97, 143);
+}
+
+#at-esporte {
+    background: rgb(96, 77, 112);
+}
+
+#at-diversidade {
+    background: rgb(250, 177, 0);
+}
+
+#at-tempo {
+    background: rgb(245, 130, 31);
+}
+
+#at-trabalho:hover,
+#at-educacao:hover,
+#at-saude:hover,
+#at-violencia:hover,
+#at-poder:hover,
+#at-desenvolvimento:hover,
+#at-cultura:hover,
+#at-esporte:hover,
+#at-diversidade:hover,
+#at-tempo:hover {
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+#at-trabalho:hover a,
+#at-educacao:hover a,
+#at-saude:hover a,
+#at-violencia:hover a,
+#at-poder:hover a,
+#at-desenvolvimento:hover a,
+#at-cultura:hover a,
+#at-esporte:hover a,
+#at-diversidade:hover a,
+#at-tempo:hover a {
+    color: #000;
+}
+
+.hachuras {
+    background-image: repeating-linear-gradient(-45deg,
+    rgba(231, 226, 235, 1), rgba(231, 226, 235, 1) 1px,
+    transparent 1px, transparent 3px);
+    background-size: 4px 4px;
+    margin: 0.375em 0 0.6875em;
+}
+
+#temas .hachuras,
+#visualizacoes .hachuras {
+    height: 0.6875em;
+}
+
+#biblioteca {
+    padding: 1.625em 1.25em 0;
+}
+
+#biblioteca .orbit-container {
+    padding: 0 1em;
+}
+
+#biblioteca .orbit-container .orbit-slides-container {
+    left: -0.9375em;
+}
+
+#biblioteca input[type=text] {
+    background: rgb(231, 226, 235);
+    color: rgb(160, 145, 168);
+    font-size: 0.875em;
+}
+
+#biblioteca .sub-nav {
+    font-size: 0.75em;
+}
+
+#biblioteca .sub-nav dd.active a {
+    background: rgb(157, 113, 171);
+    color: rgb(255, 255, 255);
+}
+
+#biblioteca .orbit-slide-number {
+    display: none;
+}
+
+#biblioteca .panel {
+    background: rgb(255, 255, 255);
+    color: rgb(160, 145, 168);
+    font-size: 0.8em;
+    font-variant: small-caps;
+    padding: 0 1.25em;
+    position: relative;
+    text-align: center;
+    text-rendering: auto;
+    top: -3em;
+}
+
+#biblioteca .button.expand {
+    background: rgb(157, 113, 171);
+    border: 0;
+    font-size: 0.875em;
+}
+
+#magnifying-glass {
+    font-size: 10em; /* This controls the size. */
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    border: 0.1em solid red;
+    position: relative;
+    border-radius: 0.35em;
+}
+
+#magnifying-glass::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -0.25em;
+    bottom: -0.1em;
+    border-width: 0;
+    background: red;
+    width: 0.35em;
+    height: 0.08em;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+
+#biblioteca dd a {
+    color: rgb(157, 113, 171);
+    padding: 0.25em 0.75em;
+}
+
+#biblioteca dd:not(.active):hover a,
+#biblioteca dd:not(.active):focus a {
+    background: rgb(250, 177, 0);
+    border-radius: 1000px;
+    color: rgb(255, 255, 255);
+}
+
+#biblioteca .inline-list {
+    font-size: 0.75em;
+    margin-bottom: 1.5em;
+}
+
+#biblioteca .large-4 a {
+    /* XXX: Melhor cor padrão? */
+    color: rgb(160, 145, 168);
+}
+
+#ultimas-noticias .orbit-container .orbit-timer {
+    top: 0.7em;
+}
+
+#ultimas-noticias .orbit-container .orbit-timer > span {
+    top: -0.25em;
+}
+
+#calendario .large-2 {
+    background: rgb(157, 113, 171);
+    color: rgb(255, 255, 255);
+    height: 50px;
+    padding: 18px 0 0;
+    text-align: center;
+    width: 50px;
+}
+
+#galeria-de-fotos h5,
+#calendario h5.retranca {
+    font-size: 1.0625em;
+}
+
+#calendario h6 {
+    color: rgb(79, 58, 96);
+    font-size: 0.9375em;
+}
+
+#acompanhe .title {
+    /**/
+}
+
+#enquete .button {
+    background-color: rgb(250, 177, 0);
+    border: 0;
+    margin: -0.5em auto 0;
+}
+
+/*#enquete .button:hover,
+#enquete .button:focus {
+    background-color: rgb(250, 177, 0);
+}
+*/
+
+#boletim .button {
+    background: rgb(157, 113, 171);
+    border: 0;
+}
+
+#banners a {
+    background: rgb(234, 230, 238);
+    display: block;
+    height: 80px;
+    width: 145px;
+}
+
+footer li:nth-child(even) a {
+    color: rgb(157, 113, 171);
+}
+
+/* fix plone */
+
+div.row {
+    float: none;
+}
+
+.contain-to-grid .top-bar {
+    margin: 0 auto;
+}
+
+.large-9 {
+    width: 69%;
+}
+
+.column th, .columns th {
+    float: none !important;
+}
+
+table.listing th {
+    width: auto;
+}
+
+#edit-bar {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#content ul.chart-tabs, ul.chart-tabs {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}

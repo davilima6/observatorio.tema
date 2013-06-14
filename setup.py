@@ -41,6 +41,7 @@ setup(
         'Plone',
         'setuptools',
         'z3c.jbot',
+        'plonetheme.foundation',
         'collective.js.foundation',
         'webcouturier.dropdownmenu',
         'plone.app.theming',

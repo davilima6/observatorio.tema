@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br"
+
+      lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/ie8-grid-foundation-4.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/ui.js"></script>
+</head>
+
+<body class="section-home">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=551749828210587";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="menu" class="row">
+    <div class="large-12 columns">
+        <div class="fixed contain-to-grid">
+            <nav class="top-bar">
+                <div id="barra-brasil">
+                    <a href="http://brasil.gov.br" style="background: #7F7F7F; height: 20px; padding: 4px 0 4px 10px; display: block; font-family: sans,sans-serif; text-decoration: none; color: #fff;">Portal do Governo Brasileiro</a>
+                    <!--<script src="http://barra.brasil.gov.br/barra.js?cor=preta"></script>-->
+                </div>
+                <ul class="title-area">
+                    <li class="name">
+                        <!-- <h1><a href="#">Página inicial</a></h1> -->
+                    </li>
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+                </ul>
+                <section class="top-bar-section">
+                    <ul class="left">
+                        <li class="has-dropdown">
+                            <a href="#">Quem somos</a>
+                            <ul class="dropdown">
+                                <li><label>Estrutura</label></li>
+                                <li>
+                                    <a href="#" class="">Comitês</a>
+                                    <a href="#" class="">Conselhos</a>
+                                    <a href="#" class="">Equipe Técnica</a>
+                                    <a href="#" class="">Grupos de Trabalho</a>
+                                </li>
+                                <li><a href="#">Parceiros</a></li>
+                                <li class="divider"></li>
+                                <li><label>Saiba mais</label></li>
+                                <li><a href="#">Perguntas frequentes</a></li>
+                                <li><a href="#">Observatório de A a Z</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Áreas Temáticas</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Trabalho</a></li>
+                                <li><a href="#">Educação</a></li>
+                                <li><a href="#">Saúde</a></li>
+                                <li><a href="#">Violência</a></li>
+                                <li><a href="#">Poder e decisão</a></li>
+                                <li><a href="#">Desenvolvimento</a></li>
+                                <li><a href="#">Cultura</a></li>
+                                <li><a href="#">Esporte</a></li>
+                                <li><a href="#">Diversidade</a></li>
+                                <li><a href="#">Uso do tempo</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Eixos de atuação</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Indicadores</a></li>
+                                <li><a href="#">Produção e disseminação de dados</a></li>
+                                <li><a href="#">Diálogo internacional</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Biblioteca</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Publicações</a></li>
+                                <li><a href="#">Documentos importantes</a></li>
+                                <li><a href="#">Perguntas frequentes</a></li>
+                                <li><a href="#">Pesquisas</a></li>
+                                <li><a href="#">Artigos</a></li>
+                                <li><a href="#">Dados</a></li>
+                                <li><a href="#">Visualizações</a></li>
+                                <li><a href="#">Editais</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#">Acompanhamento</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Notícias</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Galerias de fotos</a></li>
+                                <li><a href="#">Boletim eletrônico</a></li>
+                                <li><a href="#">Redes sociais</a></li>
+                                <li><a href="#">Distribuição de conteúdo</a></li>
+                                <li><a href="#">Participação pública</a></li>
+                                <li><a href="#">Fale com o Observatório</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="right">
+                        <li class="search">
+                            <form>
+                                <lable for="search-box">
+                                    <input id="search-box" type="text" />
+                                </lable>
+                                <!-- <input id="search-btn" value="" type="submit" /> -->
+                                <div class="search-box"></div>
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </div>
+    </div>
+</div>
+<div id="ultimas-noticias" class="row hide-for-small">
+    <div class="large-2 columns">
+        <h6><a href="#" data-tooltip class="has-tip" title="Clique aqui para acessar todas as notícias do Observatório" style="border: 0"><span>+</span> NOTÍCIAS</a></h6>
+    </div>
+    <div class="large-10 columns">
+        <div data-orbit data-options="timer_speed: 7000; bullets: false">
+            <h6><a href="#">Sed sit amet posuere erat. Quisque in ipsum non augue</a></h6>
+            <h6><a href="#">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna</a></h6>
+            <h6><a href="#">Sed sit amet posuere erat. Quisque in ipsum non augue</a></h6>
+            <h6><a href="#">Lorem ipsum dolor sed sit amet posuere erat</a></h6>
+        </div>
+    </div>
+</div><br />
+<div id="container" class="row">
+<div id="column-one" class="large-3 columns">
+    <div id="apresentacao">
+        <a id="logo" href="#" title="Acessar a página inicial">
+            <img src="images/logo.png" width="220" height="160" alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
+        </a>
+    </div>
+    <div id="portal-column-one">
+        <p class="hide-for-small">O Observatório é uma iniciativa da Secretaria de Políticas para as Mulheres da Presidência da República (SPM/PR) com o objetivo de disseminar informações sobre as desigualdades de gênero e os direitos das mulheres. Suas ações têm como referência <a href="#">3 eixos centrais</a> que perpassam <a href="#">10 áreas temáticas</a>.</p><!-- <hr class="hide-for-small" /> -->
+        <ul class="button-group radius show-for-small">
+            <!-- <li><a href="#" class="tiny secondary button">Estrutura</a></li>
+            <li><a href="#" class="tiny secondary button">Saiba mais</a></li> -->
+            <!-- <li><a href="#" class="tiny secondary button">Estrutura</a></li>
+            <li><a href="#" class="tiny secondary button">Parceiros</a></li>
+            <li><a href="#" class="tiny secondary button">Saiba mais</a></li> -->
+            <li><a href="#" class="tiny secondary button">Estrutura</a></li>
+            <li><a href="#" class="tiny secondary button">Perguntas frequentes</a></li>
+            <li><a href="#" class="tiny secondary button">Observatório de A a Z</a></li>
+        </ul>
+        <ul class=" radius hide-for-small">
+            <!-- <li><a href="#" class="tiny button">Estrutura</a></li>
+            <li><a href="#" class="tiny button">Parceiros</a></li>
+            <li><a href="#" class="tiny button">Saiba mais</a></li> -->
+            <li><a href="#" class="tiny secondary ">Estrutura</a></li>
+            <li><a href="#" class="tiny secondary ">Perguntas frequentes</a></li>
+            <li><a href="#" class="tiny secondary ">Observatório de A a Z</a></li>
+        </ul>
+        <div id="observatorio-e-voce">
+            <h5>Observatório <span>e você</span></h5>
+            <div>
+                <p class="hide-for-small">Sed sit amet posuere erat. Quisque in ipsum non augue euismod dignissim nibh fermentum odio. Quisque in ipsum non augue euismod dapibus non et eros.</p>
+                <ul class="pricing-table">
+                    <li class="title">
+                        <label for="customDropdown1">Escolha seu perfil</label>
+                    </li>
+                    <li class="price">
+                        <form>
+                            <div class="row collapse">
+                                <div class="small-12 columns">
+                                    <select id="customDropdown1">
+                                        <option>Movimento feminista</option>
+                                        <option>Gestor público</option>
+                                        <option>Pesquisador</option>
+                                        <option>Estudante</option>
+                                        <option>Imprensa</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li class="bullet-item"><a href="#">Documentos importantes</a></li>
+                    <li class="bullet-item"><a href="#">Parcerias e links</a></li>
+                    <li class="bullet-item"><a href="#">Envie um artigo</a></li>
+                    <li class="bullet-item"><a href="#">Compartilhe sua experiência</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="galeria-de-fotos">
+            <h5 class="retranca">Galeria de fotos</h5>
+            <ul class="small-block-grid-3">
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+                <li><a href="#">&nbsp;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="column-content" class="large-9 columns">
+<!--<div id="temas">-->
+    <!--<h5>Áreas Temáticas</h5><hr />-->
+    <!--<ul class="small-block-grid-4 large-block-grid-5">-->
+        <!--<li id="at-trabalho"><a data-tooltip class="has-tip" title="Autonomia econômica e igualdade no mundo do trabalho" href="area-tematica.html">Trabalho</a></li>-->
+        <!--<li id="at-educacao"><a data-tooltip class="has-tip" title="Educação para igualdade e cidadania" href="area-tematica.html">Educação</a></li>-->
+        <!--<li id="at-saude"><a data-tooltip class="has-tip" title="Saúde integral das mulheres, direitos sexuais e direitos reprodutivos" href="area-tematica.html">Saúde</a></li>-->
+        <!--<li id="at-violencia"><a data-tooltip class="has-tip" title="Enfrentamento de todas as formas de violência contra as mulheres" href="area-tematica.html">Violência</a></li>-->
+        <!--<li id="at-poder"><a data-tooltip class="has-tip" title="Mulheres em espaços de poder e decisão" href="area-tematica.html">Poder e decisão</a></li>-->
+        <!--<li id="at-desenvolvimento"><a data-tooltip class="has-tip" title="Desenvolvimento sustentável com igualdade econômica e social" href="area-tematica.html">Desenvolvimento</a></li>-->
+        <!--<li id="at-cultura"><a data-tooltip class="has-tip" title="Comunicação e cultura" href="area-tematica.html">Cultura</a></li>-->
+        <!--<li id="at-esporte"><a data-tooltip class="has-tip" title="Esporte" href="area-tematica.html">Esporte</a></li>-->
+        <!--<li id="at-diversidade"><a data-tooltip class="has-tip" title="Valorização da diversidade e enfrentamento às múltiplas formas de desigualdade" href="area-tematica.html">Diversidade</a></li>-->
+        <!--<li id="at-tempo"><a data-tooltip class="has-tip" title="Uso do tempo" href="area-tematica.html">Uso do tempo</a></li>-->
+    <!--</ul>-->
+    <!--<div class="hachuras">&lt;!&ndash; &ndash;&gt;</div>-->
+<!--</div>-->
+<!--<div id="biblioteca" class="hachuras">-->
+    <!--<h5>Biblioteca</h5><hr />-->
+    <!--<div class="slideshow-wrapper">-->
+        <!--<div class="preloader"></div>-->
+        <!--<div id="publicacoes" data-orbit data-options="timer_speed: 7000; bullets: false">-->
+            <!--<div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/pesquisas-aborto.jpg" alt="Titulo desta publicacao" />-->
+                    <!--<h6 class="panel">Violência</h6>-->
+                <!--</div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/constituicao-e-tratados.jpg" alt="Titulo desta publicacao"  />-->
+                    <!--<h6 class="panel">Trabalho</h6>-->
+                <!--</div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/conferencia-mulheres.jpg" alt="Titulo desta publicacao" />-->
+                    <!--<h6 class="panel">Saúde</h6>-->
+                <!--</div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/pnpm-2005.jpg" alt="Titulo desta publicacao" />-->
+                    <!--<h6 class="panel">Poder e decisão</h6>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/balanco-180.jpg" alt="Titulo desta publicacao" />-->
+                    <!--<h6 class="panel">Cultura</h6>-->
+                <!--</div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/todas-mulheres-todos-direitos.jpg" alt="Titulo desta publicacao" />-->
+                    <!--<h6 class="panel">Uso do tempo</h6>-->
+                <!--</div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/direitos-mulher.jpg" alt="Titulo desta publicacao" />-->
+                    <!--<h6 class="panel">Saúde</h6>-->
+                <!--</div>-->
+                <!--<div class="large-3 small-6 columns">-->
+                    <!--<img src="./imgs/_publicacoes/diretrizes-nacionais.jpg" alt="Titulo desta publicacao" />-->
+                    <!--<h6 class="panel">Esporte</h6>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="radius">-->
+        <!--<form>-->
+            <!--<div class="row collapse">-->
+                <!--<div class="large-10 small-8 columns">-->
+                    <!--<input type="text" placeholder="O que você procura?" />-->
+                <!--</div>-->
+                <!--<div class="large-2 small-3 columns">-->
+                    <!--<a href="#" class="postfix button expand">?</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</form>-->
+        <!--<div class="row">-->
+            <!--<div class="large-12 columns">-->
+                <!--<dl class="sub-nav">-->
+                    <!--<dt>Filtrar:</dt>-->
+                    <!--<dd class="active"><a href="#">Todas as publicações</a></dd>-->
+                    <!--<dd><a href="#">Documentos</a></dd>-->
+                    <!--<dd><a href="#">Pesquisas</a></dd>-->
+                    <!--<dd><a href="#">Artigos</a></dd>-->
+                    <!--<dd><a href="#">Visualizações</a></dd>-->
+                    <!--<dd><a href="#">Editais</a></dd>-->
+                    <!--<dd><a href="#">Links</a></dd>-->
+                <!--</dl>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--&lt;!&ndash; <div class="large-8 columns">-->
+          <!--<ul class="button-group">-->
+            <!--<li><a href="#" class="small secondary button">Link</a></li>-->
+            <!--<li><a href="#" class="small secondary button">Link</a></li>-->
+            <!--<li><a href="#" class="small secondary button">Link</a></li>-->
+            <!--<li><a href="#" class="small secondary button">Link</a></li>-->
+          <!--</ul>-->
+        <!--</div> &ndash;&gt;-->
+        <!--<div class="large-4 large-offset-8 columns">-->
+            <!--<ul class="inline-list right">-->
+                <!--<li><a href="#">Acessar toda a biblioteca →</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div id="acompanhe" class="row" data-match-height>-->
+    <!--<div id="noticias" class="large-6 columns">-->
+        <!--<div class="section-container tabs" data-section>-->
+            <!--<section class="section" data-height-watch>-->
+                <!--<p class="title"><a href="#panel1">Últimas Notícias</a></p>-->
+                <!--<div class="content">-->
+                    <!--<h6>Titulo da noticia 1</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                    <!--<h6>Titulo da noticia 1</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                    <!--<h6>Titulo da noticia 1</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                <!--</div>-->
+            <!--</section>-->
+            <!--<section class="section">-->
+                <!--<p class="title"><a href="#panel2" title="Monitoramento da mídia nacional a respeito de assuntos relacionados à Secretaria de Políticas para Mulheres">Clipping SPM</a></p>-->
+                <!--<div class="content">-->
+                    <!--<h6>Titulo da noticia 2</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                    <!--<h6>Titulo da noticia 2</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                    <!--<h6>Titulo da noticia 2</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                <!--</div>-->
+            <!--</section>-->
+            <!--<section class="section">-->
+                <!--<p class="title"><a href="#panel2" title="Agregação de notícias de blogs e instituições parceiras">Blogosfera</a></p>-->
+                <!--<div class="content">-->
+                    <!--<h6>Titulo da noticia 3</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                    <!--<h6>Titulo da noticia 3</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                    <!--<h6>Titulo da noticia 3</h6>-->
+                    <!--<p>Lorem ipsum dolor sed sit amet posuere erat.</p>-->
+                <!--</div>-->
+            <!--</section>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div id="calendario" class="large-6 columns" data-height-watch>-->
+        <!--<h5 class="retranca">Calendário da Igualdade de Gênero</h5>-->
+        <!--<div class="content">-->
+            <!--<div class="row">-->
+                <!--<div class="large-2 column">04/7</div>-->
+                <!--<div class="large-10 columns">-->
+                    <!--<h5><a href="#">Evento 1</a></h5>-->
+                    <!--<h6 class="subheader">Lorem ipsum dolor sed sit amet posuere erat.</h6>-->
+                <!--</div>-->
+            <!--</div><hr />-->
+            <!--<div class="row hide-for-small">-->
+                <!--<div class="large-2 column">15/7</div>-->
+                <!--<div class="large-10 columns">-->
+                    <!--<h5><a href="#">Evento 2</a></h5>-->
+                    <!--<h6 class="subheader">Lorem ipsum dolor sed sit amet posuere erat.</h6>-->
+                <!--</div>-->
+            <!--</div><hr />-->
+            <!--<div class="row hide-for-small">-->
+                <!--<div class="large-2 column">23/12</div>-->
+                <!--<div class="large-10 columns">-->
+                    <!--<h5><a href="#">Evento 3</a></h5>-->
+                    <!--<h6 class="subheader">Lorem ipsum dolor sed sit amet posuere erat.</h6>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div style="clear: both">&lt;!&ndash;  &ndash;&gt;</div>-->
+        <!--<p class="right"><a href="#">Mais eventos →</a></p>-->
+    <!--</div>-->
+<!--</div>-->
+</div>
+</div>
+<!--<div id="participe" class="row" data-match-height>-->
+    <!--<div id="enquete" class="large-4 columns">-->
+        <!--<div class="panel" data-height-watch>-->
+            <!--<h5>Enquete</h5>-->
+            <!--<p>Sed sit amet posuere erat. Quisque in ipsum non augue euismod dapibus non et eros?</p>-->
+            <!--<div class="row">-->
+                <!--<div class="small-12 columns">-->
+                    <!--<form class="custom">-->
+                        <!--<p><label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Opinião 1</label></p>-->
+                        <!--<p><label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Opinião 2</label></p>-->
+                        <!--<p><label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Opinião 3</label></p>-->
+                        <!--<a href="#" class="small button right">Enviar</a>-->
+                    <!--</form>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div id="boletim" class="large-4 columns">-->
+        <!--<div class="panel" data-height-watch>-->
+            <!--<h5>Boletim Eletrônico</h5>-->
+            <!--<p class="hide-for-small">Lorem ipsum dolor sed sit amet posuere erat. Lorem ipsum dolor quisque in ipsum non augue euismod dapibus non et eros. Lorem ipsum dolor quisque in ipsum non augue euismod dapibus non et eros. Quisque in ipsum non augue.</p>-->
+            <!--<form class="custom">-->
+                <!--<div class="row collapse">-->
+                    <!--<div class="small-10 columns">-->
+                        <!--<input type="text" placeholder="Cadastre seu e-mail">-->
+                    <!--</div>-->
+                    <!--<div class="small-2 columns">-->
+                        <!--<a href="#" class="button prefix">OK</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div id="contato" class="large-4 columns">-->
+        <!--<div class="panel" data-height-watch>-->
+            <!--<h5>Entre em contato</h5>-->
+            <!--<fb:like-box href="https://www.facebook.com/observatoriogenero" width="285" height="221" show_faces="true" colorscheme="dark" stream="false" show_border="false" header="false"></fb:like-box>-->
+            <!--&lt;!&ndash; <div class="panel">-->
+              <!--<a href="#"><strong>Envie sua opinião</strong></a>-->
+            <!--</div> &ndash;&gt;-->
+            <!--<div class="panel">-->
+                <!--<a href="#"><strong>Fale com o Observatório</strong></a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div id="banners" class="row">
+    <div class="small-12 columns">
+        <ul class="small-block-grid-3 large-block-grid-6">
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">&nbsp;</a></li>
+            <li><a href="#">&nbsp;</a></li>
+        </ul>
+    </div>
+</div>
+
+<footer class="row">
+    <div class="large-8 columns">
+        <ul class="inline-list">
+            <li><a href="#">Mapa do site</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Observatório de A a Z</a></li>
+            <li><a href="#">Fale com o Observatório</a></li>
+        </ul>
+    </div>
+    <div class="large-4 columns">
+        <ul class="inline-list right">
+            <li><a href="#">Temas</a></li>
+            <li><a href="#">Eixos</a></li>
+            <li><a href="#">Biblioteca</a></li>
+            <li><a href="#">Participe!</a></li>
+        </ul>
+    </div>
+    </div>
+</footer>
+
+</body>
+</html>

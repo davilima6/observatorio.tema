@@ -1,0 +1,46 @@
+<tal:sections tal:define="portal_tabs view/portal_tabs;
+	                      selected_tab python:view.selected_portal_tab">
+    <tal:tabs tal:repeat="tab portal_tabs">
+        <li class="divider"></li>
+        <li tal:define="tid tab/id"
+            tal:attributes="id string:portaltab-${tid};
+                        class python:selected_tab==tid and 'active' or 'plain'">
+            <a href="" tal:content="tab/name"
+               tal:attributes="href tab/url;
+                           title tab/description|nothing;">
+                Tab Name
+            </a>
+        </li>
+    </tal:tabs>
+</tal:sections>
+
+
+<tal:sections tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+
+    <ul class="left"
+        tal:define="selected_tab python:view.selected_portal_tab">
+        <tal:tabs tal:repeat="tab portal_tabs">
+            <li tal:define="tid tab/id;
+                            subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));"
+                tal:attributes="id string:portaltab-${tid};
+                                class python:subitems and 'has-dropdown' or ''">
+                <a href=""
+                   tal:content="tab/name"
+                   tal:attributes="href tab/url;
+                                   title tab/description|nothing;">
+                Tab Name
+                </a>
+                <tal:block tal:condition="subitems">
+                    <ul class="dropdown">
+                        <tal:subitems tal:replace="structure subitems">
+                            <tal:comment replace="nothing">Submenu</tal:comment>
+                        </tal:subitems>
+                    </ul>
+                </tal:block>
+            </li>
+        </tal:tabs>
+    </ul>
+</tal:sections>
