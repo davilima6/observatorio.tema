@@ -41,8 +41,16 @@ setup(
         'Plone',
         'setuptools',
         'z3c.jbot',
-        'collective.js.foundation',
+        'plone.app.modernizr',
         'plone.app.theming',
+        'plone.app.themingplugins',
+        'plone.app.z3cform',
+        'collective.configviews',
+        'collective.picturefill',
+        'collective.js.ckeditor',
+        'collective.js.enquire',
+        'collective.js.foundation',
+        'collective.z3cform.html5widgets',
     ],
     extras_require={
         'test': [

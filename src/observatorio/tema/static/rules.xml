@@ -16,6 +16,7 @@
   <!-- Portal Top -->
   <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
   <replace css:content=".left" css:theme=".left" />
+  <copy attributes="action" css:content="#nolivesearchGadget_form" css:theme="#global-nav-search" />
   <copy attributes="href title" css:content="#portal-logo" css:theme="#logo" />
 
   <!-- Portal Column Content -->

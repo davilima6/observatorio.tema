@@ -67,15 +67,3 @@ class DavizTile(ListTile):
 
     def get_uid(self, obj):
         return IUUID(obj)
-
-    def init_js(self):
-        return """
-        $(function() {
-            Galleria.loadTheme("++resource++collective.cover/galleria-theme/galleria.cover_theme.js");
-            Galleria.run('#galleria-%s .galleria-inner');
-
-            if($('body').hasClass('template-view')) {
-                Galleria.configure({ autoplay: %s });
-            };
-        });
-        """ % (self.id, str(self.autoplay()).lower())

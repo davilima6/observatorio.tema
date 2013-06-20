@@ -1,3 +1,10 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    behavior: url(/boxsizing.htc);
+}
+
 body {
     background: url(++theme++observatorio.tema/images/bg.jpg) 48% top no-repeat scroll;
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
@@ -63,20 +70,22 @@ footer a {
     text-rendering: inherit;
 }
 
-#biblioteca h5 {
-    display: block;
+#column-content #biblioteca h5 {
+    display: inline;
     left: -1.25em;
     position: relative;
-    top: -2em;
-    width: 120%;
+    top: -3.1em;
+    z-index: 5;
 }
 
 #biblioteca h5 + hr {
-    /*top*/
+    margin-bottom: -0.5em;
+    position: relative;
+    top: -2.75em;
 }
 
 footer.row {
-    margin: 2em auto 1em;
+    margin: 1.5em auto 0.75em;
     padding: 0 0.9375em;
 }
 
@@ -108,8 +117,7 @@ footer a {
 #participe h5 {
     background: rgb(121, 96, 143);
     color: rgb(255, 255, 255);
-    /*font-family: 'Arsenal';*/
-    margin: -3.05em 0 1.25em -0.2em;
+    margin: -3.05em 0 1.25em -0.25em;
     padding: 0.75em 0.5em 0.5em 0.75em;
     width: 9.8em;
 }
@@ -200,12 +208,7 @@ footer a {
 
 #noticias .content p {
     font-size: 0.9375em;
-    /*padding: 10px;*/
     padding-bottom: 0.5em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 200px;
 }
 
 #noticias .content p:not(:last-child) {
@@ -255,10 +258,30 @@ section .title {
     background: rgb(121, 96, 143);
     border: 0;
     border-radius: 1em;
+    color: rgb(255, 255, 255);
     height: 1.4em;
+    max-width: 9em;
+    padding-left: 2.2em;
     right: 0.5em;
     top: 0.8em;
-    width: 3.5em;
+    width: 5.5em;
+    -webkit-transition-duration: 400ms;
+    -webkit-transition-property: width, background;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-duration: 400ms;
+    -moz-transition-property: width, background;
+    -moz-transition-timing-function: ease;
+    -o-transition-duration: 400ms;
+    -o-transition-property: width, background;
+    -o-transition-timing-function: ease;
+    transition-duration: 400ms;
+    transition-property: width, background;
+    transition-timing-function: ease;
+}
+
+#search-box:focus {
+    background: rgb(157, 113, 171);
+    width: 9em;
 }
 
 .search {
@@ -281,16 +304,33 @@ section .title {
     border-top-right-radius: 0.3em;
 }
 
-.search-box::before {
+.search-box:before {
     border: 0.15em solid rgb(255, 255, 255);
-    content: " ";
-    position: absolute;
-    top: -0.2em;
-    left: -0.8em;
-    display: block;
-    width: 0.7em;
-    height: 0.7em;
     border-radius: 50%;
+    content: "";
+    display: block;
+    height: 0.7em;
+    left: -0.65em;
+    position: absolute;
+    top: -0.25em;
+    width: 0.7em;
+}
+
+#biblioteca .search-box {
+    border-radius: 0;
+    margin-top: -1.9em;
+    margin-left: 1.75em;
+    width: 0.65em;
+    height: 0.35em;
+    z-index: 5;
+}
+
+#biblioteca .search-box:before {
+    border: 0.2em solid rgb(255, 255, 255);
+    height: 1em;
+    left: -0.9em;
+    top: -0.3em;
+    width: 1em;
 }
 
 #observatorio-e-voce h5,
@@ -315,6 +355,7 @@ section .title {
     display: block;
     font-size: 1.363125em;
     font-weight: bold;
+    margin-left: 0.5em;
 }
 
 #galeria-de-fotos h5,
@@ -361,7 +402,7 @@ section .title {
 }
 
 #calendario h5.retranca:before {
-    left: -3.4em;
+    left: -3.55em;
     top: 2.25em;
     z-index: 5;
 }
@@ -388,7 +429,7 @@ section .title {
 }
 
 #calendario h5.retranca:after {
-    left: 3.4em;
+    left: 3.55em;
     top: 2.25em;
 }
 
@@ -397,8 +438,9 @@ section .title {
     color: rgb(133, 108, 137);
     font-size: 0.75em;
     margin-left: -1.6em;
-    width: 13.4em;
+    width: 15em;
 }
+
 #observatorio-e-voce > div {
     background: rgb(231, 226, 235);
     color: rgb(91, 91, 91);
@@ -454,12 +496,16 @@ section .title {
     text-rendering: auto;
 }
 
+#visualizacoes .orbit-container {
+    border: 1px solid rgb(222, 210, 224);
+}
+
 #visualizacoes .orbit-bullets {
     margin: -5px 0 0 15px;
     top: -20px;
 }
 
-#visualizacoes > div:first-child {
+#visualizacoes > div:nth-child(2) {
     height: 17em;
     position: relative;
 }
@@ -493,13 +539,14 @@ section .title {
 }
 
 .section-home #menu {
-    margin-bottom: 2.6875em;
+    margin-bottom: 2em;
 }
 
 #ultimas-noticias .orbit-prev,
 #ultimas-noticias .orbit-next,
 #ultimas-noticias .orbit-slide-number,
 #visualizacoes .orbit-slide-number,
+#biblioteca .orbit-slide-number,
 #biblioteca .orbit-timer {
     display: none;
 }
@@ -518,9 +565,9 @@ section .title {
     font-size: 1.25em;
     line-height: 1em;
     margin-right: 0.5em;
-    height: 1.3em;
+    height: 1.1em;
     text-align: center;
-    width: 1.3em;
+    width: 1.1em;
 }
 
 .orbit-container {
@@ -591,8 +638,8 @@ section .title {
     cursor: pointer;
 }
 
-#temas [class*="block-grid-"] {
-    margin: 0 -10px 0 0;
+#temas ul {
+    margin: 0 -0.625em 0.5em 0;
 }
 
 #temas li {
@@ -625,7 +672,7 @@ section .title {
 }
 
 #at-poder {
-    background: rgb(245, 130, 31);
+    background: rgb(96, 77, 112);
 }
 
 #at-desenvolvimento {
@@ -680,7 +727,7 @@ section .title {
     rgba(231, 226, 235, 1), rgba(231, 226, 235, 1) 1px,
     transparent 1px, transparent 3px);
     background-size: 4px 4px;
-    margin: 0.375em 0 0.6875em;
+    margin-bottom: 0.6875em;
 }
 
 #temas .hachuras,
@@ -696,9 +743,19 @@ section .title {
     padding: 0 1em;
 }
 
-#biblioteca .orbit-container .orbit-slides-container {
+#biblioteca #publicacoes {
     left: -0.9375em;
 }
+
+#biblioteca #publicacoes div div {
+    overflow: hidden;
+}
+
+/*#biblioteca #publicacoes img {
+    max-height: 100%;
+    max-width: 100%;
+}
+*/
 
 #biblioteca input[type=text] {
     background: rgb(231, 226, 235);
@@ -708,15 +765,12 @@ section .title {
 
 #biblioteca .sub-nav {
     font-size: 0.75em;
+    margin-bottom: 3.125em;
 }
 
 #biblioteca .sub-nav dd.active a {
     background: rgb(157, 113, 171);
     color: rgb(255, 255, 255);
-}
-
-#biblioteca .orbit-slide-number {
-    display: none;
 }
 
 #biblioteca .panel {
@@ -737,9 +791,9 @@ section .title {
     font-size: 0.875em;
 }
 
-#magnifying-glass {
-    font-size: 10em; /* This controls the size. */
+/*#biblioteca form .postfix {
     display: inline-block;
+    font-size: 10em;
     width: 0.4em;
     height: 0.4em;
     border: 0.1em solid red;
@@ -747,22 +801,67 @@ section .title {
     border-radius: 0.35em;
 }
 
-#magnifying-glass::before {
+#biblioteca form .postfix:before {
+    background: red;
+    border-width: 0;
+    bottom: -0.1em;
     content: "";
     display: inline-block;
+    height: 0.08em;
     position: absolute;
     right: -0.25em;
-    bottom: -0.1em;
-    border-width: 0;
-    background: red;
     width: 0.35em;
-    height: 0.08em;
     -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}*/
+
+
+#biblioteca form .postfix:before {
+    width: 6px;
+    height: 6px;
+    border: 3px solid rgb(197, 85, 0);
+    background: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
 }
 
+#biblioteca form .postfix:after {
+    left: 10px;
+    width: 3px;
+    height: 7px;
+    margin-top: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#biblioteca form .postfix:before,
+#biblioteca form .postfix:after {
+    margin: -8px 0 0;
+    background: rgb(197, 85, 0);
+}
+
+#biblioteca form .postfix li:before,
+#biblioteca form .postfix li:after,
+#biblioteca form .postfix li a:before,
+#biblioteca form .postfix li a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+#biblioteca dt {
+    color: rgb(88, 55, 107);
+    font-weight: 600;
+    margin-right: 0.5em;
+}
 
 #biblioteca dd a {
     color: rgb(157, 113, 171);
@@ -818,9 +917,9 @@ section .title {
 }
 
 #enquete .button {
-    background-color: rgb(250, 177, 0);
+    background: rgb(250, 177, 0);
     border: 0;
-    margin: -0.5em auto 0;
+    margin: 0;
 }
 
 /*#enquete .button:hover,
@@ -844,6 +943,7 @@ section .title {
 footer li:nth-child(even) a {
     color: rgb(157, 113, 171);
 }
+
 
 /* fix plone */
 

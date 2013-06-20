@@ -34,4 +34,6 @@
 
   <plone:static directory="static" type="theme" />
 
+  <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
+
 </configure>

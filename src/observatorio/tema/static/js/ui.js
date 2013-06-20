@@ -1,20 +1,22 @@
 (function($) {
     "use strict";
     $(document).ready(function() {
-
         $("#barra-brasil").prependTo(".fixed.contain-to-grid");
 
+        // if(!Modernizr.csstransitions) {
+        //   console.log("no css transitions!");
+        //   $("#search-box").focus(function() {
+        //     $(this).stop().animate({width: "9em"});
+        //   }).blur(function() {
+        //     $(this).stop().animate({width: "3.5em"});
+        //   });
+        // }
+
         // Slider para areas tematicas
-        $(document).on({
-            mouseenter: function() {
-                // detalha informações
-                $(".panel", this).slideDown(100);
-            },
-            mouseleave: function() {
-                // esconde informações
-                $(".panel", this).slideUp(100);
-            }
-        }, "#temas li");
+        // $(document).on({
+        //   mouseenter: function() { $(".panel", this).slideDown(100); },
+        //   mouseleave: function() { $(".panel", this).slideUp(100); }
+        // }, "#temas li");
 
         $("#daviz").on("orbit:before-slide-change", function() {
             $("#visualizacoes h5.subheader").fadeTo(300, 0.01);
@@ -35,10 +37,31 @@
                 childHeights = childrenCols.map(function(){ return $(this).outerHeight(); }).get(),
                 tallestChild = Math.max.apply(Math, childHeights);
             childrenCols.css("min-height", tallestChild);
-            console.log(childHeights, tallestChild);
+            // XXX: Remove me
+            // console.log(childHeights, tallestChild);
+        });
+
+        var filtros = $("#biblioteca dd");
+        filtros.click(function () {
+            var el = $(this);
+            if (el.is(filtros[0])) {
+                filtros.removeClass();
+            }
+            else {
+                $(filtros[0]).removeClass();
+            }
+            el.toggleClass("active");
+            if (!filtros.hasClass("active")) {
+                $(filtros[0]).addClass("active");
+            }
+            return false;
         });
 
         $(document).foundation().foundation("joyride", "start");
+        // $(window).load(function() {
+        //   $('#destaques').orbit({ fluid: '2x1' });
+        // });
+
     });
 
 })(jQuery);

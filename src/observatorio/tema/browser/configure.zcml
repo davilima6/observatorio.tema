@@ -18,4 +18,12 @@
       permission="zope2.View"
       />
 
+  <!--<browser:page-->
+      <!--name="foundation_view"-->
+      <!--for="*"-->
+      <!--class=".foundation_view.FoundationView"-->
+      <!--allowed_interface=".foundation_view.IFoundationView"-->
+      <!--permission="zope.Public"-->
+      <!--/>-->
+
 </configure>

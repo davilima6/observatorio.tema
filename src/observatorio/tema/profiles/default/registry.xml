@@ -1,33 +1,12 @@
 <?xml version="1.0"?>
 <registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           i18n:domain="plone">
-  <record interface="Products.ResourceRegistries.interfaces.settings.IResourceRegistriesSettings"
-          field="resourceBundlesForThemes">
-    <value purge="false">
-      <!-- BBB: These bundle assignments should go into each theme's package -->
-      <element key="Plone Classic Theme">
-        <element>jquery</element>
-        <element>default</element>
-        <element>jquerytools</element>
-        <element>tinymce</element>
-      </element>
-      <element key="Plone Default">
-        <element>jquery</element>
-        <element>default</element>
-        <element>jquerytools</element>
-        <element>tinymce</element>
-      </element>
-      <element key="Sunburst Theme">
-        <element>jquery</element>
-        <element>default</element>
-        <element>jquerytools</element>
-        <element>tinymce</element>
-      </element>
+  <record name="Products.ResourceRegistries.interfaces.settings.IResourceRegistriesSettings.resourceBundlesForThemes">
+    <value purge="False">
       <element key="observatorio.tema">
         <element>jquery</element>
         <element>default</element>
-        <element>jquerytools</element>
-        <element>tinymce</element>
+        <element>foundation</element>
       </element>
     </value>
   </record>

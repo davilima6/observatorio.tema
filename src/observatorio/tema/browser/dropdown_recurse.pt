@@ -5,9 +5,7 @@
             i18n:domain="plone">
 
 <metal:main
-    define-macro="nav_main"
-    tal:define="utils python:modules['webcouturier.dropdownmenu.utils'];
-                enable_parent_clickable view/enable_parent_clickable|utils/parentClickable">
+    define-macro="nav_main">
 <tal:navitem repeat="node children">
 <li tal:define="show_children   node/show_children;
                 children        node/children;
@@ -21,12 +19,10 @@
 
     <tal:level define="has_children nocall:children;
                        children_class python:has_children and ' hasDropDown' or '';
-                       item_class string:state-${node/normalized_review_state}${children_class};
-                       item_clickable python:enable_parent_clickable or not has_children;">
+                       item_class string:state-${node/normalized_review_state}${children_class}">
 
         <a tal:attributes="href python:use_remote_url and item_remote_url or item_url;
-                           title node/Description;
-                           class python:item_clickable and item_class or item_class + ' noClick'">
+                           title node/Description;">
             <img tal:replace="structure item_icon/html_tag" />
             <span tal:replace="node/Title">Selected Item Title</span>
         </a>
