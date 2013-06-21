@@ -5,8 +5,9 @@
     <value purge="False">
       <element key="observatorio.tema">
         <element>jquery</element>
+        <element>jquerytools</element>
         <element>default</element>
-        <element>foundation</element>
+        <element>tinymce</element>
       </element>
     </value>
   </record>

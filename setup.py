@@ -47,10 +47,6 @@ setup(
         'plone.app.z3cform',
         'collective.configviews',
         'collective.picturefill',
-        'collective.js.ckeditor',
-        'collective.js.enquire',
-        'collective.js.foundation',
-        'collective.z3cform.html5widgets',
     ],
     extras_require={
         'test': [
