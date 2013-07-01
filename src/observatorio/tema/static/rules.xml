@@ -18,9 +18,11 @@
   <replace css:content=".left" css:theme=".left" />
   <copy attributes="action" css:content="#nolivesearchGadget_form" css:theme="#global-nav-search" />
   <copy attributes="href title" css:content="#portal-logo" css:theme="#logo" />
+  <replace css:content=".ticker-item" css:theme=".ticker-item" />
 
   <!-- Portal Column Content -->
   <copy css:content-children="#portal-column-content" css:theme="#column-content" />
   <replace css:content-children="#portal-column-one" css:theme="#portal-column-one" />
+  <drop css:content="#viewlet-above-content #ticker-wrapper" />
 
 </rules>

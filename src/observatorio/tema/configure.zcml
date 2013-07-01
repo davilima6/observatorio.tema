@@ -32,7 +32,7 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <plone:static directory="static" type="theme" />
+  <plone:static directory="static" name="observatorio" type="theme" />
 
   <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
 

@@ -47,6 +47,7 @@ setup(
         'plone.app.z3cform',
         'collective.configviews',
         'collective.picturefill',
+        'diazoframework.foundation'
     ],
     extras_require={
         'test': [
