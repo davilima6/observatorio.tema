@@ -16,7 +16,7 @@
   <!-- Portal Top -->
   <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
   <replace css:content=".left" css:theme=".left" />
-  <copy attributes="action" css:content="#nolivesearchGadget_form" css:theme="#global-nav-search" />
+  <copy attributes="action" css:content="#portal-searchbox form" css:theme="#global-nav-search" />
   <copy attributes="href title" css:content="#portal-logo" css:theme="#logo" />
   <replace css:content=".ticker-item" css:theme=".ticker-item" />
 
@@ -24,5 +24,55 @@
   <copy css:content-children="#portal-column-content" css:theme="#column-content" />
   <replace css:content-children="#portal-column-one" css:theme="#portal-column-one" />
   <drop css:content="#viewlet-above-content #ticker-wrapper" />
+
+  <!-- Banners -->
+  <replace css:content="#banners" css:theme="#banners" />
+
+  <!-- Breadcrumbs -->
+  <drop css:content="#portal-breadcrumbs"/>
+  <rules css:if-content="#breadcrumbs-1">
+    <replace css:content="#viewlet-below-content" method="raw">
+      <div id="#viewlet-below-content">
+        <ul class="breadcrumbs">
+          <xsl:for-each select="..//div[@id='portal-breadcrumbs']/span/*">
+            <xsl:if css:test=":not(.breadcrumbSeparator)">
+              <li>
+                <xsl:copy-of select="."/>
+              </li>
+            </xsl:if>
+          </xsl:for-each>
+        </ul>
+      </div>
+    </replace>
+  </rules>
+
+  <!-- Forms -->
+  <!--<replace css:content=".formHelp">-->
+    <!--<p class="formHelp">-->
+      <!--<xsl:apply-templates select="./*|./text()"/>-->
+    <!--</p>-->
+  <!--</replace>-->
+  <!--<replace css:content="input[type='submit']">-->
+    <!--<button class="button">-->
+      <!--<xsl:attribute name="name">-->
+        <!--<xsl:value-of select="./@name" />-->
+      <!--</xsl:attribute>-->
+      <!--<xsl:value-of select="./@value"/>-->
+    <!--</button>-->
+  <!--</replace>-->
+
+  <!--<replace css:content=".visualClear">-->
+    <!--<div class="clearfix">-->
+      <!--<xsl:apply-templates select="./text()" />-->
+    <!--</div>-->
+  <!--</replace>-->
+
+  <!--<replace css:content=".documentDescription">-->
+    <!--<h5 class="subheader">-->
+      <!--<xsl:apply-templates select="./text()|./*"/>-->
+    <!--</h5>-->
+  <!--</replace>-->
+
+
 
 </rules>

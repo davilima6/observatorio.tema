@@ -10,14 +10,6 @@
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot directory="overrides" layer="..interfaces.IObservatorioTemaLayer" />
 
-  <browser:viewlet
-      name="plone.global_sections"
-      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-      class=".dropdown.DropdownMenuViewlet"
-      layer="..interfaces.IObservatorioTemaLayer"
-      permission="zope2.View"
-      />
-
   <!--<browser:page-->
       <!--name="foundation_view"-->
       <!--for="*"-->

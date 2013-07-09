@@ -2,7 +2,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    behavior: url(/boxsizing.htc);
+    behavior: url(++theme++observatorio/css/boxsizing.htc);
 }
 
 body {
@@ -551,11 +551,10 @@ section .title {
     display: none;
 }
 
-#ultimas-noticias li {
+#ultimas-noticias h6, {
     font-size: 0.8125em;
     line-height: 1.7;
     margin-bottom: 0;
-    font-weight: bold;
 }
 
 #ultimas-noticias .large-2 span {
@@ -887,7 +886,7 @@ section .title {
 }
 
 #ultimas-noticias .orbit-container .orbit-timer {
-    top: 2em;
+    top: 0.7em;
 }
 
 #ultimas-noticias .orbit-container .orbit-timer > span {
@@ -976,4 +975,67 @@ table.listing th {
 #content ul.chart-tabs, ul.chart-tabs {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+}
+
+ul#content-views, #contentActionMenus dl{
+    margin: 0;
+}
+
+label {
+    display: inline;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+    height: auto;
+}
+
+select {
+    width: auto;
+}
+
+.calendar .button {
+    display: table-cell;
+}
+
+.calendar table thead tr th,
+.calendar table tfoot tr th,
+.calendar table tbody tr td,
+.calendar table tr td,
+.calendar table tfoot tr td {
+    text-align: center;
+}
+
+.calendar table thead tr th,
+.calendar table thead tr td,
+.calendar table tfoot tr th,
+.calendar table tfoot tr td {
+    text-align: center;
+}
+
+.has-tip {
+    color: #333333 !important;
+}
+
+a:visited {
+    color: #79608F !important;
+}
+
+#ultimas-noticias li, #ultimas-noticias h6 {
+    font-size: 0.8125em !important;
+    line-height: 1.7;
+    margin-bottom: 0;
+    font-weight: bold;
 }
