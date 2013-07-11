@@ -21,6 +21,7 @@
   <replace css:content=".ticker-item" css:theme=".ticker-item" />
 
   <!-- Portal Column Content -->
+  <copy attributes="class" css:content="body" css:theme="body" />
   <copy css:content-children="#portal-column-content" css:theme="#column-content" />
   <replace css:content-children="#portal-column-one" css:theme="#portal-column-one" />
   <drop css:content="#viewlet-above-content #ticker-wrapper" />
@@ -47,31 +48,31 @@
   </rules>
 
   <!-- Forms -->
-  <!--<replace css:content=".formHelp">-->
-    <!--<p class="formHelp">-->
-      <!--<xsl:apply-templates select="./*|./text()"/>-->
-    <!--</p>-->
-  <!--</replace>-->
-  <!--<replace css:content="input[type='submit']">-->
-    <!--<button class="button">-->
-      <!--<xsl:attribute name="name">-->
-        <!--<xsl:value-of select="./@name" />-->
-      <!--</xsl:attribute>-->
-      <!--<xsl:value-of select="./@value"/>-->
-    <!--</button>-->
-  <!--</replace>-->
+  <replace css:content=".formHelp">
+    <p class="formHelp">
+      <xsl:apply-templates select="./*|./text()"/>
+    </p>
+  </replace>
+  <replace css:content="input[type='submit']">
+    <button class="button">
+      <xsl:attribute name="name">
+        <xsl:value-of select="./@name" />
+      </xsl:attribute>
+      <xsl:value-of select="./@value"/>
+    </button>
+  </replace>
 
-  <!--<replace css:content=".visualClear">-->
-    <!--<div class="clearfix">-->
-      <!--<xsl:apply-templates select="./text()" />-->
-    <!--</div>-->
-  <!--</replace>-->
+  <replace css:content=".visualClear">
+    <div class="clearfix">
+      <xsl:apply-templates select="./text()" />
+    </div>
+  </replace>
 
-  <!--<replace css:content=".documentDescription">-->
-    <!--<h5 class="subheader">-->
-      <!--<xsl:apply-templates select="./text()|./*"/>-->
-    <!--</h5>-->
-  <!--</replace>-->
+  <replace css:content=".documentDescription">
+    <h5 class="subheader">
+      <xsl:apply-templates select="./text()|./*"/>
+    </h5>
+  </replace>
 
 
 

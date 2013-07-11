@@ -16,4 +16,26 @@
       permission="zope2.View"
       for="*"
       />
+  <plone:tile
+      name="observatorio.tema.biblioteca"
+      title="Biblioteca Tile"
+      description="Um tile da biblioteca."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".biblioteca.IBibliotecaTile"
+      class=".biblioteca.BibliotecaTile"
+      permission="zope2.View"
+      for="*"
+      />
+  <plone:tile
+      name="observatorio.tema.areas"
+      title="Areas Tematicas Tile"
+      description="Um tile das areas."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".areas.IAreasTile"
+      class=".areas.AreasTile"
+      permission="zope2.View"
+      for="*"
+      />
 </configure>

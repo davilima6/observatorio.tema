@@ -61,7 +61,8 @@
         <div class="preloader"></div>
         <div id="daviz" data-orbit data-options="timer_speed: 14000">
             <a title=""
-               href="">
+               href=""
+               tal:attributes="href string:${item/absolute_url}">
                 <img tal:define="image python:item.restrictedTraverse('chart_1.png');
                                  scales image/@@images;
                                  thumbnail python:scales.scale('image', width=400, height=300);"

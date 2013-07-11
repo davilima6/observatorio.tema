@@ -8,16 +8,8 @@
       name="plone.global_sections"
       manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
       class=".dropdown.DropdownMenuViewlet"
-      layer="../..interfaces.IObservatorioTemaLayer"
+      layer="observatorio.tema.interfaces.IObservatorioTemaLayer"
       permission="zope2.View"
       />
-
-  <!--<browser:viewlet-->
-      <!--name="observatorio.tema.banners"-->
-      <!--manager="plone.app.layout.viewlets.interfaces.IBelowContent"-->
-      <!--class=".banners.BannersViewlet"-->
-      <!--layer="../..interfaces.IObservatorioTemaLayer"-->
-      <!--permission="zope2.View"-->
-      <!--/>-->
 
 </configure>

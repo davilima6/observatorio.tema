@@ -648,10 +648,11 @@ section .title {
     height: 110px;
     padding-top: 80px;
     width: 144px;
+    margin-bottom: 0;
 }
 
 #temas li a {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
     font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
@@ -671,7 +672,7 @@ section .title {
     background: rgb(122, 97, 143);
 }
 
-#at-poder {
+#at-poder-e-decisao {
     background: rgb(96, 77, 112);
 }
 
@@ -691,7 +692,7 @@ section .title {
     background: rgb(250, 177, 0);
 }
 
-#at-tempo {
+#at-uso-do-tempo {
     background: rgb(245, 130, 31);
 }
 
@@ -719,7 +720,7 @@ section .title {
 #at-esporte:hover a,
 #at-diversidade:hover a,
 #at-tempo:hover a {
-    color: #000;
+    color: #000 !important;
 }
 
 .hachuras {
@@ -955,9 +956,9 @@ div.row {
     margin: 0 auto;
 }
 
-.large-9 {
-    width: 69%;
-}
+/*.large-9 {*/
+    /*width: 75%;*/
+/*}*/
 
 .column th, .columns th {
     float: none !important;
@@ -1029,13 +1030,26 @@ select {
     color: #333333 !important;
 }
 
-a:visited {
-    color: #79608F !important;
-}
+/*a:visited {*/
+    /*color: #79608F !important;*/
+/*}*/
 
 #ultimas-noticias li, #ultimas-noticias h6 {
     font-size: 0.8125em !important;
     line-height: 1.7;
     margin-bottom: 0;
     font-weight: bold;
+}
+
+#content a:link, dl.portlet a:link {
+    border-bottom: none;
+    color: #79608F;
+}
+
+#content {
+    font-size: 100%;
+}
+
+ul, ol, dl {
+    font-size: 1em !important;
 }

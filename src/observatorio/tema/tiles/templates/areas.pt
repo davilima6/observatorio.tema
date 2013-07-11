@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="observatorio.tema">
+
+<!--<head>-->
+<!--<link rel="stylesheet" type="text/css"-->
+<!--tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.cover/galleria-theme/galleria.cover_theme.css" />-->
+<!--<script type="text/javascript" tal:content="structure view/init_js">-->
+<!--</script>-->
+<!--</head>-->
+
+<body tal:define="tile_id view/id;">
+<div id="temas">
+    <h5>Áreas Temáticas</h5><hr />
+    <ul class="small-block-grid-4 large-block-grid-5">
+        <tal:items repeat="item view/results">
+        <li id="at-trabalho"
+            tal:attributes="id string:at-${item/id}">
+            <a data-tooltip class="has-tip"
+               title=""
+               href=""
+               tal:attributes="title item/Title;
+                               href item/absolute_url"
+               tal:content="item/Title"></a>
+        </li>
+        </tal:items>
+    </ul>
+    <div class="hachuras"><!-- --></div>
+</div>
+</body>
+</html>

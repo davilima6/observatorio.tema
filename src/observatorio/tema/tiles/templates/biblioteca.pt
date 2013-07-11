@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="observatorio.tema">
+
+<body tal:define="tile_id view/id;
+                  autoplay python:str(view.autoplay()).lower();">
+
+<div id="biblioteca" class="hachuras">
+    <h5>Biblioteca</h5><hr />
+    <div class="slideshow-wrapper">
+        <div class="preloader"></div>
+        <div id="publicacoes" data-orbit data-options="timer_speed: 7000; bullets: false">
+            <div tal:repeat="item view/results">
+                <div class="large-3 small-6 columns">
+                    <a title=""
+                       href=""
+                       tal:attributes="href string:${item/absolute_url}">
+                        <img tal:define="scales item/@@images;
+                                         thumbnail python:scales.scale('imagem', width=400, height=300);"
+                             tal:attributes="src thumbnail/url;
+                                     width thumbnail/width;
+                                     height thumbnail/height;
+                                     data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
+                                     data-description item/Description;
+                                     data-link string:${item/absolute_url}/view;" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row collapse">
+            <form>
+                <div class="small-8 large-11 columns">
+                    <input type="text" placeholder="O que você procura?" />
+                </div>
+                <div class="small-3 large-1 columns">
+                    <a href="#" class="postfix button expand">&nbsp;</a>
+                    <input type="hidden" name="filter_values" value="" />
+                    <div class="search-box"></div>
+                </div>
+            </form>
+        </div>
+        <!--<div class="row">-->
+            <!--<div class="large-12 columns">-->
+                <!--<dl class="sub-nav">-->
+                    <!--<dt>FILTROS:</dt>-->
+                    <!--<dd class="active"><a href="#">Todas as publicações</a></dd>-->
+                    <!--<dd><a href="#">Documentos</a></dd>-->
+                    <!--<dd><a href="#">Pesquisas</a></dd>-->
+                    <!--<dd><a href="#">Artigos</a></dd>-->
+                    <!--<dd><a href="#">Visualizações</a></dd>-->
+                    <!--<dd><a href="#">Editais</a></dd>-->
+                    <!--<dd><a href="#">Links</a></dd>-->
+                <!--</dl>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <div class="row">
+        <div class="large-4 large-offset-8 columns">
+            <ul class="inline-list right">
+                <li><a href="#">Acessar toda a biblioteca →</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
