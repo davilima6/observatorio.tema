@@ -24,6 +24,31 @@
   <copy attributes="class" css:content="body" css:theme="body" />
   <copy css:content-children="#portal-column-content" css:theme="#column-content" />
   <replace css:content-children="#portal-column-one" css:theme="#portal-column-one" />
+  <drop css:theme="#portal-column-two" />
+
+  <!-- quando nao tiver nenhum portlet -->
+
+  <rules css:if-content="#portal-column-content.cell.width-full.position-0">
+    <drop css:theme="#column-one" />
+    <drop css:theme="#portal-column-two" />
+    <replace theme="//*[@id='column-content']">
+      <div id='column-content' class='large-12 columns'>
+        <xsl:apply-templates select="//*[@id='portal-column-content']/*"/>
+      </div>
+    </replace>
+  </rules>
+
+  <!-- manage portlets -->
+  <rules if-path="@@manage-portlets/">
+    <drop css:theme="#logo" />
+    <drop css:theme="#apresentacao" />
+    <copy css:content-children="#portal-column-two" css:theme="#portal-column-two"  />
+    <replace theme="//*[@id='column-content']">
+      <div id='column-content' class="large-6 columns">
+        <xsl:apply-templates select="//*[@id='portal-column-content']/*"/>
+      </div>
+    </replace>
+  </rules>
   <drop css:content="#viewlet-above-content #ticker-wrapper" />
 
   <!-- Banners -->
@@ -33,7 +58,7 @@
   <drop css:content="#portal-breadcrumbs"/>
   <rules css:if-content="#breadcrumbs-1">
     <replace css:content="#viewlet-below-content" method="raw">
-      <div id="#viewlet-below-content">
+      <div id="#portal-breadcrumbs">
         <ul class="breadcrumbs">
           <xsl:for-each select="..//div[@id='portal-breadcrumbs']/span/*">
             <xsl:if css:test=":not(.breadcrumbSeparator)">

@@ -15,11 +15,13 @@
                   autoplay python:str(view.autoplay()).lower();">
 
 <div id="visualizacoes" class="row">
-    <tal:items repeat="item view/results">
+    <div class="large-12 columns">
+        <h5>Visualizações de dados</h5>
+        <hr>
+    </div>
     <div class="large-6 columns">
-        <h5 tal:content="item/Title">Visualizações de dados</h5><hr />
         <h5 class="subheader">
-            <span tal:content="item/Description" />
+            <span />
         </h5>
         <div class="download">
             <h6 class="subheader hide-for-small">Dados abertos disponíveis em:</h6>
@@ -27,32 +29,27 @@
                 <li>
                     <a href=""
                        title="HTML"
-                       class="tiny radius secondary button"
-                       tal:attributes="href string:${item/absolute_url}/download.table">HTML</a>
+                       class="tabela tiny radius secondary button">HTML</a>
                 </li>
                 <li>
                     <a href=""
                        title="CSV"
-                       class="tiny radius secondary button"
-                       tal:attributes="href string:${item/absolute_url}/download.csv">CSV</a>
+                       class="csv tiny radius secondary button">CSV</a>
                 </li>
                 <li>
                     <a href=""
                        title="JSON"
-                       class="tiny radius secondary button"
-                       tal:attributes="href string:${item/absolute_url}/download.json">JSON</a>
+                       class="json tiny radius secondary button">JSON</a>
                 </li>
                 <li>
                     <a href=""
                        title="XML"
-                       class="tiny radius secondary button"
-                       tal:attributes="href string:${item/absolute_url}/download.xml">XML</a>
+                       class="xml-only tiny radius secondary button">XML</a>
                 </li>
                 <li>
                     <a href=""
                        title="XML com Schema"
-                       class="tiny radius secondary button"
-                       tal:attributes="href string:${item/absolute_url}/download.schema.xml">XML com Schema</a>
+                       class="xml-schema tiny radius secondary button">XML Com Schema</a>
                 </li>
             </ul>
         </div>
@@ -60,23 +57,26 @@
     <div class="large-6 columns slideshow-wrapper">
         <div class="preloader"></div>
         <div id="daviz" data-orbit data-options="timer_speed: 14000">
+            <tal:items repeat="item view/results">
             <a title=""
                href=""
-               tal:attributes="href string:${item/absolute_url}">
+               tal:attributes="href string:${item/absolute_url};
+                               title item/Title">
                 <img tal:define="image python:item.restrictedTraverse('chart_1.png');
                                  scales image/@@images;
                                  thumbnail python:scales.scale('image', width=400, height=300);"
                      tal:attributes="src thumbnail/url;
+                                     alt item/Description;
                                      width thumbnail/width;
                                      height thumbnail/height;
                                      data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
                                      data-description item/Description;
                                      data-link string:${item/absolute_url}/view;" />
             </a>
+            </tal:items>
         </div>
         <h6 class="subheader show-for-small"><a href="#">Acesse os dados em formatos abertos →</a></h6>
     </div>
-    </tal:items>
     <div class="large-12 columns">
         <div data-clearing><!-- --></div>
         <div class="hachuras"><!-- --></div>

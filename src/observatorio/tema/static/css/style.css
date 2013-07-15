@@ -1053,3 +1053,20 @@ select {
 ul, ol, dl {
     font-size: 1em !important;
 }
+
+#barra-brasil .brasilgov {
+    width: 108px;
+    text-indent: -99999px;
+}
+
+#barra-brasil .barra ul {
+    margin-bottom: 0;
+}
+
+#content li, dl.portlet li, div.portletStaticText li {
+    display: inline;
+}
+
+.button-group {
+    margin-left: 0 !important;
+}

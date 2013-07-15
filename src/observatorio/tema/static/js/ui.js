@@ -29,6 +29,42 @@
             var desc = $("img", slide).attr("alt");
             fade.html("<span>" + title + "</span>" + desc);
             fade.fadeTo(300, 1);
+
+            var table = $(".download a.tabela");
+            var slide = $(event.target).children().eq(orbit.slide_number);
+            var href = slide.attr('href');
+            var url = href + '/download.table';
+            table.attr('href', url);
+            table.fadeTo(300,1);
+
+            var table = $(".download a.csv");
+            var slide = $(event.target).children().eq(orbit.slide_number);
+            var href = slide.attr('href');
+            var url = href + '/download.csv';
+            table.attr('href', url);
+            table.fadeTo(300,1);
+
+            var table = $(".download a.json");
+            var slide = $(event.target).children().eq(orbit.slide_number);
+            var href = slide.attr('href');
+            var url = href + '/download.json';
+            table.attr('href', url);
+            table.fadeTo(300,1);
+
+            var table = $(".download a.xml-only");
+            var slide = $(event.target).children().eq(orbit.slide_number);
+            var href = slide.attr('href');
+            var url = href + '/download.xml';
+            table.attr('href', url);
+            table.fadeTo(300,1);
+
+            var table = $(".download a.xml-schema");
+            var slide = $(event.target).children().eq(orbit.slide_number);
+            var href = slide.attr('href');
+            var url = href + '/download.schema.xml';
+            table.attr('href', url);
+            table.fadeTo(300,1);
+
         });
 
         $("[data-match-height]").each(function() {
