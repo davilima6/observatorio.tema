@@ -12,7 +12,8 @@
     <div class="slideshow-wrapper">
         <div class="preloader"></div>
         <div id="publicacoes" data-orbit data-options="timer_speed: 7000; bullets: false">
-            <div tal:repeat="item view/results">
+            <div>
+                <tal:block tal:repeat="item view/results">
                 <div class="large-3 small-6 columns">
                     <a title=""
                        href=""
@@ -27,6 +28,7 @@
                                      data-link string:${item/absolute_url}/view;" />
                     </a>
                 </div>
+                </tal:block>
             </div>
         </div>
     </div>
