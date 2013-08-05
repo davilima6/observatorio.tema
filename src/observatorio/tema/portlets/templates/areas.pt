@@ -1,0 +1,16 @@
+<div id="temas">
+    <h5>Áreas Temáticas</h5>
+    <ul class="small-block-grid-4 large-block-grid-5">
+        <tal:items repeat="item view/get_areas">
+            <li id="at-trabalho"
+                tal:attributes="id string:at-${item/id}">
+                <a data-tooltip class="has-tip"
+                   title=""
+                   href=""
+                   tal:attributes="title item/Title;
+                               href item/absolute_url"
+                   tal:content="item/Title"></a>
+            </li>
+        </tal:items>
+    </ul>
+</div>

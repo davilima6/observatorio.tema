@@ -14,4 +14,14 @@
       editview=".galeria.EditForm"
       />
 
+  <plone:portlet
+      name="observatorio.tema.AreasTematicas"
+      interface=".areas.IAreasTematicas"
+      assignment=".areas.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".areas.Renderer"
+      addview=".areas.AddForm"
+      />
+
 </configure>

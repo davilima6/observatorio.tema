@@ -17,6 +17,7 @@
       <element>observatorio.tema.biblioteca</element>
       <element>observatorio.tema.areas</element>
       <element>observatorio.tema.noticias_home</element>
+      <element>observatorio.tema.eventos</element>
     </value>
   </record>
 </registry>

@@ -49,5 +49,15 @@
       permission="zope2.View"
       for="*"
       />
-
+  <plone:tile
+      name="observatorio.tema.eventos"
+      title="Eventos Tile"
+      description="Um tile dos eventos."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".eventos.IEventosTile"
+      class=".eventos.EventosTile"
+      permission="zope2.View"
+      for="*"
+      />
 </configure>

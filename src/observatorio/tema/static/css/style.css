@@ -402,8 +402,8 @@ section .title {
 }
 
 #calendario h5.retranca:before {
-    left: -3.55em;
-    top: 2.25em;
+    left: -2.65em;
+    top: 2.35em;
     z-index: 5;
 }
 
@@ -429,8 +429,8 @@ section .title {
 }
 
 #calendario h5.retranca:after {
-    left: 3.55em;
-    top: 2.25em;
+    left: 2.65em;
+    top: 2.35em;
 }
 
 #observatorio-e-voce select {
