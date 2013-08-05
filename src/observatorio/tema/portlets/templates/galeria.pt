@@ -1,0 +1,18 @@
+<div id="galeria-de-fotos"
+     tal:define="items view/get_imagens">
+    <h5 class="retranca">Galeria de fotos</h5>
+    <ul class="small-block-grid-3">
+        <tal:fotos repeat="item items">
+        <li>
+            <a href=""
+               title=""
+               tal:attributes="href string:${item/getURL}/view;
+                               title item/Title">
+                <img tal:attributes="src string:${item/getURL|nothing}/image_galeria;
+                                     data-title item/Title|nothing;
+                                     data-description item/Description|nothing;" />
+            </a>
+        </li>
+        </tal:fotos>
+    </ul>
+</div>

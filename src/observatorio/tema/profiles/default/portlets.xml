@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+  <portlet
+      addview="observatorio.tema.Galeria"
+      title="Galeria de Fotos"
+      description=""
+      i18n:attributes="title; description"
+      >
+    <for interface="plone.app.portlets.interfaces.IColumn" />
+    <for interface="plone.app.portlets.interfaces.IDashboard" />
+  </portlet>
+
+</object>

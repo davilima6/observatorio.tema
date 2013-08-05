@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.cover">
+
+<body tal:define="is_empty view/is_empty">
+    <div id="calendario" class="large-12 columns" data-height-watch>
+        <h5 class="retranca"
+            tal:condition="view/show_header">
+            <span tal:replace="view/data/header" />
+        </h5>
+        <tal:results define="results view/results|nothing;
+                             toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+        <div class="content">
+            <tal:block repeat="item results">
+            <div class="row"
+                 tal:define="obj item/getObject;
+                             date python:toLocalizedTime(obj.start())">
+                <div class="large-2 column"
+                     tal:content="python: date[:5]"></div>
+                <div class="large-10 columns">
+                    <h5>
+                        <a href=""
+                           title=""
+                           tal:attributes="href obj/absolute_url;
+                                           title obj/Description">
+                            <span tal:replace="obj/Title" />
+                        </a>
+                    </h5>
+                    <h6 class="subheader"
+                        tal:content="obj/Description"></h6>
+                </div>
+            </div>
+            <hr />
+            </tal:block>
+        </div>
+        </tal:results>
+        <div style="clear: both"><!--  --></div>
+        <p class="right" tal:condition="view/show_footer">
+            <a tal:attributes="href view/collection_url" tal:content="view/data/footer" />
+        </p>
+    </div>
+</body>
+</html>

@@ -7,7 +7,8 @@
 
   <!--Head-->
   <copy css:content="html" css:theme="html" attributes="lang dir" />
-  <before css:content="head link, head script, head meta" css:theme-children="head" />
+  <before css:content="head link, head meta" css:theme-children="head" />
+  <before css:content="head script" css:theme-children="head" />
   <replace css:content="head title" css:theme="head title" />
   <copy css:content="head base" css:theme="head base" />
   <drop css:content="head link[rel='shortcut icon']" />

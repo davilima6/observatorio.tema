@@ -16,6 +16,7 @@
       <element>observatorio.tema.daviz</element>
       <element>observatorio.tema.biblioteca</element>
       <element>observatorio.tema.areas</element>
+      <element>observatorio.tema.noticias_home</element>
     </value>
   </record>
 </registry>

@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="observatorio.tema">
+
+  <plone:portlet
+      name="observatorio.tema.Galeria"
+      interface=".galeria.IGaleria"
+      assignment=".galeria.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".galeria.Renderer"
+      addview=".galeria.AddForm"
+      editview=".galeria.EditForm"
+      />
+
+</configure>

@@ -36,9 +36,6 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'five.grok',
-        'Pillow',
-        'Plone',
         'setuptools',
         'z3c.jbot',
         'plone.app.modernizr',

@@ -38,4 +38,16 @@
       permission="zope2.View"
       for="*"
       />
+  <plone:tile
+      name="observatorio.tema.noticias_home"
+      title="Noticias Home Tile"
+      description="Um tile das noticias da home."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".noticias_home.INoticiasHomeTile"
+      class=".noticias_home.NoticiasHomeTile"
+      permission="zope2.View"
+      for="*"
+      />
+
 </configure>
