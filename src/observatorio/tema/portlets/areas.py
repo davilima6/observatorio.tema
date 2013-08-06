@@ -1,20 +1,12 @@
 # -*- coding: utf-8 -*-
 
-
-# -*- coding: utf-8 -*-
-
 from Acquisition import aq_inner
 
-from zope import schema
 from zope.interface import implements
-from zope.component import getMultiAdapter
-from zope.formlib import form
 
 from plone.memoize.instance import memoize
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
-from plone.app.vocabularies.catalog import SearchableTextSourceBinder
-from plone.app.form.widgets.uberselectionwidget import UberSelectionWidget
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
@@ -61,7 +53,7 @@ class Renderer(base.Renderer):
         if self.get_areas():
             return True
 
-#    @memoize
+    @memoize
     def get_areas(self):
         areas = getattr(self.portal, 'areas-tematicas')
         if areas:

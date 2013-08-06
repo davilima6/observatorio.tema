@@ -34,7 +34,7 @@ class DropdownQueryBuilder(NavtreeQueryBuilder):
         NavtreeQueryBuilder.__init__(self, context)
         self.query['path'] = {'query': '/'.join(context.getPhysicalPath()),
                               'navtree_start': 1,
-                              'depth': 3}
+                              'depth': 2}
 
 
 class DropdownMenuViewlet(common.GlobalSectionsViewlet):
