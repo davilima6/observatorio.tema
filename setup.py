@@ -38,13 +38,11 @@ setup(
     install_requires=[
         'setuptools',
         'z3c.jbot',
-        'plone.app.modernizr',
         'plone.app.theming',
         'plone.app.themingplugins',
         'plone.app.z3cform',
         'collective.configviews',
         'collective.picturefill',
-        'diazoframework.foundation',
     ],
     extras_require={
         'test': [
