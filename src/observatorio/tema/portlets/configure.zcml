@@ -24,4 +24,14 @@
       addview=".areas.AddForm"
       />
 
+  <plone:portlet
+      name="observatorio.tema.EixosAtuacao"
+      interface=".eixos.IEixosAtuacao"
+      assignment=".eixos.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".eixos.Renderer"
+      addview=".eixos.AddForm"
+      />
+
 </configure>

@@ -1063,9 +1063,9 @@ ul, ol, dl {
     margin-bottom: 0;
 }
 
-#content li, dl.portlet li, div.portletStaticText li {
-    display: inline;
-}
+/*#content li, dl.portlet li, div.portletStaticText li {*/
+    /*display: inline;*/
+/*}*/
 
 .button-group {
     margin-left: 0 !important;

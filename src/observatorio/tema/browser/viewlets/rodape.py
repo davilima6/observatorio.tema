@@ -29,5 +29,5 @@ class RodapeViewlet(grok.Viewlet):
     def rodape_actions(self):
         context_state = getMultiAdapter((self.context, self.request),
             name=u'plone_context_state')
-        return context_state.actions('rodape_actions')
+        return context_state.actions('site_sections')
 
