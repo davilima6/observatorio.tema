@@ -27,6 +27,9 @@
   <replace css:content-children="#portal-column-one" css:theme="#portal-column-one" />
   <drop css:theme="#portal-column-two" />
 
+  <!-- Footer -->
+  <replace css:content="#portal-footer-wrapper footer" theme="/html/body/footer" />
+
   <!-- quando nao tiver nenhum portlet -->
 
   <rules css:if-content="#portal-column-content.cell.width-full.position-0">
