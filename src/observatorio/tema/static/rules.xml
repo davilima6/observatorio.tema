@@ -59,9 +59,8 @@
   <replace css:content="#banners" css:theme="#banners" />
 
   <!-- Breadcrumbs -->
-  <drop css:content="#portal-breadcrumbs"/>
   <rules css:if-content="#breadcrumbs-1">
-    <replace css:content="#viewlet-below-content" method="raw">
+    <replace css:content="#portal-breadcrumbs" method="raw">
       <div id="#portal-breadcrumbs">
         <ul class="breadcrumbs">
           <xsl:for-each select="..//div[@id='portal-breadcrumbs']/span/*">
