@@ -81,14 +81,6 @@
       <xsl:apply-templates select="./*|./text()"/>
     </p>
   </replace>
-  <replace css:content="input[type='submit']">
-    <button class="button">
-      <xsl:attribute name="name">
-        <xsl:value-of select="./@name" />
-      </xsl:attribute>
-      <xsl:value-of select="./@value"/>
-    </button>
-  </replace>
 
   <replace css:content=".visualClear">
     <div class="clearfix">
