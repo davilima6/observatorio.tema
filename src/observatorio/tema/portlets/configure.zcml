@@ -34,4 +34,26 @@
       addview=".eixos.AddForm"
       />
 
+  <plone:portlet
+      name="observatorio.tema.UltimasNoticias"
+      interface=".noticias.IUltimasNoticias"
+      assignment=".noticias.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".noticias.Renderer"
+      addview=".noticias.AddForm"
+      editview=".noticias.EditForm"
+      />
+
+  <plone:portlet
+      name="observatorio.tema.Perfil"
+      interface=".perfil.IPerfil"
+      assignment=".perfil.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".perfil.Renderer"
+      addview=".perfil.AddForm"
+      editview=".perfil.EditForm"
+      />
+
 </configure>

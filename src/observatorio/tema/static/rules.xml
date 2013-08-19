@@ -19,7 +19,7 @@
   <replace css:content=".left" css:theme=".left" />
   <copy attributes="action" css:content="#portal-searchbox form" css:theme="#global-nav-search" />
   <copy attributes="href title" css:content="#portal-logo" css:theme="#logo" />
-  <replace css:content=".ticker-item" css:theme=".ticker-item" />
+  <!--<replace css:content=".ticker-item" css:theme=".ticker-item" />-->
 
   <!-- Portal Column Content -->
   <copy attributes="class" css:content="body" css:theme="body" />
@@ -93,7 +93,5 @@
       <xsl:apply-templates select="./text()|./*"/>
     </h5>
   </replace>
-
-
 
 </rules>

@@ -32,4 +32,24 @@
     <for interface="plone.app.portlets.interfaces.IDashboard" />
   </portlet>
 
+  <portlet
+      addview="observatorio.tema.UltimasNoticias"
+      title="Ultimas Noticias"
+      description=""
+      i18n:attributes="title; description"
+      >
+    <for interface="plone.app.portlets.interfaces.IColumn" />
+    <for interface="plone.app.portlets.interfaces.IDashboard" />
+  </portlet>
+
+  <portlet
+      addview="observatorio.tema.Perfil"
+      title="Perfil"
+      description=""
+      i18n:attributes="title; description"
+      >
+    <for interface="plone.app.portlets.interfaces.IColumn" />
+    <for interface="plone.app.portlets.interfaces.IDashboard" />
+  </portlet>
+
 </object>
