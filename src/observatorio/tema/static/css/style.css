@@ -700,12 +700,12 @@ section .title {
 #at-educacao:hover,
 #at-saude:hover,
 #at-violencia:hover,
-#at-poder:hover,
+#at-poder-e-decisao:hover,
 #at-desenvolvimento:hover,
 #at-cultura:hover,
 #at-esporte:hover,
 #at-diversidade:hover,
-#at-tempo:hover {
+#at-uso-do-tempo:hover {
     background: rgb(255, 255, 255);
     cursor: pointer;
 }
@@ -714,12 +714,12 @@ section .title {
 #at-educacao:hover a,
 #at-saude:hover a,
 #at-violencia:hover a,
-#at-poder:hover a,
+#at-poder-e-decisao:hover a,
 #at-desenvolvimento:hover a,
 #at-cultura:hover a,
 #at-esporte:hover a,
 #at-diversidade:hover a,
-#at-tempo:hover a {
+#at-uso-do-tempo:hover a {
     color: #000 !important;
 }
 
@@ -771,7 +771,11 @@ section .title {
 
 #biblioteca .sub-nav dd.active a {
     background: rgb(157, 113, 171);
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
+}
+
+#biblioteca .sub-nav dt, #biblioteca .sub-nav dd, #biblioteca .sub-nav dl {
+    font-size: 0.875em;
 }
 
 #biblioteca .panel {
@@ -865,15 +869,15 @@ section .title {
 }
 
 #biblioteca dd a {
-    color: rgb(157, 113, 171);
+    color: rgb(157, 113, 171) !important;
     padding: 0.25em 0.75em;
 }
 
 #biblioteca dd:not(.active):hover a,
 #biblioteca dd:not(.active):focus a {
-    background: rgb(250, 177, 0);
+    background: rgb(250, 177, 0) !important;
     border-radius: 1000px;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
 }
 
 #biblioteca .inline-list {
@@ -948,6 +952,10 @@ footer li:nth-child(even) a {
 
 /* fix plone */
 
+.row .row.collapse {
+    overflow: visible;
+}
+
 div.row {
     float: none;
 }
@@ -957,7 +965,7 @@ div.row {
 }
 
 /*.large-9 {*/
-    /*width: 75%;*/
+/*width: 75%;*/
 /*}*/
 
 .column th, .columns th {
@@ -1031,7 +1039,7 @@ select {
 }
 
 /*a:visited {*/
-    /*color: #79608F !important;*/
+/*color: #79608F !important;*/
 /*}*/
 
 #ultimas-noticias li, #ultimas-noticias h6 {
@@ -1051,7 +1059,7 @@ select {
 }
 
 ul, ol, dl {
-    font-size: 1em !important;
+    font-size: 1em;
 }
 
 #barra-brasil .brasilgov {
@@ -1064,9 +1072,39 @@ ul, ol, dl {
 }
 
 /*#content li, dl.portlet li, div.portletStaticText li {*/
-    /*display: inline;*/
+/*display: inline;*/
 /*}*/
 
 .button-group {
     margin-left: 0 !important;
+}
+
+
+#left-area {
+    width: 14em;
+}
+
+#right-area {
+    width: 10em;
+}
+
+.left-area-js {
+    margin-left: 14em;
+}
+
+.right-area-js {
+    margin-right: 10em;
+}
+
+.eea-preview-items .photoAlbumEntry {
+    background: none;
+    padding: 0 6px;
+    margin: 0 0.5em 1em;
+    outline: 1px solid #efefef;
+    width: 128px;
+}
+
+.eea-preview-items .photoAlbumEntryDescription,
+.listingBar:first-child {
+    display: none;
 }

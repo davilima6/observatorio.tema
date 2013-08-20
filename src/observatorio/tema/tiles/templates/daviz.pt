@@ -4,13 +4,6 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="observatorio.tema">
 
-<!--<head>-->
-    <!--<link rel="stylesheet" type="text/css"-->
-          <!--tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++collective.cover/galleria-theme/galleria.cover_theme.css" />-->
-    <!--<script type="text/javascript" tal:content="structure view/init_js">-->
-    <!--</script>-->
-<!--</head>-->
-
 <body tal:define="tile_id view/id;
                   autoplay python:str(view.autoplay()).lower();">
 
@@ -56,7 +49,7 @@
     </div>
     <div class="large-6 columns slideshow-wrapper">
         <div class="preloader"></div>
-        <div id="daviz" data-orbit data-options="timer_speed: 14000">
+        <div id="daviz" data-orbit data-options="timer_speed: 14000; bullets: false">
             <tal:items repeat="item view/results">
             <a title=""
                href=""

@@ -45,20 +45,20 @@
                 </div>
             </form>
         </div>
-        <!--<div class="row">-->
-            <!--<div class="large-12 columns">-->
-                <!--<dl class="sub-nav">-->
-                    <!--<dt>FILTROS:</dt>-->
-                    <!--<dd class="active"><a href="#">Todas as publicações</a></dd>-->
-                    <!--<dd><a href="#">Documentos</a></dd>-->
-                    <!--<dd><a href="#">Pesquisas</a></dd>-->
-                    <!--<dd><a href="#">Artigos</a></dd>-->
-                    <!--<dd><a href="#">Visualizações</a></dd>-->
-                    <!--<dd><a href="#">Editais</a></dd>-->
-                    <!--<dd><a href="#">Links</a></dd>-->
-                <!--</dl>-->
-            <!--</div>-->
-        <!--</div>-->
+        <div class="row">
+            <div class="large-12 columns">
+                <dl class="sub-nav">
+                    <dt>FILTROS:</dt>
+                    <dd class="active"><a href="#">Todas as publicações</a></dd>
+                    <dd><a href="#">Documentos</a></dd>
+                    <dd><a href="#">Pesquisas</a></dd>
+                    <dd><a href="#">Artigos</a></dd>
+                    <dd><a href="#">Visualizações</a></dd>
+                    <dd><a href="#">Editais</a></dd>
+                    <dd><a href="#">Links</a></dd>
+                </dl>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="large-4 large-offset-8 columns">

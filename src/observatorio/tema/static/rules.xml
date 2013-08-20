@@ -6,20 +6,21 @@
   <theme href="index.html" css:if-content="#visual-portal-wrapper" />
 
   <!--Head-->
-  <copy css:content="html" css:theme="html" attributes="lang dir" />
-  <before css:content="head link, head meta" css:theme-children="head" />
-  <before css:content="head script" css:theme-children="head" />
+
+  <copy attributes="lang dir" css:content="html" css:theme="html" />
+  <!-- Considerar substituir linhas 14 e 15 por 12 e 13 -->
+  <!--drop css:theme="meta, title" /-->
+  <!--replace css:content-children="head" css:theme-children="head" /-->
+  <before css:content="head base, head meta, head link, head style, head script" css:theme-children="head" />
   <replace css:content="head title" css:theme="head title" />
-  <copy css:content="head base" css:theme="head base" />
-  <drop css:content="head link[rel='shortcut icon']" />
-  <drop css:content="head link[rel='apple-touch-icon']" />
+  <copy attributes="*" css:content="body" css:theme="body" />
 
   <!-- Portal Top -->
   <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
   <replace css:content=".left" css:theme=".left" />
   <copy attributes="action" css:content="#portal-searchbox form" css:theme="#global-nav-search" />
   <copy attributes="href title" css:content="#portal-logo" css:theme="#logo" />
-  <!--<replace css:content=".ticker-item" css:theme=".ticker-item" />-->
+  <replace css:content=".ticker-item" css:theme=".ticker-item" />
 
   <!-- Portal Column Content -->
   <copy attributes="class" css:content="body" css:theme="body" />
@@ -30,8 +31,7 @@
   <!-- Footer -->
   <replace css:content="#portal-footer-wrapper footer" theme="/html/body/footer" />
 
-  <!-- quando nao tiver nenhum portlet -->
-
+  <!-- Quando nao tiver nenhum portlet -->
   <rules css:if-content="#portal-column-content.cell.width-full.position-0">
     <drop css:theme="#column-one" />
     <drop css:theme="#portal-column-two" />
@@ -42,7 +42,7 @@
     </replace>
   </rules>
 
-  <!-- manage portlets -->
+  <!-- Manage portlets -->
   <rules if-path="@@manage-portlets/">
     <drop css:theme="#logo" />
     <drop css:theme="#apresentacao" />
