@@ -608,6 +608,7 @@ section .title {
     border-top: 1px dashed #000;
     border-bottom: 1px solid #000;
     padding: 0.375em;
+    margin-top: 2em;
     /* XXX: Fix me. */
     /*width: 73%;*/
 }
@@ -771,11 +772,7 @@ section .title {
 
 #biblioteca .sub-nav dd.active a {
     background: rgb(157, 113, 171);
-    color: rgb(255, 255, 255) !important;
-}
-
-#biblioteca .sub-nav dt, #biblioteca .sub-nav dd, #biblioteca .sub-nav dl {
-    font-size: 0.875em;
+    color: rgb(255, 255, 255);
 }
 
 #biblioteca .panel {
@@ -869,15 +866,15 @@ section .title {
 }
 
 #biblioteca dd a {
-    color: rgb(157, 113, 171) !important;
+    color: rgb(157, 113, 171);
     padding: 0.25em 0.75em;
 }
 
 #biblioteca dd:not(.active):hover a,
 #biblioteca dd:not(.active):focus a {
-    background: rgb(250, 177, 0) !important;
+    background: rgb(250, 177, 0);
     border-radius: 1000px;
-    color: rgb(255, 255, 255) !important;
+    color: rgb(255, 255, 255);
 }
 
 #biblioteca .inline-list {
@@ -952,10 +949,6 @@ footer li:nth-child(even) a {
 
 /* fix plone */
 
-.row .row.collapse {
-    overflow: visible;
-}
-
 div.row {
     float: none;
 }
@@ -968,7 +961,8 @@ div.row {
 /*width: 75%;*/
 /*}*/
 
-.column th, .columns th {
+.column th,
+.columns th {
     float: none !important;
 }
 
@@ -981,12 +975,14 @@ table.listing th {
     box-sizing: content-box;
 }
 
-#content ul.chart-tabs, ul.chart-tabs {
+#content ul.chart-tabs,
+ul.chart-tabs {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
-ul#content-views, #contentActionMenus dl{
+#content-views,
+#contentActionMenus dl {
     margin: 0;
 }
 
@@ -1059,7 +1055,7 @@ select {
 }
 
 ul, ol, dl {
-    font-size: 1em;
+    font-size: 1em !important;
 }
 
 #barra-brasil .brasilgov {
@@ -1069,6 +1065,10 @@ ul, ol, dl {
 
 #barra-brasil .barra ul {
     margin-bottom: 0;
+}
+
+#breadcrumbs-current {
+    color: #666;
 }
 
 /*#content li, dl.portlet li, div.portletStaticText li {*/
@@ -1107,4 +1107,10 @@ ul, ol, dl {
 .eea-preview-items .photoAlbumEntryDescription,
 .listingBar:first-child {
     display: none;
+}
+
+input[type="text"].contentchooser-content-trees,
+input[type="text"]#contentchooser-content-trees {
+    height: 21px;
+    padding-top: 14px;
 }

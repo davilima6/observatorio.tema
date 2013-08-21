@@ -30,31 +30,31 @@ class IPerfil(IPortletDataProvider):
     perfil_1 = schema.TextLine(
         title=_(u"Título do perfil"),
         description=_(u"Informe o nome do perfil do público alvo."),
-        required=False,
+        required=True,
     )
 
     perfil_1_link01_titulo = schema.TextLine(
         title=_(u"Título do link"),
         description=_(u"Informe o título da URL."),
-        required=False,
+        required=True,
     )
 
-    perfil_1_link01_url = schema.TextLine(
+    perfil_1_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
-        required=False,
+        required=True,
     )
 
     perfil_1_link02_titulo = schema.TextLine(
         title=_(u"Título do link"),
         description=_(u"Informe o título da URL."),
-        required=False,
+        required=True,
     )
 
-    perfil_1_link02_url = schema.TextLine(
+    perfil_1_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
-        required=False,
+        required=True,
     )
 
     perfil_1_link03_titulo = schema.TextLine(
@@ -63,7 +63,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_1_link03_url = schema.TextLine(
+    perfil_1_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -75,7 +75,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_1_link04_url = schema.TextLine(
+    perfil_1_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -93,7 +93,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_2_link01_url = schema.TextLine(
+    perfil_2_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -105,7 +105,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_2_link02_url = schema.TextLine(
+    perfil_2_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -117,7 +117,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_2_link03_url = schema.TextLine(
+    perfil_2_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -129,7 +129,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_2_link04_url = schema.TextLine(
+    perfil_2_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -147,7 +147,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_3_link01_url = schema.TextLine(
+    perfil_3_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -159,7 +159,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_3_link02_url = schema.TextLine(
+    perfil_3_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -171,7 +171,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_3_link03_url = schema.TextLine(
+    perfil_3_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -183,7 +183,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_3_link04_url = schema.TextLine(
+    perfil_3_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -201,7 +201,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_4_link01_url = schema.TextLine(
+    perfil_4_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -213,7 +213,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_4_link02_url = schema.TextLine(
+    perfil_4_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -225,7 +225,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_4_link03_url = schema.TextLine(
+    perfil_4_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -237,7 +237,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_4_link04_url = schema.TextLine(
+    perfil_4_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -255,7 +255,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_5_link01_url = schema.TextLine(
+    perfil_5_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -267,7 +267,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_5_link02_url = schema.TextLine(
+    perfil_5_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -279,7 +279,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_5_link03_url = schema.TextLine(
+    perfil_5_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -291,7 +291,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_5_link04_url = schema.TextLine(
+    perfil_5_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -309,7 +309,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_6_link01_url = schema.TextLine(
+    perfil_6_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -321,7 +321,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_6_link02_url = schema.TextLine(
+    perfil_6_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -333,7 +333,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_6_link03_url = schema.TextLine(
+    perfil_6_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -345,7 +345,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_6_link04_url = schema.TextLine(
+    perfil_6_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -363,7 +363,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_7_link01_url = schema.TextLine(
+    perfil_7_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -375,7 +375,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_7_link02_url = schema.TextLine(
+    perfil_7_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -387,7 +387,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_7_link03_url = schema.TextLine(
+    perfil_7_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -399,7 +399,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_7_link04_url = schema.TextLine(
+    perfil_7_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -417,7 +417,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_8_link01_url = schema.TextLine(
+    perfil_8_link01_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -429,7 +429,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_8_link02_url = schema.TextLine(
+    perfil_8_link02_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -441,7 +441,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_8_link03_url = schema.TextLine(
+    perfil_8_link03_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -453,7 +453,7 @@ class IPerfil(IPortletDataProvider):
         required=False,
     )
 
-    perfil_8_link04_url = schema.TextLine(
+    perfil_8_link04_url = schema.URI(
         title=_(u"URL"),
         description=_(u"Informe a URL."),
         required=False,
@@ -490,6 +490,7 @@ class Assignment(base.Assignment):
                  perfil_2_link04_url=None,
                  perfil_3=None,
                  perfil_3_link01_titulo=None,
+                 perfil_3_link01_url=None,
                  perfil_3_link02_titulo=None,
                  perfil_3_link02_url=None,
                  perfil_3_link03_titulo=None,
@@ -563,6 +564,7 @@ class Assignment(base.Assignment):
         self.perfil_2_link04_url = perfil_2_link04_url
         self.perfil_3 = perfil_3
         self.perfil_3_link01_titulo = perfil_3_link01_titulo
+        self.perfil_3_link01_url = perfil_3_link01_url
         self.perfil_3_link02_titulo = perfil_3_link02_titulo
         self.perfil_3_link02_url = perfil_3_link02_url
         self.perfil_3_link03_titulo = perfil_3_link03_titulo
@@ -692,6 +694,7 @@ class AddForm(base.AddForm):
             perfil_2_link04_url = data.get('perfil_2_link04_url', ''),
             perfil_3 = data.get('perfil_3',''),
             perfil_3_link01_titulo = data.get('perfil_3_link01_titulo', ''),
+            perfil_3_link01_url = data.get('perfil_3_link01_url', ''),
             perfil_3_link02_titulo = data.get('perfil_3_link02_titulo', ''),
             perfil_3_link02_url = data.get('perfil_3_link02_url', ''),
             perfil_3_link03_titulo = data.get('perfil_3_link03_titulo', ''),
