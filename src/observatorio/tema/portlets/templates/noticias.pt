@@ -1,9 +1,9 @@
 <div id="noticias" class="large-12 columns"
-     tal:define="noticias view/noticias|nothing;
-                 eventos view/eventos">
+     tal:define="noticias view/noticias | nothing;
+                 eventos view/eventos | nothing">
     <div class="section-container tabs" data-section>
         <section class="section" data-height-watch
-                 tal:condition="noticias|nothing">
+                 tal:condition="view/noticias | nothing" >
             <p class="title">
                 <a href=""
                    tal:content="noticias/Title">Title</a>
@@ -23,7 +23,7 @@
             </p>
         </section>
         <section class="section" data-height-watch
-                 tal:condition="eventos|nothing">
+                 tal:condition="view/eventos | nothing">
             <p class="title">
                 <a href=""
                    tal:content="eventos/Title">Title</a>

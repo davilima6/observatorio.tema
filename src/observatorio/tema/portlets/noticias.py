@@ -90,12 +90,11 @@ class Renderer(base.Renderer):
         return colecao
 
 
-
 class AddForm(base.AddForm):
     form_fields = form.Fields(IUltimasNoticias)
     form_fields['noticias'].custom_widget = UberSelectionWidget
     form_fields['eventos'].custom_widget = UberSelectionWidget
-    label = _(u"Adicionar o Portlet de Noticias/Eventos")
+    label = _(u"Adicionar o Portlet de Noticias e Eventos")
     description = _(u"")
 
     def create(self, data):
@@ -109,5 +108,5 @@ class EditForm(base.EditForm):
     form_fields = form.Fields(IUltimasNoticias)
     form_fields['noticias'].custom_widget = UberSelectionWidget
     form_fields['eventos'].custom_widget = UberSelectionWidget
-    label = _(u"Editar o Portlet de Noticias/Eventos")
+    label = _(u"Editar o Portlet de Noticias e Eventos")
     description = _(u"")

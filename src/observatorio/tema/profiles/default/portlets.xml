@@ -34,7 +34,7 @@
 
   <portlet
       addview="observatorio.tema.UltimasNoticias"
-      title="Ultimas Noticias"
+      title="Noticias e Eventos"
       description=""
       i18n:attributes="title; description"
       >
