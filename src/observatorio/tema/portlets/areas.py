@@ -57,7 +57,7 @@ class Renderer(base.Renderer):
     def get_areas(self):
         areas = getattr(self.portal, 'areas-tematicas')
         if areas:
-            return [area for area in areas.objectValues() if not area.getExcludeFromNav()]
+            return [area for area in areas.objectValues() if area.portal_type == 'Folder' and not area.getExcludeFromNav()]
 
 
 class AddForm(base.NullAddForm):
