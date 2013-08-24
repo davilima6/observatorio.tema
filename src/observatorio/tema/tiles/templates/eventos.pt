@@ -8,7 +8,7 @@
     <div id="calendario" class="large-12 columns" data-height-watch>
         <h5 class="retranca"
             tal:condition="view/show_header"
-            tal:content="view/data/header" />
+            tal:content="view/data/header">Calendario da Igualdade de Genero
         </h5>
         <tal:results define="results view/results|nothing;
                              toLocalizedTime nocall:context/@@plone/toLocalizedTime">
@@ -18,7 +18,7 @@
                  tal:define="obj item/getObject;
                              date python:toLocalizedTime(obj.start())">
                 <div class="large-2 column"
-                     tal:content="python: date[:5]"></div>
+                     tal:content="python: date[:5]">31/12</div>
                 <div class="large-10 columns">
                     <h5>
                         <a tal:attributes="href obj/absolute_url;
