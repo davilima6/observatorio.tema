@@ -7,13 +7,13 @@
 <body tal:define="is_empty view/is_empty">
     <div id="calendario" class="large-12 columns" data-height-watch>
         <h5 class="retranca"
-            tal:condition="view/show_header">
-            <span tal:replace="view/data/header" />
+            tal:condition="view/show_header"
+            tal:content="view/data/header" />
         </h5>
         <tal:results define="results view/results|nothing;
                              toLocalizedTime nocall:context/@@plone/toLocalizedTime">
         <div class="content">
-            <tal:block repeat="item results">
+            <tal:block repeat="item python:results[:2]">
             <div class="row"
                  tal:define="obj item/getObject;
                              date python:toLocalizedTime(obj.start())">
@@ -21,9 +21,7 @@
                      tal:content="python: date[:5]"></div>
                 <div class="large-10 columns">
                     <h5>
-                        <a href=""
-                           title=""
-                           tal:attributes="href obj/absolute_url;
+                        <a tal:attributes="href obj/absolute_url;
                                            title obj/Description">
                             <span tal:replace="obj/Title" />
                         </a>
