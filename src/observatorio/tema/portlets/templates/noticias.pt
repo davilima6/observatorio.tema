@@ -1,45 +1,32 @@
-<div id="noticias" class="large-12 columns"
-     tal:define="noticias view/noticias | nothing;
-                 eventos view/eventos | nothing">
+<div id="noticias"
+     tal:define="noticias view/noticias|nothing;
+                 eventos view/eventos|nothing">
     <div class="section-container tabs" data-section>
-        <section class="section" data-height-watch
-                 tal:condition="view/noticias | nothing" >
-            <p class="title">
-                <a href=""
-                   tal:content="noticias/Title">Title</a>
-            </p>
+        <section class="section"
+                 tal:condition="view/noticias|nothing" >
+            <p class="title"><a href="" tal:content="noticias/Title">Title</a></p>
             <div class="content">
                 <tal:block repeat="item python:noticias.results(batch=False)[:3]">
-                    <a href=""
-                       tal:attributes="href item/getURL">
-                        <h6 tal:content="item/Title"></h6>
-                    </a>
-                    <p tal:content="item/Description"></p>
+                    <h6><a tal:content="item/Title" tal:attributes="href item/getURL">Titulo</a></h6>
+                    <p tal:content="item/Description">Descricao</p>
                 </tal:block>
             </div>
             <div style="clear: both"><!--  --></div>
             <p class="right">
-                <a tal:attributes="href noticias/absolute_url">Mais not&iacute;cias...</a>
+                <a tal:attributes="href noticias/absolute_url; title noticias/Description">mais not&iacute;cias →</a>
             </p>
         </section>
-        <section class="section" data-height-watch
-                 tal:condition="view/eventos | nothing">
-            <p class="title">
-                <a href=""
-                   tal:content="eventos/Title">Title</a>
-            </p>
+        <section class="section" tal:condition="view/eventos|nothing">
+            <p class="title"><a href="" tal:content="eventos/Title">Title</a></p>
             <div class="content">
                 <tal:block repeat="item python:eventos.results(batch=False)[:3]">
-                    <a href=""
-                       tal:attributes="href item/getURL">
-                        <h6 tal:content="item/Title"></h6>
-                    </a>
-                    <p tal:content="item/Description"></p>
+                    <h6><a tal:content="item/Title" tal:attributes="href item/getURL">Titulo</a></h6>
+                    <p tal:content="item/Description">Descricao</p>
                 </tal:block>
             </div>
             <div style="clear: both"><!--  --></div>
             <p class="right">
-                <a tal:attributes="href eventos/absolute_url">Mais eventos...</a>
+                <a tal:attributes="href eventos/absolute_url; title eventos/Description">mais eventos →</a>
             </p>
         </section>
     </div>
