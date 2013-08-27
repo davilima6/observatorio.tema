@@ -3,16 +3,13 @@
     <div>
         <p class="hide-for-small" tal:content="view/data/sumario"></p>
         <ul class="pricing-table">
-            <li class="title">
-                <label for="perfis">Escolha seu perfil</label>
-            </li>
+            <li class="title"><label for="perfis">Escolha seu perfil</label></li>
             <li class="price">
                 <form>
                     <select id="perfis">
                         <tal:perfis repeat="perfil view/get_perfis">
-                        <tal:links define="links perfil/links">
                         <option tal:content="perfil/title"
-                                tal:attributes="data-links perfil/links"></option>
+                                tal:attributes="data-links perfil/links">Movimento feminista</option>
                         </tal:perfis>
                     </select>
                 </form>
