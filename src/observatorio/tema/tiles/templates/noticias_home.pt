@@ -11,11 +11,11 @@
         <div class="section-container tabs" data-section>
             <tal:section repeat="result results">
             <section class="section" data-height-watch>
-                <p class="title"><a href="" tal:content="result/Title">Title</a></p>
+                <p class="title"><a href="" tal:content="result/Title">Titulo</a></p>
                 <div class="content">
                     <tal:block repeat="item python:result.results(batch=False)[:3]">
-                    <h6><a tal:content="item/Title" tal:attributes="href item/getURL"></a></h6>
-                    <p tal:condition="item/Description" tal:content="item/Description"></p>
+                    <h6><a tal:content="item/Title" tal:attributes="href item/getURL">Titulo</a></h6>
+                    <p tal:condition="item/Description" tal:content="item/Description">Descricao</p>
                     </tal:block>
                 </div>
             </section>
