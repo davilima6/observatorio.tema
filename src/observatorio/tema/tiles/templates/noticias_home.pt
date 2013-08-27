@@ -4,24 +4,18 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="observatorio.tema">
 
-<body tal:define="tile_id view/id;">
+<body tal:define="tile_id view/id">
 <div id="acompanhe" class="row" data-match-height>
     <div id="noticias" class="large-12 columns"
-         tal:define="results view/results|nothing;">
+        tal:define="results view/results|nothing">
         <div class="section-container tabs" data-section>
             <tal:section repeat="result results">
             <section class="section" data-height-watch>
-                <p class="title">
-                    <a href=""
-                       tal:content="result/Title">Title</a>
-                </p>
+                <p class="title"><a href="" tal:content="result/Title">Title</a></p>
                 <div class="content">
                     <tal:block repeat="item python:result.results(batch=False)[:3]">
-                    <a href=""
-                       tal:attributes="href item/getURL">
-                        <h6 tal:content="item/Title"></h6>
-                    </a>
-                    <p tal:content="item/Description"></p>
+                    <h6><a tal:content="item/Title" tal:attributes="href item/getURL"></a></h6>
+                    <p tal:condition="item/Description" tal:content="item/Description"></p>
                     </tal:block>
                 </div>
             </section>
