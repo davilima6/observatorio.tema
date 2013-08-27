@@ -10,24 +10,20 @@
                            tal:attributes="href item/getURL;
                                            title item/Description|nothing">Titulo</a></h6>
                 </tal:block>
-               <p class="right">
-                     <a tal:attributes="href noticias/absolute_url;
-                                        title noticias/Description">mais not&iacute;cias →</a>
-               </p>
+                <p><a tal:attributes="href noticias/absolute_url;
+                                      title noticias/Description">mais not&iacute;cias →</a></p>
             </div>
         </section>
         <section class="section" tal:condition="view/eventos|nothing">
             <p class="title"><a href="" tal:content="eventos/Title">Title</a></p>
             <div class="content">
                 <tal:block repeat="item python:eventos.results(batch=False)[:3]">
-                    <h6><a tal:content="item/Title"
-                           tal:attributes="href item/getURL;
-                                           title item/Description|nothing">Titulo</a></h6>
+                <h6><a tal:content="item/Title"
+                       tal:attributes="href item/getURL;
+                                       title item/Description|nothing">Titulo</a></h6>
                 </tal:block>
-                <p class="right">
-                    <a tal:attributes="href eventos/absolute_url;
-                                       title eventos/Description">mais eventos →</a>
-                </p>
+                <p><a tal:attributes="href eventos/absolute_url;
+                                      title eventos/Description">mais eventos →</a></p>
             </div>
         </section>
     </div>
