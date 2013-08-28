@@ -39,6 +39,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a,
+a:link,
+a:visited,
 a:hover,
 a:focus {
     color: rgb(121, 96, 143);
@@ -657,7 +659,7 @@ section .title {
     font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
-#at-trabalho {
+#at-autonomia-economica {
     background: rgb(96, 77, 112);
 }
 
@@ -677,11 +679,11 @@ section .title {
     background: rgb(96, 77, 112);
 }
 
-#at-desenvolvimento {
+#at-desenvolvimento-sustentavel {
     background: rgb(245, 130, 31);
 }
 
-#at-cultura {
+#at-comunicacao-e-cultura {
     background: rgb(122, 97, 143);
 }
 
@@ -697,13 +699,13 @@ section .title {
     background: rgb(245, 130, 31);
 }
 
-#at-trabalho:hover,
+#at-autonomia-economica:hover,
 #at-educacao:hover,
 #at-saude:hover,
 #at-violencia:hover,
 #at-poder-e-decisao:hover,
-#at-desenvolvimento:hover,
-#at-cultura:hover,
+#at-desenvolvimento-sustentavel:hover,
+#at-comunicacao-e-cultura:hover,
 #at-esporte:hover,
 #at-diversidade:hover,
 #at-uso-do-tempo:hover {
@@ -711,13 +713,13 @@ section .title {
     cursor: pointer;
 }
 
-#at-trabalho:hover a,
+#at-autonomia-economica:hover a,
 #at-educacao:hover a,
 #at-saude:hover a,
 #at-violencia:hover a,
 #at-poder-e-decisao:hover a,
-#at-desenvolvimento:hover a,
-#at-cultura:hover a,
+#at-desenvolvimento-sustentavel:hover a,
+#at-comunicacao-e-cultura:hover a,
 #at-esporte:hover a,
 #at-diversidade:hover a,
 #at-uso-do-tempo:hover a {
@@ -1105,12 +1107,36 @@ ul, ol, dl {
 }
 
 .eea-preview-items .photoAlbumEntryDescription,
-.listingBar:first-child {
+.listingBar:first-child,
+#salutation,
+.easynewsletter_text[name='fullname'] {
     display: none;
 }
 
-input[type="text"].contentchooser-content-trees,
-input[type="text"]#contentchooser-content-trees {
-    height: 21px;
-    padding-top: 14px;
+input.contentchooser-content-trees[type="text"],
+input#contentchooser-content-trees[type="text"] {
+    border: medium none;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#content .download ul {
+    list-style: none;
+}
+
+#column-one #temas li {
+    width: 100px;
+}
+
+#eixos ul {
+    background: rgb(96, 77, 112);
+}
+
+#eixos li a {
+    color: rgb(255, 255, 255);
+}
+
+#eixos li a:hover {
+    background: rgb(157, 113, 171);
 }

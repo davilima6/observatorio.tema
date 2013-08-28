@@ -30,6 +30,7 @@
 
   <!-- Footer -->
   <replace css:content="#portal-footer-wrapper footer" theme="/html/body/footer" />
+  <after css:content="#kss-spinner" css:theme-children="#visual-portal-wrapper" />
 
   <!-- Quando nao tiver nenhum portlet -->
   <rules css:if-content="#portal-column-content.cell.width-full.position-0">
@@ -76,12 +77,6 @@
   </rules>
 
   <!-- Forms -->
-  <replace css:content=".formHelp">
-    <p class="formHelp">
-      <xsl:apply-templates select="./*|./text()"/>
-    </p>
-  </replace>
-
   <replace css:content=".visualClear">
     <div class="clearfix">
       <xsl:apply-templates select="./text()" />

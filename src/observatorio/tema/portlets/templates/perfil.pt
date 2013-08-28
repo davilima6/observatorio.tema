@@ -16,6 +16,7 @@
                                 <tal:links tal:define="links perfil/links">
                                 <option tal:content="perfil/title"
                                         tal:attributes="data-links perfil/links"></option>
+                                </tal:links>
                                 </tal:perfis>
                             </select>
                         </div>
