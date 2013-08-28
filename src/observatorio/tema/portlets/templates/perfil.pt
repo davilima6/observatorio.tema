@@ -14,6 +14,11 @@
                     </select>
                 </form>
             </li>
+            <li class="bullet-item"
+                tal:define="links python:view.get_links('perfil_1')"
+                tal:repeat="link links">
+                <a tal:content="link/title" tal:attributes="href link/url">Documentos importantes</a>
+            </li>
         </ul>
     </div>
 </div>
