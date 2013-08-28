@@ -663,7 +663,8 @@ class Renderer(base.Renderer):
             link = {}
             link['title'] = getattr(self.data, '%s_link0%s_titulo' %(perfil, i))
             link['url'] = getattr(self.data, '%s_link0%s_url' %(perfil, i))
-            links.append(link)
+            if all(link.values()):
+                links.append(link)
         return links
 
 
