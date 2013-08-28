@@ -1,27 +1,25 @@
 <div id="observatorio-e-voce">
     <h5>Observat&oacute;rio <span>E VOC&Ecirc;</span></h5>
     <div>
-        <p class="hide-for-small"
-           tal:content="view/data/sumario"></p>
+        <p class="hide-for-small" tal:content="view/data/sumario"></p>
         <ul class="pricing-table">
-            <li class="title">
-                <label for="customDropdown1">Escolha seu perfil</label>
-            </li>
+            <li class="title"><label for="perfis">Escolha seu perfil</label></li>
             <li class="price">
                 <form>
-                    <div class="row collapse">
-                        <div class="small-12 columns">
-                            <select id="customDropdown1">
-                                <tal:perfis tal:repeat="perfil view/get_perfis">
-                                <tal:links tal:define="links perfil/links">
-                                <option tal:content="perfil/title"
-                                        tal:attributes="data-links perfil/links"></option>
-                                </tal:links>
-                                </tal:perfis>
-                            </select>
-                        </div>
-                    </div>
+                    <select id="perfis">
+                        <tal:perfis repeat="perfil view/get_perfis">
+                        <option tal:content="perfil/title"
+                                tal:attributes="data-links perfil/links">Movimento feminista</option>
+                        </tal:perfis>
+                    </select>
                 </form>
+            </li>
+            <li class="bullet-item"
+                tal:define="links python:view.get_links('perfil_1')"
+                tal:repeat="link links">
+                <a tal:content="link/title"
+                    tal:attributes="href link/url;
+                                    title link/title">Documentos importantes</a>
             </li>
         </ul>
     </div>
