@@ -70,6 +70,8 @@ class Renderer(base.Renderer):
         path = '/'.join(self.portal.getPhysicalPath()) + self.data.root
         resultado = self.catalog(portal_type='Image', path=path, sort_limit=12)[:12]
         if resultado:
+            for r in resultado:
+                r.parentURL = '/'.join(r.split('/')[:-1])
             return resultado
 
 
