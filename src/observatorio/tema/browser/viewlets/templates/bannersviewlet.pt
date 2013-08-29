@@ -7,7 +7,7 @@
                     tal:attributes="href obj/get_link;
                                     target obj/get_target">
                     <img tal:define="scale obj/@@images"
-                        tal:replace="structure python: scale.scale('banner', width=145, height=80).tag()" />
+                        tal:replace="structure python:scale.scale('imagem', width=145, height=80).tag()" />
                 </a>
             </li>
         </ul>
