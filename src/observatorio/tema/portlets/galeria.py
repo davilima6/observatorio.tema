@@ -70,8 +70,7 @@ class Renderer(base.Renderer):
         path = '/'.join(self.portal.getPhysicalPath()) + self.data.root
         resultado = self.catalog(portal_type='Image', path=path, sort_limit=12)[:12]
         if resultado:
-            parentURL = '/'.join(r.split('/')[:-1])
-            return [{'brain': brain, 'parentURL': parentURL} for brain in resultado]
+            return [{'brain': brain, 'parentURL': '/'.join(r.split('/')[:-1])} for brain in resultado]
 
 
 class AddForm(base.AddForm):
