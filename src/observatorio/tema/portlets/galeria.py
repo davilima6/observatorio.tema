@@ -68,7 +68,7 @@ class Renderer(base.Renderer):
     @memoize
     def get_imagens(self):
         path = '/'.join(self.portal.getPhysicalPath()) + self.data.root
-        resultado = self.catalog(portal_type='Image', path=path)
+        resultado = self.catalog(portal_type='Image', path=path, sort_limit=12)[:12]
         if resultado:
             return resultado
 
