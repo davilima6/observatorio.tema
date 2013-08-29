@@ -3,10 +3,9 @@
     <ul class="small-block-grid-3">
         <li tal:repeat="item items">
             <a tal:attributes="href string:${item/parentURL}/view">
-                <img tal:attributes="src string:${item/getURL|nothing}/image_galleria;
-                                     alt item/Description;
-                                     data-title item/Title|nothing;
-                                     data-description item/Description|nothing;" /></a>
+                <img tal:define="brain nocall:item/brain"
+                    tal:attributes="src string:${brain/getURL|nothing}/image_galleria;
+                                     alt brain/Description;" /></a>
         </li>
     </ul>
 </div>
