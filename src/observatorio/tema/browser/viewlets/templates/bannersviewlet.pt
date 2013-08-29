@@ -1,14 +1,13 @@
 <div id="banners" class="row">
     <div class="small-12 columns"
-         tal:define="banners viewlet/get_banners">
+        tal:define="banners viewlet/get_banners">
         <ul class="small-block-grid-3 large-block-grid-6">
             <li tal:repeat="banner banners">
-                <a href="#"
-                   tal:define="obj banner/getObject"
-                   tal:attributes="href python: obj.get_link();
-                                  target python:obj.get_target()">
+                <a tal:define="obj banner/getObject"
+                    tal:attributes="href obj/get_link;
+                                    target obj/get_target">
                     <img tal:define="scale obj/@@images"
-                         tal:replace="structure python: scale.scale('imagem', width=145, height=80).tag()" />
+                        tal:replace="structure python: scale.scale('image', width=145, height=80).tag()" />
                 </a>
             </li>
         </ul>
