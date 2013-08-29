@@ -15,6 +15,11 @@ class IDavizTile(IListTile):
     """
     """
 
+    title = schema.TextLine(
+        title=_(u'Title'),
+        required=False,
+    )
+
     autoplay = schema.Bool(
         title=_(u'Auto play'),
         required=False,

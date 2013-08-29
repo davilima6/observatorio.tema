@@ -9,7 +9,7 @@
 
 <div id="visualizacoes" class="row">
     <div class="large-12 columns">
-        <h5>Visualizações de dados</h5>
+        <h5 tal:content="view/data/title">Visualizações de dados</h5>
         <hr>
     </div>
     <div class="large-6 columns">

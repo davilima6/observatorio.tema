@@ -8,7 +8,7 @@
                title=""
                tal:attributes="href string:${item/getURL}/view;
                                title item/Title">
-                <img tal:attributes="src string:${item/getURL|nothing}/image_galeria;
+                <img tal:attributes="src string:${item/getURL|nothing}/image_galleria;
                                      data-title item/Title|nothing;
                                      data-description item/Description|nothing;" />
             </a>

@@ -8,7 +8,7 @@
                   autoplay python:str(view.autoplay()).lower();">
 
 <div id="biblioteca" class="hachuras">
-    <h5>Biblioteca</h5><hr />
+    <h5 tal:content="view/data/title">Biblioteca</h5><hr />
     <div class="slideshow-wrapper">
         <div class="preloader"></div>
         <div id="publicacoes" data-orbit data-options="timer_speed: 7000; bullets: false">
@@ -26,6 +26,12 @@
                                      data-title string:<a href='${item/absolute_url}/view'>${item/title}</a>;
                                      data-description item/Description;
                                      data-link string:${item/absolute_url}/view;" />
+                        <tal:area repeat="area item/area">
+                            <h6 class="panel"
+                                tal:condition="repeat/area/start|nothing"
+                                tal:content="area"></h6>
+                        </tal:area>
+
                     </a>
                 </div>
                 </tal:block>
