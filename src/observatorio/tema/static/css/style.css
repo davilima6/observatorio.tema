@@ -41,13 +41,28 @@ h1, h2, h3, h4, h5, h6 {
 a,
 a:link,
 a:visited,
-a:hover,
 a:focus {
     color: rgb(121, 96, 143);
 }
 
-a:hover,
-a:focus {
+a:hover {
+    color: rgb(121, 96, 143) !important;
+    text-decoration: underline;
+}
+
+#content a:link,
+#content a:visited,
+#content a:focus,
+dl.portlet a:link,
+dl.portlet a:visited,
+dl.portlet a:focus {
+    border-bottom: 0;
+    color: rgb(79, 58, 96);
+}
+
+#content a:hover,
+dl.portlet a:hover {
+    color: rgb(79, 58, 96) !important;
     text-decoration: underline;
 }
 
@@ -185,8 +200,9 @@ footer a {
     background: rgb(79, 58, 96);
 }
 
-#noticias section .title a {
-    color: rgb(255, 255, 255);
+#noticias section .title a,
+#noticias section .title a:hover {
+    color: rgb(255, 255, 255) !important;
 }
 
 #noticias .content {
@@ -203,9 +219,9 @@ footer a {
 }
 
 #noticias .content h6 {
+    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
     font-size: 1.0625em;
     font-variant: small-caps;
-    margin-bottom: 0;
 }
 
 #noticias .content p {
@@ -213,9 +229,20 @@ footer a {
     padding-bottom: 0.5em;
 }
 
-#noticias .content p:not(:last-child) {
-    border-bottom: 1px solid rgb(222, 210, 224);
-    margin-bottom: 0.5em;
+#noticias .content h6:not(:first-child) {
+    border-top: 1px solid rgb(222, 210, 224);
+    padding-top: 0.5em;
+}
+
+#column-one #noticias .content p:last-child {
+    border-top: 1px solid rgb(222, 210, 224);
+    font-size: 0.75em;
+    padding: 1em 0 0;
+    text-align: right;
+}
+
+#column-one #noticias .content p:last-child a {
+    color: rgb(157, 113, 171);
 }
 
 section .title {
@@ -439,7 +466,6 @@ section .title {
     background: rgb(242, 235, 243);
     color: rgb(133, 108, 137);
     font-size: 0.75em;
-    margin-left: -1.6em;
     width: 15em;
 }
 
@@ -457,10 +483,12 @@ section .title {
 
 #observatorio-e-voce .pricing-table .bullet-item {
     border-color: rgb(231, 226, 235);
+    display: block;
 }
 
 #observatorio-e-voce .pricing-table .title {
     background: rgb(122, 97, 143);
+    display: block;
     padding: 0.4375em 1.25em;
     text-transform: uppercase;
 }
@@ -1047,11 +1075,6 @@ select {
     font-weight: bold;
 }
 
-#content a:link, dl.portlet a:link {
-    border-bottom: none;
-    color: #79608F;
-}
-
 #content {
     font-size: 100%;
 }
@@ -1139,4 +1162,28 @@ input#contentchooser-content-trees[type="text"] {
 
 #eixos li a:hover {
     background: rgb(157, 113, 171);
+}
+
+dl.portletNewsletterSubscriber {
+    background: rgb(79, 57, 95);
+    color: rgb(255, 255, 255);
+}
+
+dl.portletNewsletterSubscriber dt {
+    background: rgb(121, 96, 143);
+    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-variant: small-caps;
+}
+
+dl.portletNewsletterSubscriber .easynewsletter_text {
+    width: 8em;
+}
+
+dl.portletNewsletterSubscriber .easynewsletter_button {
+    background: rgb(157, 113, 171);
+    border-color: rgb(157, 113, 171);
+    color: rgb(255, 255, 255);
+    padding: 0 0 2px;
+    text-align: center;
+    width: 3.75em;
 }

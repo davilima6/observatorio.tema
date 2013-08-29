@@ -1,5 +1,17 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
- <javascript id="++resource++collective.newsticker/jquery.ticker.js"
-             remove="true" />
+  <!-- remove javascript ruins -->
+  <javascript id="++resource++collective.newsticker/jquery.ticker.js"
+    remove="true" />
+  <javascript id="++resource++collective.wasthisuseful.javascripts/wasthisuseful.js"
+    remove="true" />
+  <javascript id="++resource++collective.linguafaq.javascripts/linguafaq.js"
+              remove="true" />
+  <javascript id="++resource++portletbanners.js"
+              remove="true" />
+
+  <!-- adiciona os javascript corrigidos -->
+  <javascript id="++theme++observatorio/js/wasthisuseful.js" />
+  <javascript id="++theme++observatorio/js/linguafaq.js" />
+  <javascript id="++theme++observatorio/js/portletbanners.js" />
 </object>
