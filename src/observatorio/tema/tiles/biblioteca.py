@@ -37,8 +37,8 @@ class IBibliotecaTile(IListTile):
 
 class BibliotecaTile(ListTile):
     index = ViewPageTemplateFile("templates/biblioteca.pt")
-    is_configurable = False
     is_editable = True
+    limit = 12
 
     def populate_with_object(self, obj):
         if not obj.portal_type == 'Publicacao':
