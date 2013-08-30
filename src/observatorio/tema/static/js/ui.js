@@ -79,6 +79,13 @@
 
         var filtros = $("#biblioteca dd");
         filtros.click(function () {
+            var list = []
+            var areas = $("#area-filtro").val();
+            alert(areas);
+            if (areas !== '') {
+                list.push(areas)
+            }
+            var filtro = $("#area-filtro");
             var el = $(this);
             if (el.is(filtros[0])) {
                 filtros.removeClass();
@@ -87,6 +94,9 @@
                 $(filtros[0]).removeClass();
             }
             el.toggleClass("active");
+            list.push(el.text());
+            filtro.val(list);
+            alert(list);
             if (!filtros.hasClass("active")) {
                 $(filtros[0]).addClass("active");
             }

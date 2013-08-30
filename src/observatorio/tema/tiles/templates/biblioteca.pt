@@ -5,21 +5,22 @@
       i18n:domain="observatorio.tema">
 
 <body tal:define="tile_id view/id;
-                  autoplay python:str(view.autoplay()).lower();">
+                  autoplay python:str(view.autoplay()).lower();
+                  portal context/@@plone_portal_state/portal;
+                  portal_url portal/portal_url">
 
 <div id="biblioteca" class="hachuras">
     <h5 tal:content="view/data/title">Biblioteca</h5><hr />
     <div class="slideshow-wrapper">
         <div class="preloader"></div>
         <div id="publicacoes" data-orbit data-options="timer_speed: 7000; bullets: false">
-            <div>
-                <tal:block tal:repeat="item view/results">
+            <tal:block tal:repeat="item view/results">
                 <div class="large-3 small-6 columns">
                     <a title=""
                        href=""
                        tal:attributes="href string:${item/absolute_url}">
                         <img tal:define="scales item/@@images;
-                                         thumbnail python:scales.scale('imagem', width=400, height=300);"
+                                         thumbnail python:scales.scale('imagem', width=200, height=200);"
                              tal:attributes="src thumbnail/url;
                                      width thumbnail/width;
                                      height thumbnail/height;
@@ -31,22 +32,22 @@
                                 tal:condition="repeat/area/start|nothing"
                                 tal:content="area"></h6>
                         </tal:area>
-
                     </a>
                 </div>
-                </tal:block>
-            </div>
+            </tal:block>
         </div>
     </div>
     <div>
         <div class="row collapse">
-            <form>
+            <form action="" method="get"
+                  tal:attributes="action string:${portal_url}/@@search">
                 <div class="small-8 large-11 columns">
-                    <input type="text" placeholder="O que você procura?" />
+                    <input type="text" name="SearchableText" placeholder="O que você procura?" />
                 </div>
                 <div class="small-3 large-1 columns">
-                    <a href="#" class="postfix button expand">&nbsp;</a>
-                    <input type="hidden" name="filter_values" value="" />
+                    <input type="submit" class="postfix button expand" value="" />
+                    <input type="hidden" id="area-filtro" name="area:list" value="" />
+                    <input type="hidden" name="portal_type" value="Publicacao" />
                     <div class="search-box"></div>
                 </div>
             </form>
@@ -69,7 +70,9 @@
     <div class="row">
         <div class="large-4 large-offset-8 columns">
             <ul class="inline-list right">
-                <li><a href="#">Acessar toda a biblioteca →</a></li>
+                <li>
+                    <a href=""
+                       tal:attributes="href string:${portal_url}/biblioteca">Acessar toda a biblioteca →</a></li>
             </ul>
         </div>
     </div>

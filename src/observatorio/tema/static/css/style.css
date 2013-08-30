@@ -789,14 +789,19 @@ section .title {
 }
 */
 
+#biblioteca .slideshow-wrapper {
+    height: 230px;
+}
+
 #biblioteca input[type=text] {
     background: rgb(231, 226, 235);
     color: rgb(160, 145, 168);
     font-size: 0.875em;
+    height: 2.3125em !important;
 }
 
 #biblioteca .sub-nav {
-    font-size: 0.75em;
+    font-size: 0.75em !important;
     margin-bottom: 3.125em;
 }
 
@@ -907,8 +912,12 @@ section .title {
     color: rgb(255, 255, 255);
 }
 
+#biblioteca .collapse {
+    height: 100%;
+}
+
 #biblioteca .inline-list {
-    font-size: 0.75em;
+    font-size: 0.75em !important;
     margin-bottom: 1.5em;
 }
 
