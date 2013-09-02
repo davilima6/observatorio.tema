@@ -37,7 +37,6 @@ class IDavizTile(IListTile):
 
 class DavizTile(ListTile):
     index = ViewPageTemplateFile("templates/daviz.pt")
-    is_configurable = False
     is_editable = True
 
     def populate_with_object(self, obj):
