@@ -26,45 +26,15 @@
             var fade = $("#visualizacoes h5.subheader");
             var slide = $(event.target).children().eq(orbit.slide_number);
             var title = slide.attr("title");
+            var href = slide.attr('href');
             var desc = $("img", slide).attr("alt");
             fade.html("<span>" + title + "</span>" + desc);
             fade.fadeTo(300, 1);
-
-            var table = $(".download a.tabela");
-            var slide = $(event.target).children().eq(orbit.slide_number);
-            var href = slide.attr('href');
-            var url = href + '/download.table';
-            table.attr('href', url);
-            table.fadeTo(300,1);
-
-            var table = $(".download a.csv");
-            var slide = $(event.target).children().eq(orbit.slide_number);
-            var href = slide.attr('href');
-            var url = href + '/download.csv';
-            table.attr('href', url);
-            table.fadeTo(300,1);
-
-            var table = $(".download a.json");
-            var slide = $(event.target).children().eq(orbit.slide_number);
-            var href = slide.attr('href');
-            var url = href + '/download.json';
-            table.attr('href', url);
-            table.fadeTo(300,1);
-
-            var table = $(".download a.xml-only");
-            var slide = $(event.target).children().eq(orbit.slide_number);
-            var href = slide.attr('href');
-            var url = href + '/download.xml';
-            table.attr('href', url);
-            table.fadeTo(300,1);
-
-            var table = $(".download a.xml-schema");
-            var slide = $(event.target).children().eq(orbit.slide_number);
-            var href = slide.attr('href');
-            var url = href + '/download.schema.xml';
-            table.attr('href', url);
-            table.fadeTo(300,1);
-
+            $(".download a.tabela").attr('href', href + '/download.table');
+            $(".download a.csv").attr('href', href + '/download.csv');
+            $(".download a.json").attr('href', href + '/download.json');
+            $(".download a.xml-only").attr('href', href + '/download.xml');
+            $(".download a.xml-schema").attr('href', href + '/download.schema.xml');
         });
 
         $("[data-match-height]").each(function() {
@@ -79,13 +49,6 @@
 
         var filtros = $("#biblioteca dd");
         filtros.click(function () {
-            var list = []
-            var areas = $("#area-filtro").val();
-            alert(areas);
-            if (areas !== '') {
-                list.push(areas)
-            }
-            var filtro = $("#area-filtro");
             var el = $(this);
             if (el.is(filtros[0])) {
                 filtros.removeClass();
@@ -94,9 +57,6 @@
                 $(filtros[0]).removeClass();
             }
             el.toggleClass("active");
-            list.push(el.text());
-            filtro.val(list);
-            alert(list);
             if (!filtros.hasClass("active")) {
                 $(filtros[0]).addClass("active");
             }
@@ -107,6 +67,14 @@
         // $(window).load(function() {
         //   $('#destaques').orbit({ fluid: '2x1' });
         // });
+        
+        $("#observatorio-e-voce select").change(function() {
+            var links = $("option:selected", this).data("links");
+            $("#observatorio-e-voce .bullet-item a").fadeOut().each(function(i) {
+                $(this).attr("href", links[i].url).text(links[i].title);
+            }).fadeIn();
+            
+        });
 
     });
 
