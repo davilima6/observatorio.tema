@@ -1206,4 +1206,10 @@ dl.portletNewsletterSubscriber .easynewsletter_button {
 .photoAlbumEntry,
 .photoAlbumFolder {
     background: none;
+    height: 200px;
+}
+
+.tiles-edit .formControls {
+    background: rgb(255, 255, 255);
+    position: relative;
 }
