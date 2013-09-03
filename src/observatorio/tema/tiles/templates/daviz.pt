@@ -19,37 +19,33 @@
             <span tal:content="item/Title" />
             <span tal:replace="item/Description" />
         </h5>
-        </tal:block>
         <div class="download">
             <h6 class="subheader hide-for-small">Dados abertos disponíveis em:</h6>
-            <ul class="button-group hide-for-small">
+            <ul class="button-group hide-for-small"
+                tal:define="href item/absolute_url">
                 <li>
-                    <a href=""
-                       title="HTML"
-                       class="tabela tiny radius secondary button">HTML</a>
+                    <a title="HTML" class="table tiny radius secondary button"
+                        tal:attributes="href string:${item/absolute_url}/download.table">HTML</a>
                 </li>
                 <li>
-                    <a href=""
-                       title="CSV"
-                       class="csv tiny radius secondary button">CSV</a>
+                    <a title="CSV" class="csv tiny radius secondary button"
+                        tal:attributes="href string:${item/absolute_url}/download.csv">CSV</a>
                 </li>
                 <li>
-                    <a href=""
-                       title="JSON"
-                       class="json tiny radius secondary button">JSON</a>
+                    <a title="JSON" class="json tiny radius secondary button"
+                        tal:attributes="href string:${item/absolute_url}/download.json">JSON</a>
                 </li>
                 <li>
-                    <a href=""
-                       title="XML"
-                       class="xml-only tiny radius secondary button">XML</a>
+                    <a title="XML" class="xml-only tiny radius secondary button"
+                        tal:attributes="href string:${item/absolute_url}/download.xml">XML</a>
                 </li>
                 <li>
-                    <a href=""
-                       title="XML com Schema"
-                       class="xml-schema tiny radius secondary button">XML Com Schema</a>
+                    <a title="XML com Schema" class="xml-schema tiny radius secondary button"
+                        tal:attributes="href string:${item/absolute_url}/download.schema.xml">XML Com Schema</a>
                 </li>
             </ul>
         </div>
+        </tal:block>
     </div>
     <div class="large-6 columns slideshow-wrapper">
         <div class="preloader"></div>
