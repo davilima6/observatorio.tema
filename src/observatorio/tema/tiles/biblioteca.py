@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from plone.batching.batch import Batch
 from observatorio.tema import _
 from collective.cover.tiles.list import IListTile
 from collective.cover.tiles.list import ListTile
@@ -7,6 +8,7 @@ from collective.cover.widgets.textlinessortable import TextLinesSortableFieldWid
 from plone.autoform import directives as form
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
+from plone.app.uuid.utils import uuidToObject
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
 
@@ -39,6 +41,28 @@ class BibliotecaTile(ListTile):
     index = ViewPageTemplateFile("templates/biblioteca.pt")
     is_editable = True
     limit = 12
+
+    def results(self):
+        """ Return the list of objects stored in the tile.
+        """
+        self.set_limit()
+        uuids = self.data.get('uuids', None)
+        results = []
+        if uuids:
+            uuids = [uuids] if type(uuids) == str else uuids
+            for uid in uuids:
+                obj = uuidToObject(uid)
+                if obj:
+                    results.append(obj)
+                else:
+                    self.remove_item(uid)
+
+        final_result = []
+        batch = Batch.fromPagenumber(items=results, pagesize=4, pagenumber=1)
+        for num in batch.navlist:
+            batch.pagenumber = num
+            final_result.append(list(batch))
+        return final_result
 
     def populate_with_object(self, obj):
         if not obj.portal_type == 'Publicacao':
