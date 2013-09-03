@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br"
-      lang="pt-br">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 <head>
     <title>observatorio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,14 +17,14 @@
 <body class="section-home">
 
     <div id="fb-root"></div>
-    <!--<script>(function(d, s, id) {-->
-        <!--var js, fjs = d.getElementsByTagName(s)[0];-->
-        <!--if (d.getElementById(id)) return;-->
-        <!--js = d.createElement(s); js.id = id;-->
-        <!--js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=551749828210587";-->
-        <!--fjs.parentNode.insertBefore(js, fjs);-->
-        <!--}(document, 'script', 'facebook-jssdk'));-->
-    <!--</script>-->
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=551749828210587";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <div id="menu" class="row">
         <div class="large-12 columns">
@@ -45,7 +44,7 @@
                             <li class="search">
                                 <form id="global-nav-search">
                                     <label for="search-box"></label>
-                                    <input name="SearchableText" id="search-box" type="text" />
+                                    <input id="search-box" type="text" />
                                     <div class="search-box"></div>
                                 </form>
                             </li>
@@ -57,13 +56,11 @@
     </div>
     <div id="ultimas-noticias" class="row hide-for-small">
         <div class="large-2 columns">
-            <h6><a href="#" data-tooltip class="has-tip" title="Clique aqui para acessar todas as notícias do Observatório" style="border: 0"><span>+</span> NOTÍCIAS</a></h6>
+            <h6><a href="#" data-tooltip class="has-tip" title="Acessar todas as notícias do Observatório"><span>+</span> NOTÍCIAS</a></h6>
         </div>
         <div class="large-10 columns">
             <div data-orbit data-options="timer_speed: 7000; bullets: false">
-                <h6 class="ticker-item">
-                    <a href="#">Sed sit amet posuere erat. Quisque in ipsum non augue</a>
-                </h6>
+                <h6><a href="#">Sed sit amet posuere erat. Quisque in ipsum non augue</a></h6>
             </div>
         </div>
     </div>
@@ -85,11 +82,26 @@
     <div id="banners" class="row">
     </div>
 
-    <footer class="row"></footer>
+    <footer class="row">
+        <div class="large-8 columns">
+            <ul class="inline-list">
+                <li><a href="#">Mapa do site</a></li>
+                <li><a href="#">Acessibilidade</a></li>
+                <li><a href="#">Observatório de A a Z</a></li>
+                <li><a href="#">Fale com o Observatório</a></li>
+            </ul>
+        </div>
+        <div class="large-4 columns">
+            <ul class="inline-list right">
+                <li><a href="#">Temas</a></li>
+                <li><a href="#">Eixos</a></li>
+                <li><a href="#">Biblioteca</a></li>
+                <li><a href="#">Participe!</a></li>
+            </ul>
+        </div>
+        </div>
+    </footer>
 
-<script>
-  jQuery(document).foundation();
-</script>
 </body>
 
 </html>
