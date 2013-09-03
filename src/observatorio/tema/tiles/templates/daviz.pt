@@ -14,12 +14,12 @@
         <hr />
     </div>
     <div class="large-6 columns">
-        <h5 class="subheader" tal:repeat="item items">
-            <tal:block condition="repeat/item/first">
+        <tal:block repeat="item items">
+        <h5 class="subheader" tal:condition="repeat/item/start">
             <span tal:content="item/Title" />
             <span tal:replace="item/Description" />
-            </tal:block>
         </h5>
+        </tal:block>
         <div class="download">
             <h6 class="subheader hide-for-small">Dados abertos disponíveis em:</h6>
             <ul class="button-group hide-for-small">
