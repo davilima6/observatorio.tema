@@ -14,25 +14,33 @@
     <div class="slideshow-wrapper">
         <div class="preloader"></div>
         <div id="publicacoes" data-orbit data-options="timer_speed: 7000; bullets: false">
-            <div tal:repeat="item view/results"
-                tal:omit-tag="not python:repeat['item'].index % 4 == 0">
-                <div class="large-3 small-6 columns">
-                    <a tal:attributes="href string:${item/absolute_url}">
-                        <img tal:define="scales item/@@images;
+            <tal:block define="items view/results"
+                repeat="item items">
+            <div class="container"
+                tal:attributes="data-i repeat/item/index"
+                tal:omit-tag="python:repeat['item'].index % 4 == 0">
+                <tal:i repeat="i items">
+                <div class="large-3 small-6 columns"
+                    tal:define="min python:repeat['item'].index * 4;
+                                max python:repeat['item'].number() * 4"
+                    tal:condition="python:min <= i < max">
+                    <a tal:attributes="href string:${i/absolute_url}">
+                        <img tal:define="scales i/@@images;
                                          thumbnail python:scales.scale('imagem', width=200, height=200)"
                              tal:attributes="src thumbnail/url;
-                                             alt item/Description|item/Title;
+                                             alt i/Description|i/Title;
                                              width thumbnail/width;
                                              height thumbnail/height" />
-                        <tal:area repeat="area item/area">
+                        <tal:area repeat="area i/area">
                         <h6 class="panel"
                             tal:condition="repeat/area/start|nothing"
                             tal:content="area">Area tematica</h6>
                         </tal:area>
                     </a>
                 </div>
+                </tal:i>
             </div>
-        </div>
+        </tal:block>
     </div>
     <div>
         <div class="row collapse">
