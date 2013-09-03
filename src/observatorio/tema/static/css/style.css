@@ -16,6 +16,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
+h1.documentFirstHeading {
+    margin-bottom: 0.25em;
+}
+
+h5.subheader {
+    margin: 0.2em 0 1.5em 0.2em;
+}
+
 @font-face {
     font-family: 'Arsenal';
     font-style: normal;
@@ -67,8 +75,47 @@ dl.portlet a:hover {
 }
 
 #ultimas-noticias {
+    border-top: 1px dashed #000;
+    border-bottom: 1px solid #000;
     display: block !important;
+    margin-top: 2em;
+    padding: 0.375em;
     text-transform: uppercase;
+    /* XXX: Fix me. */
+    /*width: 73%;*/
+}
+
+#ultimas-noticias h6 {
+    font-size: 0.8125em;
+    font-weight: bold;
+    height: 22px;
+    line-height: 1.7;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-right: 9em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+}
+
+#ultimas-noticias .large-2 h6 a {
+    border: 0;
+}
+
+#ultimas-noticias .large-2 h6 span {
+    background: #000;
+    border-radius: 1em;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-size: 1.25em;
+    line-height: 1em;
+    margin-right: 0.5em;
+    height: 1.1em;
+    text-align: center;
+    width: 1.1em;
 }
 
 #temas h5,
@@ -577,25 +624,6 @@ section .title {
     display: none;
 }
 
-#ultimas-noticias h6, {
-    font-size: 0.8125em;
-    line-height: 1.7;
-    margin-bottom: 0;
-}
-
-#ultimas-noticias .large-2 span {
-    background: #000;
-    border-radius: 1em;
-    color: rgb(255, 255, 255);
-    display: inline-block;
-    font-size: 1.25em;
-    line-height: 1em;
-    margin-right: 0.5em;
-    height: 1.1em;
-    text-align: center;
-    width: 1.1em;
-}
-
 .orbit-container {
     background: none;
 }
@@ -628,15 +656,6 @@ section .title {
 
 .orbit-bullets li.active {
     background: rgb(250, 177, 0);
-}
-
-#ultimas-noticias {
-    border-top: 1px dashed #000;
-    border-bottom: 1px solid #000;
-    padding: 0.375em;
-    margin-top: 2em;
-    /* XXX: Fix me. */
-    /*width: 73%;*/
 }
 
 #column-one > div:not(:last-child) {
@@ -673,6 +692,7 @@ section .title {
     display: inline-block;
     font-variant: small-caps;
     height: 110px;
+    line-height: 1.2;
     padding-top: 80px;
     width: 144px;
     margin-bottom: 0;
@@ -681,6 +701,9 @@ section .title {
 #temas li a {
     color: rgb(255, 255, 255) !important;
     font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
+    -webkit-text-stroke-width: .7px;
+    -webkit-text-stroke-color: #fff;
+    -webkit-font-smoothing: antialiased;
 }
 
 #at-autonomia-economica {
@@ -763,6 +786,18 @@ section .title {
     height: 0.6875em;
 }
 
+.section-areas-tematicas #content .row {
+    margin-left: -0.46875em;
+}
+
+.section-areas-tematicas #content #visualizacoes {
+    margin-left: -0.9375em;
+}
+
+.section-areas-tematicas #content #biblioteca {
+    margin-top: 2em;
+}
+
 #biblioteca {
     padding: 1.625em 1.25em 0;
 }
@@ -785,19 +820,14 @@ section .title {
 }
 */
 
-#biblioteca .slideshow-wrapper {
-    height: 230px;
-}
-
 #biblioteca input[type=text] {
     background: rgb(231, 226, 235);
     color: rgb(160, 145, 168);
     font-size: 0.875em;
-    height: 2.3125em !important;
 }
 
 #biblioteca .sub-nav {
-    font-size: 0.75em !important;
+    font-size: 0.75em;
     margin-bottom: 3.125em;
 }
 
@@ -908,26 +938,14 @@ section .title {
     color: rgb(255, 255, 255);
 }
 
-#biblioteca .collapse {
-    height: 100%;
-}
-
 #biblioteca .inline-list {
-    font-size: 0.75em !important;
+    font-size: 0.75em;
     margin-bottom: 1.5em;
 }
 
 #biblioteca .large-4 a {
     /* XXX: Melhor cor padrão? */
     color: rgb(160, 145, 168);
-}
-
-#ultimas-noticias .orbit-container .orbit-timer {
-    top: 0.7em;
-}
-
-#ultimas-noticias .orbit-container .orbit-timer > span {
-    top: -0.25em;
 }
 
 #calendario .large-2 {
@@ -1073,20 +1091,18 @@ select {
 /*color: #79608F !important;*/
 /*}*/
 
-#ultimas-noticias li, #ultimas-noticias h6 {
-    font-size: 0.8125em !important;
-    line-height: 1.7;
-    margin-bottom: 0;
-    font-weight: bold;
-}
 
 #content {
     font-size: 100%;
 }
 
+/* XXX: Lepri, qual foi a necessidade do CSS abaixo?
+   O !important fica muito generico e acaba atrapalhando outras seções do site
+   Podemos remover/modificar?
 ul, ol, dl {
     font-size: 1em !important;
 }
+*/
 
 #barra-brasil .brasilgov {
     width: 108px;
@@ -1212,4 +1228,16 @@ dl.portletNewsletterSubscriber .easynewsletter_button {
 .tiles-edit .formControls {
     background: rgb(255, 255, 255);
     position: relative;
+}
+
+#content .aztabs {
+    margin: 2em 0 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+#content .aztabs li {
+    border-bottom: 1px solid rgb(231, 226, 235);
+    list-style: none;
+    margin-bottom: 1.5em;
 }
