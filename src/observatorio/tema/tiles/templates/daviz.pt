@@ -13,7 +13,7 @@
         <h5 tal:content="view/data/title">Visualizações de dados</h5>
         <hr />
     </div>
-    <div class="large-6 columns">
+    <div class="large-6 columns" tal:condition="python:items[0]">
         <h5 class="subheader" tal:define="item python:items[0]">
             <span tal:content="item/Title" />
             <span tal:replace="item/Description" />
