@@ -661,8 +661,8 @@ class Renderer(base.Renderer):
 
         for i in range(1,5):
             link = {}
-            link['title'] = getattr(self.data, '%s_link0%s_titulo' %(perfil, i))
-            link['url'] = getattr(self.data, '%s_link0%s_url' %(perfil, i))
+            link['title'] = '"%s"' % getattr(self.data, '%s_link0%s_titulo' %(perfil, i))
+            link['url'] = '"%s"' % getattr(self.data, '%s_link0%s_url' %(perfil, i))
             if all(link.values()):
                 links.append(link)
         return links
