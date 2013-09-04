@@ -29,7 +29,8 @@ h5.subheader {
     font-style: normal;
     font-weight: normal;
     src: url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot');
-    src: url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    src: local('☺'),
+    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot?#iefix') format('embedded-opentype'),
     url('++theme++observatorio/fonts/Arsenal-Regular-webfont.woff') format('woff'),
     url('++theme++observatorio/fonts/Arsenal-Regular-webfont.ttf') format('truetype'),
     url('++theme++observatorio/fonts/Arsenal-Regular-webfont.svg#Arsenal') format('svg');
@@ -40,7 +41,8 @@ h5.subheader {
     font-style: normal;
     font-weight: bold;
     src: url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot');
-    src: url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    src: local('☺'),
+    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot?#iefix') format('embedded-opentype'),
     url('++theme++observatorio/fonts/Arsenal-Bold-webfont.woff') format('woff'),
     url('++theme++observatorio/fonts/Arsenal-Bold-webfont.ttf') format('truetype'),
     url('++theme++observatorio/fonts/Arsenal-Bold-webfont.svg#ArsenalBold') format('svg');
@@ -92,8 +94,10 @@ dl.portlet a:hover {
     line-height: 1.7;
     margin-bottom: 0;
     overflow: hidden;
-    padding-right: 9em;
+    padding-right: 10em;
     text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
     white-space: nowrap;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -125,10 +129,10 @@ dl.portlet a:hover {
 #participe h5,
 section .title,
 #column-one h5,
+#eixos a,
 footer a {
     font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
     font-size: 1.0625em;
-    /* XXX: is bigger better? font-size: 1.25em;*/
     font-variant: small-caps;
     font-weight: bold;
     text-rendering: inherit;
@@ -1084,7 +1088,7 @@ select {
 }
 
 .has-tip {
-    color: #333333 !important;
+    color: #333 !important;
 }
 
 /*a:visited {*/
@@ -1154,7 +1158,9 @@ ul, ol, dl {
 .listingBar:first-child,
 #salutation,
 .easynewsletter_text[name='fullname'],
-.section-pagina-inicial #portal-breadcrumbs {
+.section-pagina-inicial #portal-breadcrumbs,
+.top-bar img,
+#viewlet-below-content > a {
     display: none;
 }
 
@@ -1171,18 +1177,42 @@ input#contentchooser-content-trees[type="text"] {
 }
 
 #column-one #temas li {
-    width: 100px;
+    width: 110px;
+}
+
+#temas h5,
+#eixos h5,
+dl.portletNewsletterSubscriber dt {
+    background: rgb(79, 57, 95);
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0.5em 0 0.25em;
+    text-align: center;
 }
 
 #eixos ul {
     background: rgb(96, 77, 112);
 }
 
-#eixos li a {
-    color: rgb(255, 255, 255);
+#eixos li {
+    display: block;
+    font-size: 0.875em;
+    padding: 1.5em 0 0.5em 1em;
 }
 
-#eixos li a:hover {
+#eixos li:nth-child(odd) {
+    background: rgb(96, 77, 112);
+}
+
+#eixos li:nth-child(even) {
+    background: rgb(122, 97, 143);
+}
+
+#eixos li a {
+    color: rgb(255, 255, 255) !important;
+}
+
+#eixos li:hover {
     background: rgb(157, 113, 171);
 }
 
@@ -1192,9 +1222,7 @@ dl.portletNewsletterSubscriber {
 }
 
 dl.portletNewsletterSubscriber dt {
-    background: rgb(121, 96, 143);
-    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
-    font-variant: small-caps;
+    text-align: left;
 }
 
 dl.portletNewsletterSubscriber .easynewsletter_text {
@@ -1225,19 +1253,71 @@ dl.portletNewsletterSubscriber .easynewsletter_button {
     height: 200px;
 }
 
+.template-compose .edit-tile-link {
+    left: 0;
+}
+
+.template-compose .edit-tile-link[rel='#pb_3'] {
+    top: -1.75em;
+}
+
+.template-compose .edit-tile-link[rel='#pb_5'] {
+    left: 0.25em;
+}
+
 .tiles-edit .formControls {
     background: rgb(255, 255, 255);
     position: relative;
 }
 
 #content .aztabs {
-    margin: 2em 0 0;
-    text-align: left;
+    margin: 0 0 2em;
     text-transform: uppercase;
 }
 
 #content .aztabs li {
-    border-bottom: 1px solid rgb(231, 226, 235);
-    list-style: none;
-    margin-bottom: 1.5em;
+    display: inline;
+    padding: 0 0.25em;
+}
+
+#content .aztabs .haswords a {
+    color: rgb(122, 97, 143);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#content .aztabs .current {
+    padding: 0 0.25em;
+}
+
+#portal-personaltools,
+#portal-personaltools dd {
+    background: rgb(121, 96, 143);
+    position: absolute;
+    z-index: 101;
+}
+
+#portal-personaltools a {
+    color: rgb(255, 255, 255) !important;
+}
+
+#login-form label {
+    text-align: center;
+}
+
+@-moz-document url-prefix() {
+
+    .top-bar-section ul {
+        font-size: 16px;
+    }
+    
+    footer a {
+        font-size: 16px;
+    }
+}
+
+#logo-biblioteca {
+    float: left;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
 }

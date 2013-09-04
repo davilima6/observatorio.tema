@@ -53,6 +53,25 @@
     </replace>
   </rules>
 
+  <!-- regra diazo biblioteca -->
+
+  <rules if-path="biblioteca/">
+    <replace css:content="#viewlet-above-content-title">
+      <div id="logo-biblioteca">
+        <a id="logo" href="#" title="Acessar a página inicial">
+        <xsl:attribute name="href">
+          <xsl:value-of select="//*[@id='portal-logo']/@href" />
+        </xsl:attribute><xsl:apply-templates select="node()"/>
+          <img src="/++theme++observatorio/images/logo.png" width="220" height="160" alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
+        </a>
+      </div>
+    </replace>
+  </rules>
+
+  <!-- Enquete tile -->
+  <drop css:content="#enquete" />
+  <replace css:content-children="#enquete" css:theme-children="#enquete" />
+
   <!-- Banners -->
   <replace css:content="#banners" css:theme="#banners" />
 
