@@ -16,6 +16,7 @@
       permission="zope2.View"
       for="*"
       />
+
   <plone:tile
       name="observatorio.tema.biblioteca"
       title="Biblioteca Tile"
@@ -27,6 +28,7 @@
       permission="zope2.View"
       for="*"
       />
+
   <plone:tile
       name="observatorio.tema.areas"
       title="Areas Tematicas Tile"
@@ -49,6 +51,7 @@
       permission="zope2.View"
       for="*"
       />
+
   <plone:tile
       name="observatorio.tema.eventos"
       title="Eventos Tile"
@@ -57,6 +60,30 @@
       add_permission="cmf.ModifyPortalContent"
       schema=".eventos.IEventosTile"
       class=".eventos.EventosTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <plone:tile
+      name="observatorio.tema.poll"
+      title="Enquete tile"
+      description="Um tile que exibe uma enquete."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".poll.IPollTile"
+      class=".poll.PollTile"
+      permission="zope2.View"
+      for="*"
+      />
+
+  <plone:tile
+      name="observatorio.tema.social"
+      title="Facebook tile"
+      description="Um tile que exibe o facebook."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".social.ISocialTile"
+      class=".social.SocialTile"
       permission="zope2.View"
       for="*"
       />

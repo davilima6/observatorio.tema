@@ -18,6 +18,8 @@
       <element>observatorio.tema.areas</element>
       <element>observatorio.tema.noticias_home</element>
       <element>observatorio.tema.eventos</element>
+      <element>observatorio.tema.poll</element>
+      <element>observatorio.tema.social</element>
     </value>
   </record>
 </registry>
