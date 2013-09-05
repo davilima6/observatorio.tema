@@ -16,16 +16,6 @@
 
 <body class="section-home">
 
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=551749828210587";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
     <div id="menu" class="row">
         <div class="large-12 columns">
             <div class="fixed contain-to-grid">
@@ -56,12 +46,15 @@
     </div>
     <div id="ultimas-noticias" class="row hide-for-small">
         <div class="large-2 columns">
-            <h6><a href="#" data-tooltip class="has-tip" title="Acessar todas as notícias do Observatório"><span>+</span> NOTÍCIAS</a></h6>
+            <h6>
+                <a href="#"
+                   data-tooltip class="has-tip"
+                   title="Acessar todas as notícias do Observatório">
+                    <span>+</span> NOTÍCIAS</a>
+            </h6>
         </div>
         <div class="large-10 columns">
-            <div data-orbit data-options="timer_speed: 7000; bullets: false">
-                <h6><a href="#">Sed sit amet posuere erat. Quisque in ipsum non augue</a></h6>
-            </div>
+            <div data-orbit data-options="timer_speed: 7000; bullets: false"></div>
         </div>
     </div>
     <br />
@@ -69,7 +62,10 @@
         <div id="column-one" class="large-3 columns">
             <div id="apresentacao">
                 <a id="logo" href="#" title="Acessar a página inicial">
-                    <img src="images/logo.png" width="220" height="160" alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
+                    <img src="images/logo.png"
+                         width="220"
+                         height="160"
+                         alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
                 </a>
             </div>
             <div id="portal-column-one">
@@ -86,28 +82,9 @@
         <div id="contato" class="large-4 columns" />
     </div>
 
-    <div id="banners" class="row">
-    </div>
+    <div id="banners" class="row" />
 
-    <footer class="row">
-        <div class="large-8 columns">
-            <ul class="inline-list">
-                <li><a href="#">Mapa do site</a></li>
-                <li><a href="#">Acessibilidade</a></li>
-                <li><a href="#">Observatório de A a Z</a></li>
-                <li><a href="#">Fale com o Observatório</a></li>
-            </ul>
-        </div>
-        <div class="large-4 columns">
-            <ul class="inline-list right">
-                <li><a href="#">Temas</a></li>
-                <li><a href="#">Eixos</a></li>
-                <li><a href="#">Biblioteca</a></li>
-                <li><a href="#">Participe!</a></li>
-            </ul>
-        </div>
-        </div>
-    </footer>
+    <footer class="row" />
 
 </body>
 

@@ -72,6 +72,10 @@
   <drop css:content="#enquete" />
   <replace css:content-children="#enquete" css:theme-children="#enquete" />
 
+  <!-- Facebook tile -->
+  <drop css:content="#contato" />
+  <replace css:content-children="#contato" css:theme-children="#contato" />
+
   <!-- Banners -->
   <replace css:content="#banners" css:theme="#banners" />
 
