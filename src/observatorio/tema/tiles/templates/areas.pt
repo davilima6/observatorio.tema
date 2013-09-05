@@ -11,19 +11,16 @@
 <!--</script>-->
 <!--</head>-->
 
-<body tal:define="tile_id view/id;">
+<body tal:define="tile_id view/id">
 <div id="temas">
     <h5>Áreas Temáticas</h5><hr />
     <ul class="small-block-grid-4 large-block-grid-5">
         <tal:items repeat="item view/results">
-        <li id="at-trabalho"
-            tal:attributes="id string:at-${item/id}">
+        <li tal:attributes="id string:at-${item/id}">
             <a data-tooltip class="has-tip"
-               title=""
-               href=""
-               tal:attributes="title item/Title;
-                               href item/absolute_url"
-               tal:content="item/Title"></a>
+               tal:content="item/Title"
+               tal:attributes="title item/Description|item/Title;
+                               href item/absolute_url">Titulo da area tematica</a>
         </li>
         </tal:items>
     </ul>
