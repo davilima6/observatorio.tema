@@ -30,10 +30,10 @@ h5.subheader {
     font-weight: normal;
     src: url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot');
     src: local('☺'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.woff') format('woff'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.ttf') format('truetype'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.svg#Arsenal') format('svg');
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.woff') format('woff'),
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.ttf') format('truetype'),
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.svg#Arsenal') format('svg');
 }
 
 @font-face {
@@ -42,10 +42,10 @@ h5.subheader {
     font-weight: bold;
     src: url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot');
     src: local('☺'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.woff') format('woff'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.ttf') format('truetype'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.svg#ArsenalBold') format('svg');
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.woff') format('woff'),
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.ttf') format('truetype'),
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.svg#ArsenalBold') format('svg');
 }
 
 a,
