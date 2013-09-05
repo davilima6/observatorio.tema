@@ -15,6 +15,7 @@
   <copy attributes="*" css:content="body" css:theme="body" />
 
   <!-- Top -->
+  <before css:content="#portal-personaltools-wrapper" css:theme-children="body" css:if-content="#user-name" />
   <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
   <replace css:content=".left" css:theme=".left" />
   <copy attributes="action" css:content="#portal-searchbox form" css:theme="#global-nav-search" />
@@ -53,8 +54,7 @@
     </replace>
   </rules>
 
-  <!-- regra diazo biblioteca -->
-
+  <!-- Biblioteca -->
   <rules if-path="biblioteca/">
     <replace css:content="#viewlet-above-content-title">
       <div id="logo-biblioteca">
@@ -92,7 +92,7 @@
     </replace>
   </rules>
 
-  <!-- Forms -->
+  <!-- Forms -->  
   <replace css:content=".visualClear">
     <div class="clearfix">
       <xsl:apply-templates select="./text()" />
