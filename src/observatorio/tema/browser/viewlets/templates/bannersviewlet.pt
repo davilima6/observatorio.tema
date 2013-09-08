@@ -1,5 +1,5 @@
 <div id="banners" class="row"
-    tal:condition="view/available">
+    tal:condition="viewlet/available">
     <div class="small-12 columns"
         tal:define="banners viewlet/get_banners">
         <ul class="small-block-grid-3 large-block-grid-6">
