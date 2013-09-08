@@ -22,7 +22,7 @@
                         <img tal:define="scales item/@@images;
                                          thumbnail python:scales.scale('imagem', width=200, height=200)"
                              tal:attributes="src thumbnail/url;
-                                             alt item/Description|i/Title;
+                                             alt item/Description|item/Title;
                                              width thumbnail/width;
                                              height thumbnail/height" />
                         <tal:area repeat="area item/area">
