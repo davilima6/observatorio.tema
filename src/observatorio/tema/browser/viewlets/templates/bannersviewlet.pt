@@ -5,7 +5,7 @@
             <li tal:repeat="banner banners">
                 <a tal:define="obj banner/getObject"
                     tal:attributes="href obj/get_link;
-                                    target obj/get_target">
+                                    target python:obj.get_target() or None">
                     <img tal:define="scale obj/@@images"
                         tal:replace="structure python:scale.scale('imagem', width=145, height=80).tag()" />
                 </a>
