@@ -23,8 +23,6 @@ class PollTile(PersistentCoverTile):
 
     index = ViewPageTemplateFile("templates/poll.pt")
 
-    is_configurable = False
-
     def results(self):
         uuid = self.data.get('uuid', None)
         if uuid is not None:
@@ -60,7 +58,6 @@ class PollTile(PersistentCoverTile):
 
     @property
     def can_vote(self):
-
         utility = self.utility
         poll = self.poll()
         if poll:
@@ -82,7 +79,6 @@ class PollTile(PersistentCoverTile):
 
     def populate_with_object(self, obj):
         super(PollTile, self).populate_with_object(obj)
-
         uuid = IUUID(obj, None)
         data_mgr = ITileDataManager(self)
         data_mgr.set({'uuid': uuid})
