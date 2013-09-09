@@ -5,7 +5,7 @@
             <a tal:attributes="href string:${item/parentURL}/view">
                 <img tal:define="brain nocall:item/brain"
                     tal:attributes="src string:${brain/getURL}/image_galleria;
-                                    alt brain/Description|brain/Title" /></a>
+                                    alt python:brain.Description or brain.Title" /></a>
         </li>
     </ul>
 </div>

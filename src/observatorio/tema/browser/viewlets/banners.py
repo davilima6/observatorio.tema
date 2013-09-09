@@ -33,4 +33,3 @@ class BannersViewlet(grok.Viewlet):
         if self.get_banners():
             return True
 
-
