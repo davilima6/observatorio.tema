@@ -4,8 +4,8 @@
         <li tal:repeat="item items">
             <a tal:attributes="href string:${item/parentURL}/view">
                 <img tal:define="brain nocall:item/brain"
-                    tal:attributes="src string:${brain/getURL|nothing}/image_galleria;
-                                     alt brain/Description;" /></a>
+                    tal:attributes="src string:${brain/getURL}/image_galleria;
+                                    alt brain/Description|brain/Title" /></a>
         </li>
     </ul>
 </div>
