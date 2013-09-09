@@ -12,6 +12,7 @@
                                 tal:attributes="data-links perfil/links">Movimento feminista</option>
                         </tal:perfis>
                     </select>
+                    <input type="submit" value="Selecionar perfil" class="hiddenStructure" />
                 </form>
             </li>
             <li class="bullet-item"
