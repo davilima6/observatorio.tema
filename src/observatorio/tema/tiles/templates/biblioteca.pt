@@ -12,7 +12,7 @@
 <div id="biblioteca" class="hachuras">
     <h5 tal:content="view/data/title">Biblioteca</h5><hr />
     <div class="slideshow-wrapper">
-        <div class="preloader"></div>
+        <!--div class="preloader"></div-->
         <div id="publicacoes" data-orbit data-options="timer_speed: 7000; bullets: false">
             <tal:block repeat="results view/results">
             <div>
@@ -40,7 +40,7 @@
             <form method="get"
                   tal:attributes="action string:${portal_url}/biblioteca/biblioteca">
                 <div class="small-8 large-11 columns">
-                    <input type="text" name="SearchableText" placeholder="O que você procura?" />
+                    <input type="text" name="SearchableText" placeholder="O que você procura?" title="O que você procura?" />
                 </div>
                 <div class="small-3 large-1 columns">
                     <input type="submit" class="postfix button expand" value="" />
