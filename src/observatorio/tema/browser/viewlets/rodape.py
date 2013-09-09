@@ -20,14 +20,13 @@ class RodapeViewlet(grok.Viewlet):
 
     grok.viewletmanager(IPortalFooter)
     grok.layer(IObservatorioTemaLayer)
+    
+    self.context_state = getMultiAdapter((self.context, self.request),
+            name=u'plone_context_state')
 
     def site_actions(self):
-        context_state = getMultiAdapter((self.context, self.request),
-            name=u'plone_context_state')
-        return context_state.actions('site_actions')
+        return self.context_state.actions('site_actions')
 
-    def rodape_actions(self):
-        context_state = getMultiAdapter((self.context, self.request),
-            name=u'plone_context_state')
-        return context_state.actions('site_sections')
+    def site_sections(self):
+        return self.context_state.actions('site_sections')
 
