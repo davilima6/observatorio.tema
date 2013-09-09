@@ -19,9 +19,7 @@ class SocialTile(PersistentCoverTile):
 
     index = ViewPageTemplateFile("templates/social.pt")
     implements(IPersistentCoverTile)
-    is_configurable = False
     is_droppable = False
-    is_editable = True
 
 
     def facebook_available(self):
