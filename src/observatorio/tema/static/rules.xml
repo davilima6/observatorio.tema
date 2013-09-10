@@ -4,6 +4,7 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <theme href="index.html" css:if-content="#visual-portal-wrapper" />
+  <xsl:output method="html"/>
 
   <!-- Head -->
   <copy attributes="lang dir" css:content="html" css:theme="html" />
@@ -16,6 +17,7 @@
 
   <!-- Top -->
   <before css:content="#portal-personaltools-wrapper" css:theme-children="body" css:if-content="#user-name" />
+  <before css:content="#portal-header > p.hiddenStructure" css:theme-children="body" />
   <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
   <replace css:content=".left" css:theme=".left" />
   <copy attributes="action" css:content="#portal-searchbox form" css:theme="#global-nav-search" />
@@ -59,9 +61,9 @@
     <replace css:content="#viewlet-above-content-title">
       <div id="logo-biblioteca">
         <a id="logo" href="#" title="Acessar a página inicial">
-        <xsl:attribute name="href">
-          <xsl:value-of select="//*[@id='portal-logo']/@href" />
-        </xsl:attribute><xsl:apply-templates select="node()"/>
+          <xsl:attribute name="href">
+            <xsl:value-of select="//*[@id='portal-logo']/@href" />
+          </xsl:attribute><xsl:apply-templates select="node()"/>
           <img src="/++theme++observatorio/images/logo.png" width="220" height="160" alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
         </a>
       </div>
@@ -96,7 +98,7 @@
     </replace>
   </rules>
 
-  <!-- Forms -->  
+  <!-- Forms -->
   <replace css:content=".visualClear">
     <div class="clearfix">
       <xsl:apply-templates select="./text()" />

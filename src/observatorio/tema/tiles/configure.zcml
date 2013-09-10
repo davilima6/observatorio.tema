@@ -87,4 +87,17 @@
       permission="zope2.View"
       for="*"
       />
+
+  <plone:tile
+      name="observatorio.tema.boletim"
+      title="Boletim tile"
+      description="Um tile que exibe o boletim."
+      icon="++resource++collective.cover/tile-basic.png"
+      add_permission="cmf.ModifyPortalContent"
+      schema=".boletim.IBoletimTile"
+      class=".boletim.BoletimTile"
+      permission="zope2.View"
+      for="*"
+      />
+
 </configure>

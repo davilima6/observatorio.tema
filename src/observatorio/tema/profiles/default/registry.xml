@@ -20,6 +20,7 @@
       <element>observatorio.tema.eventos</element>
       <element>observatorio.tema.poll</element>
       <element>observatorio.tema.social</element>
+      <element>observatorio.tema.boletim</element>
     </value>
   </record>
 </registry>
