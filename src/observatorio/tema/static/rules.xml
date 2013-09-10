@@ -74,6 +74,10 @@
   <drop css:content="#enquete" />
   <replace css:content-children="#enquete" css:theme-children="#enquete" />
 
+  <!-- Boletim -->
+  <drop css:content="#boletim" />
+  <replace css:content-children="#boletim" css:theme-children="#boletim" />
+
   <!-- Facebook tile -->
   <drop css:content="#contato" />
   <replace css:content-children="#contato" css:theme-children="#contato" />
