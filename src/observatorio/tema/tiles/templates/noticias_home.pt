@@ -12,42 +12,32 @@
                     blogosfera python:view.entries('rss_blogosfera')">
         <div class="section-container tabs" data-section>
             <section class="section" data-height-watch
-                     tal:condition="results|nothing">
-                <p class="title">
-                    <a href="" tal:content="view/data/titulo_noticia">Titulo</a>
-                </p>
+                tal:condition="results|nothing">
+                <p class="title"><a href="" tal:content="view/data/titulo_noticia">Titulo</a></p>
                 <div class="content">
                     <tal:block repeat="item python:results.results(batch=False)[:3]">
-                    <h6>
-                        <a tal:content="item/Title" tal:attributes="href item/getURL">Titulo</a>
-                    </h6>
+                    <h6><a tal:content="item/Title" tal:attributes="href item/getURL">Titulo</a></h6>
                     <p tal:condition="item/Description" tal:content="item/Description">Descricao</p>
                     </tal:block>
                 </div>
             </section>
             <section class="section" data-height-watch
-                     tal:condition="clipping|nothing">
-                <p class="title">
-                    <a href="" tal:content="view/data/titulo_clipping">Titulo</a>
-                </p>
+                tal:condition="clipping|nothing">
+                <p class="title"><a href="" tal:content="view/data/titulo_clipping">Titulo</a></p>
                 <div class="content">
                     <tal:block repeat="item clipping">
-                        <h6>
-                            <a tal:content="item/title" tal:attributes="href item/link">Titulo</a>
-                        </h6>
+                    <h6><a tal:content="item/title" tal:attributes="href item/link">Titulo</a></h6>
+                    <p tal:condition="item/summary" tal:content="string:Fonte: ${item/summary}">Descricao</p>
                     </tal:block>
                 </div>
             </section>
             <section class="section" data-height-watch
                      tal:condition="blogosfera|nothing">
-                <p class="title">
-                    <a href="" tal:content="view/data/titulo_blogosfera">Titulo</a>
-                </p>
+                <p class="title"><a href="" tal:content="view/data/titulo_blogosfera">Titulo</a></p>
                 <div class="content">
                     <tal:block repeat="item blogosfera">
-                        <h6>
-                            <a tal:content="item/title" tal:attributes="href item/link">Titulo</a>
-                        </h6>
+                    <h6><a tal:content="item/title" tal:attributes="href item/link">Titulo</a></h6>
+                    <!--p tal:condition="item/Description" tal:content="item/Description">Descricao</p-->
                     </tal:block>
                 </div>
             </section>
