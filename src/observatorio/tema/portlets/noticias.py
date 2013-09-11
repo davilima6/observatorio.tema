@@ -76,18 +76,18 @@ class Renderer(base.Renderer):
         path = self.data.noticias
         lista = path.split('/')
         id = lista[len(lista)-1]
-
-        colecao = self.catalog(id = id, portal_type='Collection', path='/'.join(self.portal.getPhysicalPath()) + path)[0].getObject()
-        return colecao
+        colecao = self.catalog(id = id, portal_type='Collection', path='/'.join(self.portal.getPhysicalPath()) + path)
+        if colecao:
+            return colecao[0].getObject()
 
     @memoize
     def eventos(self):
         path = self.data.eventos
         lista = path.split('/')
         id = lista[len(lista)-1]
-
-        colecao = self.catalog(id = id, portal_type='Collection', path='/'.join(self.portal.getPhysicalPath()) + path)[0].getObject()
-        return colecao
+        colecao = self.catalog(id = id, portal_type='Collection', path='/'.join(self.portal.getPhysicalPath()) + path)
+        if colecao:
+            return colecao[0].getObject()
 
 
 class AddForm(base.AddForm):
