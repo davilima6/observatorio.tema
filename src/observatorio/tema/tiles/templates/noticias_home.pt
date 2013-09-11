@@ -27,7 +27,7 @@
                 <div class="content">
                     <tal:block repeat="item clipping">
                     <h6><a tal:content="item/title" tal:attributes="href item/link">Titulo</a></h6>
-                    <p tal:condition="item/summary" tal:content="string:Fonte: ${item/summary}">Descricao</p>
+                    <p tal:condition="item/summary" tal:content="string:Fonte: ${item/summary}">Fonte</p>
                     </tal:block>
                 </div>
             </section>
@@ -37,7 +37,7 @@
                 <div class="content">
                     <tal:block repeat="item blogosfera">
                     <h6><a tal:content="item/title" tal:attributes="href item/link">Titulo</a></h6>
-                    <!--p tal:condition="item/Description" tal:content="item/Description">Descricao</p-->
+                    <p tal:condition="item/feed/title" tal:content="string:Fonte: ${item/feed/title}">Fonte</p>
                     </tal:block>
                 </div>
             </section>
