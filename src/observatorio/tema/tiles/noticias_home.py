@@ -4,23 +4,24 @@ import itertools
 import time
 import feedparser
 
+from zope import schema
 from zope.component import getUtility
 
 from plone.memoize import request
 from plone.memoize.interfaces import ICacheChooser
-from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
 from plone.tiles.interfaces import ITileDataManager
 from plone.uuid.interfaces import IUUID
 from plone.app.uuid.utils import uuidToObject
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from zope import schema
 from Products.validation import validation
+
+from collective.cover.tiles.base import IPersistentCoverTile, PersistentCoverTile
 
 
 def isUrlList(data):
-    verify=validation.validatorFor("isURL")
+    verify = validation.validatorFor("isURL")
     for url in (x.strip() for x in data.split()):
-        if verify(url)!=True:
+        if verify(url) != True:
             return False
     return True
 
@@ -31,15 +32,14 @@ class INoticiasHomeTile(IPersistentCoverTile):
 
 
     titulo_noticia = schema.TextLine(
-        title = u"Titulo Noticia",
-        default = u"Notícia",
+        title = u"Título da aba de notícias do Observatório",
+        default = u"Últimas Notícias",
         required = True,
     )
 
     titulo_clipping = schema.TextLine(
-        title = u"Titulo clipping",
-        description = u"Clipping SPM",
-        default = u"",
+        title = u"Titulo da aba de clipping",
+        default = u"Clipping SPM",
         required = False,
     )
 
@@ -50,8 +50,7 @@ class INoticiasHomeTile(IPersistentCoverTile):
     )
 
     titulo_blogosfera = schema.TextLine(
-        title = u"Titulo bloglosfera",
-        description = u"",
+        title = u"Titulo da aba de bloglosfera",
         default = u"Blogosfera",
         required = False,
     )
@@ -64,7 +63,7 @@ class INoticiasHomeTile(IPersistentCoverTile):
     )
 
     cache_timeout = schema.Choice(
-        title=u"Tempo maximo para fazer o cache dos dados",
+        title=u"Intervalo para cache dos feeds",
         description=u"",
         default=3600,
         required=True,
@@ -72,9 +71,9 @@ class INoticiasHomeTile(IPersistentCoverTile):
     )
 
     items_show = schema.Int(
-        title=u"Numeros de itens para exibir",
+        title=u"Número de itens para exibir",
         description=u"",
-        default=5,
+        default=3,
         required=True,
     )
 
@@ -86,8 +85,6 @@ class INoticiasHomeTile(IPersistentCoverTile):
 
 class NoticiasHomeTile(PersistentCoverTile):
     index = ViewPageTemplateFile("templates/noticias_home.pt")
-    is_configurable = False
-    is_editable = True
     limit = 3
 
     def results(self):
@@ -113,37 +110,37 @@ class NoticiasHomeTile(PersistentCoverTile):
         """Sanitize the feed.
         """
         for entry in feed.entries:
-            entry["feed"]=feed.feed
+            entry["feed"] = feed.feed
             if not "published_parsed" in entry['feed']:
-                entry["published_parsed"]=entry["updated_parsed"]
-                entry["published"]=entry["updated"]
+                entry["published_parsed"] = entry["updated_parsed"]
+                entry["published"] = entry["updated"]
 
 
     def getFeed(self, url):
         """Fetch a feed.
         """
-        now=time.time()
+        now = time.time()
 
-        chooser=getUtility(ICacheChooser)
-        cache=chooser("collective.portlet.feedmixer.FeedCache")
+        chooser = getUtility(ICacheChooser)
+        cache = chooser("collective.portlet.feedmixer.FeedCache")
 
-        cached_data=cache.get(url, None)
+        cached_data = cache.get(url, None)
         if cached_data is not None:
-            (timestamp, feed)=cached_data
-            if now-timestamp<self.data.get('cache_timeout'):
+            (timestamp, feed) = cached_data
+            if now-timestamp < self.data.get('cache_timeout'):
                 return feed
 
-            newfeed=feedparser.parse(url,
-                etag=getattr(feed, "etag", None),
-                modified=getattr(feed, "modified", None))
-            if newfeed.status==304:
+            newfeed = feedparser.parse(url,
+                etag = getattr(feed, "etag", None),
+                modified = getattr(feed, "modified", None))
+            if newfeed.status == 304:
                 self.cleanFeed(feed)
-                cache[url]=(now+self.data.get('cache_timeout'), feed)
+                cache[url] = (now + self.data.get('cache_timeout'), feed)
                 return feed
 
-        feed=feedparser.parse(url)
+        feed = feedparser.parse(url)
         self.cleanFeed(feed)
-        cache[url]=(now+self.data.get('cache_timeout'), feed)
+        cache[url] = (now + self.data.get('cache_timeout'), feed)
 
         return feed
 
@@ -151,10 +148,10 @@ class NoticiasHomeTile(PersistentCoverTile):
     def mergeEntriesFromFeeds(self, feeds):
         if not feeds:
             return []
-        if len(feeds)==1:
+        if len(feeds) == 1:
             return feeds[0].entries
 
-        entries=list(itertools.chain(*(feed.entries for feed in feeds)))
+        entries = list(itertools.chain(*(feed.entries for feed in feeds)))
         entries.sort(key=lambda x: x["published_parsed"], reverse=True)
 
         return entries
@@ -162,12 +159,12 @@ class NoticiasHomeTile(PersistentCoverTile):
 #    @request.cache(get_key=lambda func,self:self.data.get('rss_blogosfera'),
 #                   get_request="self.request")
     def get_entries(self, feeds):
-        feeds=self.data.get(feeds)
+        feeds = self.data.get(feeds)
         if feeds is None:
             feeds = ''
-        feeds=[self.getFeed(url) for url in self.feed_urls(feeds)]
-        feeds=[feed for feed in feeds if feed is not None]
-        entries=self.mergeEntriesFromFeeds(feeds)
+        feeds = [self.getFeed(url) for url in self.feed_urls(feeds)]
+        feeds = [feed for feed in feeds if feed is not None]
+        entries = self.mergeEntriesFromFeeds(feeds)
         return entries
 
     def feed_urls(self, feeds):
