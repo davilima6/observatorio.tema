@@ -27,8 +27,8 @@
                                              height thumbnail/height" />
                         <tal:area repeat="area item/area">
                         <h6 class="panel"
-                            tal:condition="repeat/area/start|nothing"
-                            tal:content="area">Area tematica</h6>
+                            tal:condition="repeat/area/start|nothing">
+                            <span tal:replace="python: view.get_area(area)" /></h6>
                         </tal:area>
                     </a>
                 </div>

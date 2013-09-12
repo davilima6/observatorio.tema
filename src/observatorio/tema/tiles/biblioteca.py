@@ -11,6 +11,8 @@ from plone.uuid.interfaces import IUUID
 from plone.app.uuid.utils import uuidToObject
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope import schema
+from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
 
 
 class IBibliotecaTile(IListTile):
@@ -92,3 +94,12 @@ class BibliotecaTile(ListTile):
 
     def get_uid(self, obj):
         return IUUID(obj)
+
+    def get_area(self, area):
+        context = self.context
+        factory = getUtility(IVocabularyFactory, 'observatorio.conteudo.areas_tematicas')
+        vocabulary = factory(context)
+
+        termo = vocabulary.getTerm(area)
+
+        return termo.title
