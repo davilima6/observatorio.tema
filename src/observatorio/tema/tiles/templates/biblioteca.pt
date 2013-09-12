@@ -39,12 +39,10 @@
             <form method="get"
                   tal:attributes="action string:${portal_url}/biblioteca/biblioteca">
                 <div class="small-8 large-11 columns">
-                    <input type="text" name="SearchableText" placeholder="O que você procura?" title="O que você procura?" />
+                    <input type="text" name="c1" placeholder="O que você procura?" title="O que você procura?" />
                 </div>
                 <div class="small-3 large-1 columns">
                     <input type="submit" class="postfix button expand" value="" />
-                    <input type="hidden" id="area-filtro" name="area:list" value="" />
-                    <input type="hidden" name="portal_type" value="" />
                     <div class="search-box"></div>
                 </div>
             </form>
