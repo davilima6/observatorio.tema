@@ -6,8 +6,7 @@
 
 <body tal:define="tile_id view/id;
                   autoplay python:str(view.autoplay()).lower();
-                  portal context/@@plone_portal_state/portal;
-                  portal_url portal/portal_url">
+                  portal_url context/@@plone_portal_state/portal_url">
 
 <div id="biblioteca" class="hachuras">
     <h5 tal:content="view/data/title">Biblioteca</h5><hr />
@@ -17,7 +16,7 @@
             <tal:block repeat="results view/results">
             <div>
                 <div tal:repeat="item results"
-                     class="large-3 small-6 columns">
+                     class="small-6 large-3 columns">
                     <a tal:attributes="href item/absolute_url">
                         <img tal:define="scales item/@@images;
                                          thumbnail python:scales.scale('imagem', width=200, height=200)"
@@ -51,7 +50,7 @@
             </form>
         </div>
         <div class="row">
-            <div class="large-12 columns">
+            <div class="small-12 columns">
                 <dl class="sub-nav">
                     <dt>FILTROS:</dt>
                     <dd class="active"><a href="" data-portal_type="all">Todos os tipos</a></dd>
@@ -65,7 +64,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="large-4 large-offset-8 columns">
+        <div class="small-12 columns">
             <ul class="inline-list right">
                 <li><a tal:attributes="href string:${portal_url}/biblioteca">Acessar toda a biblioteca →</a></li>
             </ul>
