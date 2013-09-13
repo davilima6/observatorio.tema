@@ -43,7 +43,7 @@ class INoticiasHomeTile(IPersistentCoverTile):
     )
 
     rss_clipping = schema.URI(
-        title=u"Fonte do clipping",
+        title=u"Feed do clipping",
         description=u"URL da fonte RSS do clipping",
         required=False,
     )
@@ -73,7 +73,7 @@ class INoticiasHomeTile(IPersistentCoverTile):
         title=u"Quantidade de itens",
         description=u"Número máximo de itens a serem exibidos.",
         default=3,
-        required=False,
+        required=True,
     )
 
     uuid = schema.TextLine(
