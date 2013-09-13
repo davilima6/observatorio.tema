@@ -30,51 +30,50 @@ class INoticiasHomeTile(IPersistentCoverTile):
     """
     """
 
-
     titulo_noticia = schema.TextLine(
-        title = u"Título da aba de notícias do Observatório",
-        default = u"Últimas Notícias",
-        required = True,
+        title=u"Título da aba de notícias",
+        default=u"Últimas Notícias",
+        required=False,
     )
 
     titulo_clipping = schema.TextLine(
-        title = u"Titulo da aba de clipping",
-        default = u"Clipping SPM",
-        required = False,
+        title=u"Título da aba de clipping",
+        default=u"Clipping SPM",
+        required=False,
     )
 
     rss_clipping = schema.URI(
-        title = u"Fonte RSS do clipping",
-        description = u"",
-        required = False,
+        title=u"Fonte do clipping",
+        description=u"URL da fonte RSS do clipping",
+        required=False,
     )
 
     titulo_blogosfera = schema.TextLine(
-        title = u"Titulo da aba de bloglosfera",
-        default = u"Blogosfera",
-        required = False,
+        title=u"Título da aba de bloglosfera",
+        default=u"Blogosfera",
+        required=False,
     )
 
     rss_blogosfera = schema.ASCII(
-        title=u"URL(s) dos feeds da blogosfera",
-        description=u"Insira as URLs de todos os feeds, um por linha",
-        required=True,
-        constraint=isUrlList
+        title=u"Feeds da blogosfera",
+        description =u"URLs de todas as fontes RSS, uma por linha",
+        required=False,
+        constraint=isUrlList,
     )
 
     cache_timeout = schema.Choice(
-        title=u"Intervalo para cache dos feeds",
-        description=u"",
+        title=u"Intervalo de atualização dos feeds",
+        description=u"Período em que as fontes RSS são lidas e armazenadas/cacheadas",
         default=3600,
-        required=True,
-        vocabulary="collective.portlet.feedmixer.timeouts"
+        required=False,
+        vocabulary="collective.portlet.feedmixer.timeouts",
     )
 
     items_show = schema.Int(
-        title=u"Número de itens para exibir",
-        description=u"",
+        title=u"Quantidade de itens",
+        description=u"Número máximo de itens a serem exibidos.",
         default=3,
-        required=True,
+        required=False,
     )
 
     uuid = schema.TextLine(
@@ -94,7 +93,8 @@ class NoticiasHomeTile(PersistentCoverTile):
             return obj
 
     def populate_with_object(self, obj):
-#        super(NoticiasHomeTile, self).populate_with_object(obj)
+        # XXX: Pode ser removido?
+        # super(NoticiasHomeTile, self).populate_with_object(obj)
         if obj.portal_type in self.accepted_ct():
             uuid = IUUID(obj, None)
             data_mgr = ITileDataManager(self)
@@ -156,6 +156,7 @@ class NoticiasHomeTile(PersistentCoverTile):
 
         return entries
 
+#    XXX: Pode ser removido?
 #    @request.cache(get_key=lambda func,self:self.data.get('rss_blogosfera'),
 #                   get_request="self.request")
     def get_entries(self, feeds):
