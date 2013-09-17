@@ -7,7 +7,7 @@
             <li class="price">
                 <form>
                     <select id="perfis">
-                        <tal:perfis repeat="perfil view/get_perfis">
+                        <tal:perfis repeat="perfil python:view.get_perfis(is_json=True)">
                         <option tal:content="perfil/title"
                                 tal:attributes="data-links perfil/links">Movimento feminista</option>
                         </tal:perfis>

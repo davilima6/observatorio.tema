@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from StringIO import StringIO
+import json
+
 from Acquisition import aq_inner
 
 from zope import schema
@@ -639,10 +642,11 @@ class Renderer(base.Renderer):
             return True
 
     @memoize
-    def get_perfis(self):
+    def get_perfis(self, is_json=False):
         ''' funcao que retorna os perfis e seus links
         '''
         perfis = []
+        links_in_json = StringIO()
 
         for i in range(1,7):
             perfil = {}
@@ -650,7 +654,10 @@ class Renderer(base.Renderer):
             perfil['title'] = getattr(self.data, perfil_numero)
             if perfil['title']:
                 perfil['links'] = self.get_links(perfil_numero)
+                if is_json:
+                    perfil['links'] = json.dumps(perfil['links'], links_in_json)
                 perfis.append(perfil)
+        links_in_json.close() 
         return perfis
 
     @memoize
