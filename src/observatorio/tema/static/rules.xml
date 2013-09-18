@@ -4,7 +4,7 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <theme href="index.html" css:if-content="#visual-portal-wrapper" />
-  <xsl:output method="html"/>
+  <xsl:output method="html" />
 
   <!-- Head -->
   <copy attributes="lang dir" css:content="html" css:theme="html" />
@@ -23,7 +23,11 @@
   <copy attributes="action" css:content="#portal-searchbox form" css:theme="#global-nav-search" />
   <copy attributes="href title" css:content="#portal-logo" css:theme="#logo" />
   <replace css:theme-children="#ultimas-noticias div[data-orbit]">
-    <xsl:for-each select="//ul[@id='js-news']/li/*"><h6><xsl:copy-of select="." /></h6></xsl:for-each>
+    <xsl:for-each select="//ul[@id='js-news']/li/*">
+      <xsl:if test="not(position() > 5)">
+        <h6><xsl:copy-of select="." /></h6>
+      </xsl:if>
+    </xsl:for-each>
   </replace>
   <drop css:content="#ticker-wrapper" />
 
@@ -57,7 +61,7 @@
   </rules>
 
   <!-- Biblioteca -->
-  <rules if-path="biblioteca/">
+  <rules if-path="biblioteca/ biblioteca/dados/ biblioteca/links/ biblioteca/publicacoes/ biblioteca/visualizacoes/">
     <replace css:content="#viewlet-above-content-title">
       <div id="logo-biblioteca">
         <a id="logo" href="#" title="Acessar a página inicial">

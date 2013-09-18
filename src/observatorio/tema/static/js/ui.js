@@ -1,9 +1,15 @@
-(function($) {    
+(function($) {
     "use strict";
     $(document).ready(function() {
 
         // BARRA BRASIL
-        $("#barra-brasil").prependTo(".fixed.contain-to-grid");
+        $("#barra-brasil").insertAfter("body > p.hiddenStructure:first-child");
+
+        // TODO: Slider para areas tematicas
+        // $(document).on({
+        //   mouseenter: function() { $(".panel", this).slideDown(100); },
+        //   mouseleave: function() { $(".panel", this).slideUp(100); }
+        // }, "#temas li");
 
         // VISUALIZACOES DE DADOS
         $("#daviz").on("orbit:before-slide-change", function() {
@@ -39,57 +45,53 @@
             }
             return false;
         });
+        $("#biblioteca form").submit(function(e) {
+            e.preventDefault();
+            $("input[type=hidden]", this).remove();
+            var portal_types = $("#biblioteca dd.active a");
+            for (var i = 0; i < portal_types.length; i++) {
+                var t = $(portal_types[i]).data("portal_type");
+                $(this).append($("<input type='hidden' name='c4' value='" + t + "' />"));
+            }
+            window.location = $(this).attr("action") + "#" + $(this).serialize();
+        });
 
         // OBSERVATORIO E VOCE
         $("#observatorio-e-voce select").change(function() {
-            var links = $("option:selected", this).data("links");
-            var links = JSON.stringify(eval('('+links+')'));
-            // var links = JSON.parse(links);
-            $("#observatorio-e-voce .bullet-item a").fadeOut().each(function(i) {
-                var parent = $(this).parent();
-                var url = links[i].url;
-                var title = links[i].title;
-                var html = $("<li><a href='" + url + "' title='" + title + "'>" + title + "</a></li>");
-                // debugger;
-                parent.remove();
-                parent.html(html);
-            }).fadeIn();            
+            var data_links = $("option:selected", this).data("links");
+            var holder = $("<div />");
+            for (var i = 0; i < data_links.length; i++) {
+                var url = data_links[i].url;
+                var title = data_links[i].title;
+                holder.append($("<li class='bullet-item'><a href='" + url + "' title='" + title + "'>" + title + "</a></li>"));
+            }
+            var ul = $("#observatorio-e-voce ul");
+            $(".bullet-item", ul).fadeOut(200, function() {
+                $(this).remove();
+                holder.children().hide().css("display", "inline-block").appendTo(ul).show(100);
+            });
         });
 
-        // XXX: Verificar se eh possivel remover
-        //   $(window).load(function() {
-        //   $('#destaques').orbit({ fluid: '2x1' });
-        // });
-        
-        // TODO: Fallback para animacao da caixa de busca
-        // if(!Modernizr.csstransitions) {
-        //   console.log("no css transitions!");
-        //   $("#search-box").focus(function() {
-        //     $(this).stop().animate({width: "9em"});
-        //   }).blur(function() {
-        //     $(this).stop().animate({width: "3.5em"});
-        //   });
-        // }
-
-        // TODO: Slider para areas tematicas
-        // $(document).on({
-        //   mouseenter: function() { $(".panel", this).slideDown(100); },
-        //   mouseleave: function() { $(".panel", this).slideUp(100); }
-        // }, "#temas li");
+        // FALLBACK para animacao CSS3 da caixa de busca
+        if(!Modernizr.csstransitions) {
+          $("#search-box").focus(function() {
+            $(this).stop().animate({width: "9em"});
+          }).blur(function() {
+            $(this).stop().animate({width: "5.5em"});
+          });
+        }
 
         // PARTICIPE (Enquete/Boletim/Contato)
-        // XXX: Verificar se eh possivel remover
         $("[data-match-height]").each(function() {
             var parentRow = $(this),
                 childrenCols = $(this).find("[data-height-watch]"),
                 childHeights = childrenCols.map(function(){ return $(this).outerHeight(); }).get(),
                 tallestChild = Math.max.apply(Math, childHeights);
             childrenCols.css("min-height", tallestChild);
-            // XXX: Remove me
-            // console.log(childHeights, tallestChild);
         });
 
-        $(document).foundation().foundation("joyride", "start");
+        // Inicializa Foundation
+        $(document).foundation();
 
     });
 

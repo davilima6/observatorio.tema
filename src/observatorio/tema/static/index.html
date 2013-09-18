@@ -3,11 +3,10 @@
 <head>
     <title>Observatório Brasil da Igualdade de Gênero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700" rel="stylesheet" type="text/css">
+    <!-- TODO: Avaliar performance utilizando CDN p/ jQuery, Normalize e Foundation </script>-->
     <link type="text/css" rel="stylesheet" href="css/normalize.css" />
     <link type="text/css" rel="stylesheet" href="css/foundation.min.css" />
-    <!--script type="text/javascript" src="js/custom.modernizr.js"></script-->
     <script type="text/javascript" src="js/foundation.min.js"></script>
     <link rel="stylesheet" href="css/ie8-grid-foundation-4.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -16,68 +15,68 @@
 
 <body class="section-home">
 
-<div id="menu" class="row">
-    <div class="large-12 columns">
-        <div class="fixed contain-to-grid">
-            <nav class="top-bar">
-                <div id="barra-brasil"></div>
-                <ul class="title-area">
-                    <li class="name hiddenStructure">
-                        <h1>Página inicial</h1>
-                    </li>
-                    <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-                </ul>
-                <section class="top-bar-section">
-                    <ul class="left">
-                    </ul>
-                    <ul class="right">
-                        <li class="search">
-                            <form id="global-nav-search">
-                                <input name="SearchableText" id="search-box" type="text" title="O que você procura?" />
-                                <div class="search-box"></div>
-                                <input type="submit" value="Pesquisar" class="hiddenStructure" />
-                            </form>
+    <div id="menu" class="row">
+        <div class="large-12 columns">
+            <div class="fixed contain-to-grid">
+                <nav class="top-bar">
+                    <div id="barra-brasil"></div>
+                    <ul class="title-area">
+                        <li class="name hiddenStructure">
+                            <h1>Página inicial</h1>
                         </li>
+                        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
                     </ul>
-                </section>
-            </nav>
+                    <section class="top-bar-section">
+                        <ul class="left">
+                        </ul>
+                        <ul class="right">
+                            <li class="search">
+                                <form id="global-nav-search">
+                                    <input name="SearchableText" id="search-box" type="text" title="O que você procura?" />
+                                    <div class="search-box"></div>
+                                    <input type="submit" value="Pesquisar" class="hiddenStructure" />
+                                </form>
+                            </li>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="ultimas-noticias" class="row hide-for-small">
-    <div class="large-2 columns">
-        <h6><a href="#" data-tooltip class="has-tip" title="Acessar todas as notícias do Observatório"><span>+</span> NOTÍCIAS</a></h6>
-    </div>
-    <div class="large-10 columns">
-        <div data-orbit data-options="timer_speed: 7000; bullets: false">
-            <h6><a href="#">Sed sit amet posuere erat. Quisque in ipsum non augue</a></h6>
+    <div id="ultimas-noticias" class="row hide-for-small">
+        <div class="large-2 columns">
+            <h6><a href="#" data-tooltip class="has-tip" title="Acessar todas as notícias do Observatório"><span>+</span> NOTÍCIAS</a></h6>
         </div>
-    </div>
-</div><br />
-
-<div id="container" class="row">
-    <div id="column-one" class="large-3 columns">
-        <div id="apresentacao">
-            <a id="logo" href="#" title="Acessar a página inicial">
-                <img src="images/logo.png" width="220" height="160" alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
-            </a>
+        <div class="large-10 columns">
+            <div data-orbit data-options="timer_speed: 7000; bullets: false">
+                <h6><a href="#">Sed sit amet posuere erat. Quisque in ipsum non augue</a></h6>
+            </div>
         </div>
-        <div id="portal-column-one"> </div>
+    </div><br />
+
+    <div id="container" class="row">
+        <div id="column-one" class="large-3 columns">
+            <div id="apresentacao">
+                <a id="logo" href="#" title="Acessar a página inicial">
+                    <img src="images/logo.png" width="220" height="160" alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
+                </a>
+            </div>
+            <div id="portal-column-one"> </div>
+        </div>
+        <div id="column-content" class="large-9 columns"> </div>
+        <div id="portal-column-two" class="large-3 columns"> </div>
     </div>
-    <div id="column-content" class="large-9 columns"> </div>
-    <div id="portal-column-two" class="large-3 columns"> </div>
-</div>
 
-<div id="participe" class="row" data-match-height>
-    <div id="enquete" class="large-4 columns" />
-    <div id="boletim" class="large-4 columns" />
-    <div id="contato" class="large-4 columns" />
-</div>
+    <div id="participe" class="row" data-match-height>
+        <div id="enquete" class="large-4 columns" />
+        <div id="boletim" class="large-4 columns" />
+        <div id="contato" class="large-4 columns" />
+    </div>
 
-<div id="banners" class="row"> </div>
+    <div id="banners" class="row"> </div>
 
-<footer class="row" />
+    <footer class="row" />
 
 </body>
 

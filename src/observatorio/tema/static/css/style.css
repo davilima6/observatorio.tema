@@ -17,11 +17,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.documentFirstHeading {
+    color: rgb(245, 130, 31);
+    font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
+    font-variant: small-caps;
+    font-weight: bold;
     margin-bottom: 0.25em;
+    text-rendering: inherit;
+}
+
+
+h1.documentFirstHeading + h5.subheader {
+    color: rgb(96, 77, 112);
+    margin-left: 0;
+    margin-bottom: 0;
 }
 
 h5.subheader {
-    margin: 0.2em 0 1.5em 0.2em;
+    margin: 0 0 1.5em;
 }
 
 @font-face {
@@ -30,10 +42,10 @@ h5.subheader {
     font-weight: normal;
     src: url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot');
     src: local('☺'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.woff') format('woff'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.ttf') format('truetype'),
-    url('++theme++observatorio/fonts/Arsenal-Regular-webfont.svg#Arsenal') format('svg');
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.woff') format('woff'),
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.ttf') format('truetype'),
+        url('++theme++observatorio/fonts/Arsenal-Regular-webfont.svg#Arsenal') format('svg');
 }
 
 @font-face {
@@ -42,10 +54,10 @@ h5.subheader {
     font-weight: bold;
     src: url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot');
     src: local('☺'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.woff') format('woff'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.ttf') format('truetype'),
-    url('++theme++observatorio/fonts/Arsenal-Bold-webfont.svg#ArsenalBold') format('svg');
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.woff') format('woff'),
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.ttf') format('truetype'),
+        url('++theme++observatorio/fonts/Arsenal-Bold-webfont.svg#ArsenalBold') format('svg');
 }
 
 a,
@@ -111,6 +123,10 @@ dl.portlet a:hover {
 
 #ultimas-noticias .large-2 h6 span {
     background: #000;
+    -border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -khtml-border-radius: 1em;
     border-radius: 1em;
     color: rgb(255, 255, 255);
     display: inline-block;
@@ -210,6 +226,17 @@ footer a {
     color: rgb(231, 226, 235);
 }
 
+#participe form.custom .custom.radio {
+    margin-right: 0.25em;
+    padding: 2px;
+}
+
+#participe form.custom .custom.radio.checked:before {
+    background: rgb(250, 177, 0);
+    height: 10px;
+    width: 10px;
+}
+
 #contato h5 {
     margin: -3.05em 0 0 -0.25em;
 }
@@ -277,8 +304,14 @@ footer a {
 }
 
 #noticias .content p {
-    font-size: 0.9375em;
-    padding-bottom: 0.5em;
+    font-size: 0.75em;
+    font-style: italic;
+    margin-top: -0.75em;
+}
+
+#noticias .content .footer {
+    margin: 1em 0 0;
+    text-align: right;
 }
 
 #noticias .content h6:not(:first-child) {
@@ -341,6 +374,10 @@ section .title {
 #search-box {
     background: rgb(121, 96, 143);
     border: 0;
+    -border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -khtml-border-radius: 1em;
     border-radius: 1em;
     color: rgb(255, 255, 255);
     height: 1.4em;
@@ -390,6 +427,10 @@ section .title {
 
 .search-box:before {
     border: 0.15em solid rgb(255, 255, 255);
+    -border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -khtml-border-radius: 50%;
     border-radius: 50%;
     content: "";
     display: block;
@@ -401,6 +442,10 @@ section .title {
 }
 
 #biblioteca .search-box {
+    -border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
     border-radius: 0;
     margin-top: -1.9em;
     margin-left: 1.75em;
@@ -539,7 +584,8 @@ section .title {
 
 #observatorio-e-voce .pricing-table .bullet-item {
     border-color: rgb(231, 226, 235);
-    display: block;
+    display: inline-block;
+    width: 100%;
 }
 
 #observatorio-e-voce .pricing-table .title {
@@ -563,9 +609,13 @@ section .title {
     margin: -2.5em auto 0 0.9375em;
 }
 
-#temas,
-#visualizacoes,
-#biblioteca {
+#visualizacoes {
+    margin-bottom: 1em;
+}
+
+.section-pagina-inicial #temas,
+.section-pagina-inicial #visualizacoes,
+.section-pagina-inicial #biblioteca {
     margin-bottom: 3em;
 }
 
@@ -712,14 +762,15 @@ section .title {
 }
 
 #temas li a {
-    bottom: 0;
+    bottom: 0.25em;
     color: rgb(255, 255, 255) !important;
     font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
     padding-right: 0.5em;
     position: absolute;
-    -webkit-text-stroke-width: .7px;
+    text-rendering: inherit;
+    /*-webkit-text-stroke-width: .7px;
     -webkit-text-stroke-color: #fff;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;*/
 }
 
 #at-autonomia-economica {
@@ -830,7 +881,8 @@ section .title {
     overflow: hidden;
 }
 
-#biblioteca .row.collapse {
+#biblioteca .row.collapse,
+#boletim .row.collapse {
     display: inline;
 }
 
@@ -907,8 +959,10 @@ section .title {
     height: 6px;
     border: 3px solid rgb(197, 85, 0);
     background: rgba(0, 0, 0, 0);
-    -webkit-border-radius: 12px;
+    -border-radius: 12px;
     -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -webkit-border-radius: 12px;
     border-radius: 12px;
 }
 
@@ -954,6 +1008,10 @@ section .title {
 #biblioteca dd:not(.active):hover a,
 #biblioteca dd:not(.active):focus a {
     background: rgb(250, 177, 0);
+    -border-radius: 1000px;
+    -moz-border-radius: 1000px;
+    -webkit-border-radius: 1000px;
+    -webkit-border-radius: 1000px;
     border-radius: 1000px;
     color: rgb(255, 255, 255);
 }
@@ -1006,6 +1064,10 @@ section .title {
 #boletim .button {
     background: rgb(157, 113, 171);
     border: 0;
+}
+
+#banners {
+    margin-top: 1em;
 }
 
 #banners a {
@@ -1079,6 +1141,14 @@ textarea {
 
 select {
     width: auto;
+}
+
+.tileHeadline {
+    font-size: 1.5em;
+}
+
+.tileFooter {
+    font-weight: 300;
 }
 
 .calendar .button {
@@ -1173,8 +1243,16 @@ ul, ol, dl {
 .easynewsletter_text[name='fullname'],
 .section-pagina-inicial #portal-breadcrumbs,
 .top-bar img,
-#viewlet-below-content > a {
+#viewlet-below-content > a,
+.subsection-eventos-eventos .fc-event-time,
+.pfg-form #fieldset-settings,
+.pfg-form #fieldset-ownership,
+.pfg-form #fieldset-categorization {
     display: none;
+}
+
+.subsection-eventos-eventos .fc-event-title {
+    color: rgb(255, 255, 255);
 }
 
 input.contentchooser-content-trees[type="text"],
@@ -1314,6 +1392,26 @@ dl.portletNewsletterSubscriber .easynewsletter_button {
     color: rgb(255, 255, 255) !important;
 }
 
+
+#useful {
+    border: 1px solid rgb(222, 210, 224);
+    -border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 3em;
+    padding: 1em 1em 1em 0.5em;
+}
+
+.relevance a.up {
+    right: 45px;
+}
+
+.relevance a.down {
+    right: 15px;
+}
+
 #login-form label {
     text-align: center;
 }
@@ -1323,7 +1421,7 @@ dl.portletNewsletterSubscriber .easynewsletter_button {
     .top-bar-section ul {
         font-size: 16px;
     }
-    
+
     footer a {
         font-size: 16px;
     }
@@ -1333,4 +1431,20 @@ dl.portletNewsletterSubscriber .easynewsletter_button {
     float: left;
     padding-left: 0.9375em;
     padding-right: 0.9375em;
+}
+
+.subsection-noticias-blogosfera p.title,
+.subsection-noticias-clipping-spm p.title {
+    display: none;
+}
+
+#boletim form,
+#contato .panel .panel {
+    bottom: 2em;
+    position: absolute;
+    width: 79%;
+}
+
+#contato .panel .panel {
+    bottom: 3em;
 }
