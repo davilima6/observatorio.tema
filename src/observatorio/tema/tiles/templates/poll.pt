@@ -16,14 +16,14 @@
       <div class="row">
         <div class="small-12 columns">
           <form method="post" class="custom"
-                tal:attributes="action poll/absolute_url">
+              tal:attributes="action poll/absolute_url">
             <p tal:repeat="option poll/options">
-              <label tal:attributes="for option/option_id">
-                  <input type="radio"
-                      tal:attributes="name string:options;
-                                      id option/option_id;
-                                      value option/option_id" />
-                  <span tal:content="option/description" />
+              <label tal:define="option_id option/option_id"
+                  tal:attributes="for option_id">
+                <input type="radio" name="options"
+                    tal:attributes="id option_id;
+                                    value option_id" />
+                <span tal:content="option/description" />
               </label>
             </p>
             <input type="hidden" name="voting.from"
