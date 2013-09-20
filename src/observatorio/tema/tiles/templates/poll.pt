@@ -34,7 +34,7 @@
           </form>
           <div class="poll-spinner">
               <img alt="spiner"
-                   tal:attributes="src ${context/absolute_url}/spinner.gif"
+                   tal:attributes="src string:${context/absolute_url}/spinner.gif"
                    i18n:attributes="alt" />
           </div>
         </div>
