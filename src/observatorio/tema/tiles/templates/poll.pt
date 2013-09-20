@@ -19,9 +19,9 @@
               tal:attributes="action poll/absolute_url">
             <p tal:repeat="option poll/options">
               <label tal:define="option_id option/option_id"
-                  tal:attributes="for option_id">
+                  tal:attributes="for string:cpolls-opt-${option_id}">
                 <input type="radio" name="options"
-                    tal:attributes="id option_id;
+                    tal:attributes="id string:cpolls-opt-${option_id};
                                     value option_id" />
                 <span tal:content="option/description" />
               </label>
