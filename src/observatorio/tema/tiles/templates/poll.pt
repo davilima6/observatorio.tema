@@ -5,49 +5,41 @@
       i18n:domain="observatorio.tema">
 
 <body>
-    <div id="enquete" class="large-4 columns"
-         tal:define="closed view/is_closed;
-                     poll view/poll;
-                     toLocalizedTime nocall:context/@@plone/toLocalizedTime;"
-         tal:condition="nocall:poll">
-        <div class="panel" data-height-watch>
-            <h5>Enquete</h5>
-            <p tal:content="poll/Title" />
-            <div class="row">
-                <div class="small-12 columns">
-
-                    <form action="#" method="post"
-                          class="custom"
-                          tal:attributes="action poll/absolute_url">
-
-                        <tal:one_choice repeat="option poll/options">
-                            <p>
-                                <label>
-                                    <input type="radio"
-                                           name="#"
-                                           value="#"
-                                           tal:attributes="name string:options;
-                                                           value option/option_id;" />
-                                    <span tal:content="option/description" />
-                                </label>
-                            </p>
-                        </tal:one_choice>
-                        <input type="hidden" name="voting.from" value=""
-                               tal:attributes="value context/absolute_url" />
-                        <input type="hidden" name="poll.uuid" value=""
-                               tal:attributes="value view/poll_uid" />
-                        <input type="submit" name="poll.submit" value="Enviar" class="small button right" />
-                    </form>
-                    <tal:spinner>
-                        <div class="poll-spinner">
-                            <img alt="spiner" src="/spinner.gif"
-                                 tal:attributes="src python:context.absolute_url()+'/spinner.gif'"
-                                 i18n:attributes="alt" />
-                        </div>
-                    </tal:spinner>
-                </div>
-            </div>
+  <div id="enquete" class="large-4 columns"
+      tal:define="closed view/is_closed;
+                  poll view/poll;
+                  toLocalizedTime nocall:context/@@plone/toLocalizedTime"
+      tal:condition="nocall:poll">
+    <div class="panel" data-height-watch>
+      <h5>Enquete</h5>
+      <p tal:content="poll/Title" />
+      <div class="row">
+        <div class="small-12 columns">
+          <form method="post" class="custom"
+                tal:attributes="action poll/absolute_url">
+            <p tal:repeat="option poll/options">
+              <label tal:attributes="for option/option_id">
+                  <input type="radio"
+                      tal:attributes="name string:options;
+                                      id option/option_id;
+                                      value option/option_id" />
+                  <span tal:content="option/description" />
+              </label>
+            </p>
+            <input type="hidden" name="voting.from"
+                tal:attributes="value context/absolute_url" />
+            <input type="hidden" name="poll.uuid"
+                tal:attributes="value view/poll_uid" />
+            <input type="submit" name="poll.submit" value="Enviar" class="small button right" />
+          </form>
+          <div class="poll-spinner">
+              <img alt="spiner"
+                   tal:attributes="src ${context/absolute_url}/spinner.gif"
+                   i18n:attributes="alt" />
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </body>
 </html>
