@@ -21,6 +21,7 @@ h1.documentFirstHeading {
     font-family: 'Arsenal', 'Helvetica', Helvetica, Arial, sans-serif;
     font-variant: small-caps;
     font-weight: bold;
+    line-height: 1.2em;
     margin-bottom: 0.25em;
     text-rendering: inherit;
 }
@@ -99,7 +100,7 @@ dl.portlet a:hover {
     /*width: 73%;*/
 }
 
-#ultimas-noticias h6 {
+#ultimas-noticias p {
     font-size: 0.8125em;
     font-weight: bold;
     height: 22px;
@@ -117,11 +118,11 @@ dl.portlet a:hover {
 
 }
 
-#ultimas-noticias .large-2 h6 a {
+#ultimas-noticias .large-2 p a {
     border: 0;
 }
 
-#ultimas-noticias .large-2 h6 span {
+#ultimas-noticias .large-2 p span {
     background: #000;
     -border-radius: 1em;
     -moz-border-radius: 1em;
@@ -136,6 +137,10 @@ dl.portlet a:hover {
     height: 1.1em;
     text-align: center;
     width: 1.1em;
+}
+
+#ultimas-noticias .orbit-container .orbit-timer >span {
+    top: -5px;
 }
 
 #temas h5,
@@ -462,105 +467,85 @@ section .title {
     width: 1em;
 }
 
+#observatorio-e-voce,
+#galeria-de-fotos,
+#calendario {
+    margin: 0 auto;
+    position: relative;
+}
+
 #observatorio-e-voce h5,
 #galeria-de-fotos h5,
 #calendario h5.retranca {
     background: rgb(79, 58, 96);
     color: rgb(255, 255, 255);
     line-height: 1.25em;
-    margin-bottom: 0;
+    margin: 0;
     padding: 0.4em 0;
+    position: absolute;
+    left: -0.75em;
+    right: -0.75em;
     text-align: center;
-}
-
-#observatorio-e-voce {
-    margin: 0 auto;
-    position: relative;
 }
 
 #observatorio-e-voce h5 {
     font-size: 1.25em;
     font-weight: normal;
     height: 3.25em;
-    margin: 0 -0.625em;
 }
 
 #observatorio-e-voce h5 span {
     display: block;
     font-size: 1.363125em;
     font-weight: bold;
-    margin-left: 0.5em;
 }
 
-#galeria-de-fotos h5,
-#calendario h5.retranca {
-    margin: 0 -0.625em 1em;
+#calendario .right {
+    font-style: italic;
 }
 
-#galeria-de-fotos {
-    padding: 0 0.1em;
-}
-
-#galeria-de-fotos a {
-    display: block;
-    width: 60px;
-}
-
-#calendario .content {
-    padding: 0 1em;
+#observatorio-e-voce h5:after,
+#galeria-de-fotos h5:after,
+#calendario h5.retranca:after,
+#observatorio-e-voce h5:before,
+#galeria-de-fotos h5:before,
+#calendario h5.retranca:before {
+  border-color: transparent;
+  border-style: solid;
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  width: 0;
 }
 
 #observatorio-e-voce h5:before,
 #galeria-de-fotos h5:before,
 #calendario h5.retranca:before {
-    border-top: 0.75em solid rgb(70, 51, 83);
-    border-left: 0.75em solid rgba(0, 0, 0, 0);
-    content: "";
-    height: 0;
-    position: relative;
-    width: 0;
-}
-
-#observatorio-e-voce h5:before {
-    left: -3.35em;
-    top: 3.5em;
-}
-
-#galeria-de-fotos h5:before {
-    left: -3.3em;
-    top: 2.25em;
-}
-
-#calendario h5.retranca:before {
-    left: -2.65em;
-    top: 2.35em;
-    z-index: 5;
+  border-right-color: rgb(70, 51, 83);
+  border-width: 0 0.75em 0.75em 0;
+  left: 0;
 }
 
 #observatorio-e-voce h5:after,
 #galeria-de-fotos h5:after,
 #calendario h5.retranca:after {
-    border-top: 0.75em solid rgb(70, 51, 83);
-    border-right: 0.75em solid rgba(0, 0, 0, 0);
-    content: "";
-    height: 0;
-    position: relative;
-    width: 0;
+  border-top-color: rgb(70, 51, 83);
+  border-width: 0.75em 0.75em 0 0;
+  right: 0;
 }
 
-#observatorio-e-voce h5:after {
-    left: 5.75em;
-    top: 1em;
+#observatorio-e-voce > div {
+    background: rgb(231, 226, 235);
+    color: rgb(91, 91, 91);
+    font-size: 0.875em;
+    padding: 6em 0.75em 0.01em;
 }
 
-#galeria-de-fotos h5:after {
-    left: 3.25em;
-    top: 2.25em;
-}
-
-#calendario h5.retranca:after {
-    left: 2.65em;
-    top: 2.35em;
+#galeria-de-fotos > ul,
+#calendario .content {
+    padding-top: 3.25em;
 }
 
 #observatorio-e-voce select {
@@ -568,13 +553,6 @@ section .title {
     color: rgb(133, 108, 137);
     font-size: 0.75em;
     width: 15em;
-}
-
-#observatorio-e-voce > div {
-    background: rgb(231, 226, 235);
-    color: rgb(91, 91, 91);
-    font-size: 0.875em;
-    padding: 1em 0.75em 0.01em;
 }
 
 #observatorio-e-voce .pricing-table .price {
@@ -622,12 +600,14 @@ section .title {
 #visualizacoes h5.subheader {
     color: rgb(91, 91, 91);
     font-size: 0.875em;
+    font-style: italic;
     font-weight: 400;
 }
 
 #visualizacoes h5.subheader span {
     display: block;
     font-size: 1.25em;
+    font-style: normal;
     font-variant: small-caps;
     text-rendering: auto;
 }
@@ -886,12 +866,6 @@ section .title {
     display: inline;
 }
 
-/*#biblioteca #publicacoes img {
-    max-height: 100%;
-    max-width: 100%;
-}
-*/
-
 #biblioteca input[type=text] {
     background: rgb(231, 226, 235);
     color: rgb(160, 145, 168);
@@ -1022,17 +996,28 @@ section .title {
 }
 
 #biblioteca .large-4 a {
-    /* XXX: Melhor cor padrão? */
     color: rgb(160, 145, 168);
+}
+
+.subsection-biblioteca #content .widget-fieldset ul {
+    margin-left: 0;
+}
+
+#calendario .row {
+    padding: 1em 0;
+}
+
+#calendario .row:not(:first-child) {
+    border-top: 1px solid rgb(231, 226, 235);
 }
 
 #calendario .large-2 {
     background: rgb(157, 113, 171);
     color: rgb(255, 255, 255);
-    height: 50px;
-    padding: 18px 0 0;
+    height: 3.1em;
+    padding: 0.9em 0 0;
     text-align: center;
-    width: 50px;
+    width: 3.1em;
 }
 
 #galeria-de-fotos h5,
@@ -1043,10 +1028,6 @@ section .title {
 #calendario h6 {
     color: rgb(79, 58, 96);
     font-size: 0.9375em;
-}
-
-#acompanhe .title {
-    /**/
 }
 
 #enquete .button {
@@ -1174,22 +1155,9 @@ select {
     color: #333 !important;
 }
 
-/*a:visited {*/
-/*color: #79608F !important;*/
-/*}*/
-
-
 #content {
     font-size: 100%;
 }
-
-/* XXX: Lepri, qual foi a necessidade do CSS abaixo?
-   O !important fica muito generico e acaba atrapalhando outras seções do site
-   Podemos remover/modificar?
-ul, ol, dl {
-    font-size: 1em !important;
-}
-*/
 
 #barra-brasil .brasilgov {
     width: 108px;
@@ -1203,10 +1171,6 @@ ul, ol, dl {
 #breadcrumbs-current {
     color: #666;
 }
-
-/*#content li, dl.portlet li, div.portletStaticText li {*/
-/*display: inline;*/
-/*}*/
 
 .button-group {
     margin-left: 0 !important;
@@ -1247,7 +1211,8 @@ ul, ol, dl {
 .subsection-eventos-eventos .fc-event-time,
 .pfg-form #fieldset-settings,
 .pfg-form #fieldset-ownership,
-.pfg-form #fieldset-categorization {
+.pfg-form #fieldset-categorization,
+.template-facetednavigation_view #document-action-rss {
     display: none;
 }
 

@@ -1,9 +1,18 @@
+-- PASS THROUGH --
 (function($) {
     "use strict";
     $(document).ready(function() {
 
-        // BARRA BRASIL
-        $("#barra-brasil").insertAfter("body > p.hiddenStructure:first-child");
+//        // Carrega RespondJS para navegadores que nÃ£o suportam CSS3 media queries (ie: IE8)
+//        if (Modernizr) {
+//            Modernizr.load({
+//                test: Modernizr.mq('only all'),
+//                nope: 'js/respond.min.js'
+//            });
+//        }
+//        else {
+//            console.log("no modernizr!");
+//        }
 
         // TODO: Slider para areas tematicas
         // $(document).on({
@@ -46,14 +55,19 @@
             return false;
         });
         $("#biblioteca form").submit(function(e) {
-            e.preventDefault();
             $("input[type=hidden]", this).remove();
-            var portal_types = $("#biblioteca dd.active a");
-            for (var i = 0; i < portal_types.length; i++) {
-                var t = $(portal_types[i]).data("portal_type");
-                $(this).append($("<input type='hidden' name='c4' value='" + t + "' />"));
+            var paths;
+            if ($("#biblioteca dd.active a[data-path=all]").length !== 0) {
+                paths = $("#biblioteca dd:not(.active) a");
+            } else {
+                paths = $("#biblioteca dd.active a");
+            }
+            for (var i = 0; i < paths.length; i++) {
+                var p = $(paths[i]).data("path");
+                $(this).append($("<input type='hidden' name='c4' value='/observatorio/biblioteca/" + p + "' />"));
             }
             window.location = $(this).attr("action") + "#" + $(this).serialize();
+            e.preventDefault();
         });
 
         // OBSERVATORIO E VOCE
@@ -73,13 +87,13 @@
         });
 
         // FALLBACK para animacao CSS3 da caixa de busca
-        if(!Modernizr.csstransitions) {
-          $("#search-box").focus(function() {
-            $(this).stop().animate({width: "9em"});
-          }).blur(function() {
-            $(this).stop().animate({width: "5.5em"});
-          });
-        }
+//        if(!Modernizr.csstransitions) {
+//          $("#search-box").focus(function() {
+//            $(this).stop().animate({width: "9em"});
+//          }).blur(function() {
+//            $(this).stop().animate({width: "5.5em"});
+//          });
+//        }
 
         // PARTICIPE (Enquete/Boletim/Contato)
         $("[data-match-height]").each(function() {

@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <rules xmlns="http://namespaces.plone.org/diazo"
        xmlns:css="http://namespaces.plone.org/diazo/css"
@@ -16,8 +17,8 @@
   <copy attributes="*" css:content="body" css:theme="body" />
 
   <!-- Top -->
-  <before css:content="#portal-personaltools-wrapper" css:theme-children="body" css:if-content="#user-name" />
   <before css:content="#portal-header > p.hiddenStructure" css:theme-children="body" />
+  <before css:content="#portal-personaltools-wrapper" css:theme-children="body" css:if-content="#user-name" />
   <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
   <replace css:content=".left" css:theme=".left" />
   <copy attributes="action" css:content="#portal-searchbox form" css:theme="#global-nav-search" />
@@ -25,7 +26,7 @@
   <replace css:theme-children="#ultimas-noticias div[data-orbit]">
     <xsl:for-each select="//ul[@id='js-news']/li/*">
       <xsl:if test="not(position() > 5)">
-        <h6><xsl:copy-of select="." /></h6>
+        <p><xsl:copy-of select="." /></p>
       </xsl:if>
     </xsl:for-each>
   </replace>
