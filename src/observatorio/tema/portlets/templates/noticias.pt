@@ -3,27 +3,27 @@
                 eventos view/eventos|nothing">
   <section class="section" tal:condition="view/noticias|nothing">
     <p class="title"><a tal:content="noticias/Title"
-        tal:attributes="href noticias/absolute_url">Title</a></p>
+        tal:attributes="href noticias/absolute_url|nothing">Title</a></p>
     <div class="content">
       <tal:block repeat="item python:noticias.results(batch=False)[:3]">
       <h6><a tal:content="item/Title"
              tal:attributes="href item/getURL;
                              title item/Description|nothing">Titulo</a></h6>
       </tal:block>
-      <p><a tal:attributes="href noticias/absolute_url;
+      <p><a tal:attributes="href noticias/absolute_url|nothing;
                             title noticias/Description">mais not&iacute;cias &#8594;</a></p>
     </div>
   </section>
   <section class="section" tal:condition="view/eventos|nothing">
     <p class="title"><a tal:content="eventos/Title"
-        tal:attributes="href noticias/absolute_url">Title</a></p>
+        tal:attributes="href eventos/absolute_url|nothing">Title</a></p>
     <div class="content">
       <tal:block repeat="item python:eventos.results(batch=False)[:3]">
       <h6><a tal:content="item/Title"
           tal:attributes="href item/getURL;
                           title item/Description|nothing">Titulo</a></h6>
       </tal:block>
-      <p><a tal:attributes="href eventos/absolute_url;
+      <p><a tal:attributes="href eventos/absolute_url|nothing;
                             title eventos/Description">mais eventos &#8594;</a></p>
     </div>
   </section>
