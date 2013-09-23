@@ -35,6 +35,6 @@
 
   <plone:static directory="static" name="observatorio" type="theme" />
 
-  <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
+  <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
 
 </configure>

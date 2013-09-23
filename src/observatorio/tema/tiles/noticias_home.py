@@ -66,7 +66,7 @@ class INoticiasHomeTile(IPersistentCoverTile):
         description=u"Período em que as fontes RSS são lidas e armazenadas/cacheadas",
         default=3600,
         required=False,
-        vocabulary="collective.portlet.feedmixer.timeouts",
+        vocabulary="observatorio.tema.timeouts",
     )
 
     items_show = schema.Int(
@@ -122,7 +122,7 @@ class NoticiasHomeTile(PersistentCoverTile):
         now = time.time()
 
         chooser = getUtility(ICacheChooser)
-        cache = chooser("collective.portlet.feedmixer.FeedCache")
+        cache = chooser("observatorio.tema.FeedCache")
 
         cached_data = cache.get(url, None)
         if cached_data is not None:
