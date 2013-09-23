@@ -54,9 +54,9 @@
                     <dd class="active"><a href="#" data-path="all">Todos os tipos</a></dd>
                     <dd><a href="#" data-path="publicacoes">Publicações</a></dd>
                     <dd><a href="#" data-path="documentos-importantes">Documentos</a></dd>
+                    <dd><a href="#" data-path="links">Links</a></dd>
                     <dd><a href="#" data-path="pesquisas">Pesquisas</a></dd>
                     <dd><a href="#" data-path="artigos">Artigos</a></dd>
-                    <dd><a href="#" data-path="visualizacoes">Visualizações</a></dd>
                     <dd><a href="#" data-path="dados">Dados</a></dd>
                     <dd><a href="#" data-path="visualizacoes">Visualizações</a></dd>
                 </dl>
