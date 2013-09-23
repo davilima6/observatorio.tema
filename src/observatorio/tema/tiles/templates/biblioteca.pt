@@ -51,12 +51,14 @@
             <div class="small-12 columns">
                 <dl class="sub-nav">
                     <dt>FILTROS:</dt>
-                    <dd class="active"><a href="" data-portal_type="all">Todos os tipos</a></dd>
-                    <dd><a href="" data-portal_type="Publicacao">Publicações</a></dd>
-                    <dd><a href="" data-portal_type="DavizVisualization">Visualizações de dados</a></dd>
-                    <dd><a href="" data-portal_type="FaqItem">Perguntas frequentes</a></dd>
-                    <dd><a href="" data-portal_type="File">Arquivos</a></dd>
-                    <dd><a href="" data-portal_type="Link">Links</a></dd>
+                    <dd class="active"><a href="" data-path="all">Todos os tipos</a></dd>
+                    <dd><a href="#" data-path="publicacoes">Publicações</a></dd>
+                    <dd><a href="#" data-path="documentos-importantes">Documentos</a></dd>
+                    <dd><a href="#" data-path="pesquisas">Pesquisas</a></dd>
+                    <dd><a href="#" data-path="artigos">Artigos</a></dd>
+                    <dd><a href="#" data-path="visualizacoes">Visualizações</a></dd>
+                    <dd><a href="#" data-path="perguntas-frequentes">Perguntas frequentes</a></dd>
+                    <dd><a href="#" data-path="links">Links</a></dd>
                 </dl>
             </div>
         </div>
