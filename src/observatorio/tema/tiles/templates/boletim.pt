@@ -12,12 +12,10 @@
            tal:content="view/data/description" />
         <form action="@@register-subscriber">
             <div class="row collapse">
-                <input type="hidden"
-                       name="newsletter"
-                       value="newsletter"
-                       tal:attributes="value view/get_newsletter" />
+                <input type="hidden" name="newsletter"
+                    tal:attributes="value view/get_newsletter" />
                 <div class="small-10 columns">
-                    <input type="text" placeholder="Cadastre seu e-mail" />
+                    <input type="text" placeholder="Cadastre seu e-mail" title="Cadastre seu e-mail" />
                 </div>
                 <div class="small-2 columns">
                     <input class="button prefix" type="submit" value="OK" />
