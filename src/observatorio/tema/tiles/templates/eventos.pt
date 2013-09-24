@@ -23,6 +23,7 @@
                                            title obj/Description"
                                            tal:content="obj/Title">Titulo</a></h5>
                     <h6 class="subheader"
+                        tal:condition="obj/Description"
                         tal:content="obj/Description">Descricao</h6>
                 </div>
             </div>
