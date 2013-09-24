@@ -7,7 +7,7 @@ except ImportError:
 from zope.interface import implements
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
-from collective.portlet.feedmixer import FeedMixerMessageFactory as _
+from observatorio.tema import MessageFactory as _
 
 class CacheTimeoutVocabulary(object):
     """Vocabulary factory for cache timeouts.
