@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <rules xmlns="http://namespaces.plone.org/diazo"
        xmlns:css="http://namespaces.plone.org/diazo/css"
@@ -9,14 +8,14 @@
 
   <!-- Head -->
   <copy attributes="lang dir" css:content="html" css:theme="html" />
-  <!-- Considerar substituir linhas comentadas pelas 2 seguintes -->
-  <!--drop css:theme="meta, title" /-->
-  <!--replace css:content-children="head" css:theme-children="head" /-->
-  <before css:content="head base, head meta, head link, head style, head script" css:theme-children="head" />
-  <replace css:content="head title" css:theme="head title" />
-  <copy attributes="*" css:content="body" css:theme="body" />
+  <!-- TODO: Considerar descartar linhas comentadas em substituicao as 2 posteriores -->
+  <!--before css:content="head base, head meta, head link, head style, head script" css:theme-children="head" /-->
+  <!--replace css:content="head title" css:theme="head title" /-->
+  <drop css:theme="meta, title" />
+  <replace css:content-children="head" css:theme-children="head" />
 
   <!-- Top -->
+  <copy attributes="*" css:content="body" css:theme="body" />
   <before css:content="#portal-header > p.hiddenStructure" css:theme-children="body" />
   <before css:content="#portal-personaltools-wrapper" css:theme-children="body" css:if-content="#user-name" />
   <replace css:content="#barra-brasil" css:theme="#barra-brasil" />
@@ -51,6 +50,7 @@
   </rules>
 
   <!-- Manage portlets -->
+  <!-- TODO: coluna 2 nao esta sendo exibida -->
   <rules if-path="@@manage-portlets/">
     <drop css:theme="#logo, #apresentacao" />
     <replace css:content-children="#portal-column-two" css:theme-children="#portal-column-two"  />

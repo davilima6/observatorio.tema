@@ -252,7 +252,11 @@ footer a {
 }
 
 #contato .fb_iframe_widget {
-    margin-left: -0.625em;
+    margin-left: -0.85em;
+}
+
+.fb_iframe_widget iframe {
+    height: 245px !important;
 }
 
 #contato a {
@@ -498,10 +502,6 @@ section .title {
     display: block;
     font-size: 1.363125em;
     font-weight: bold;
-}
-
-#calendario .right {
-    font-style: italic;
 }
 
 #observatorio-e-voce h5:after,
@@ -820,12 +820,14 @@ section .title {
     color: #000 !important;
 }
 
-.hachuras {
+.hachuras,
+.eea-preview-items {
     background-image: repeating-linear-gradient(-45deg,
-    rgba(231, 226, 235, 1), rgba(231, 226, 235, 1) 1px,
-    transparent 1px, transparent 3px);
+        rgb(231, 226, 235), rgb(231, 226, 235) 1px,
+        transparent 1px, transparent 3px);
     background-size: 4px 4px;
     margin-bottom: 0.6875em;
+    padding-top: 1em;
 }
 
 #temas .hachuras,
@@ -999,6 +1001,29 @@ section .title {
     color: rgb(160, 145, 168);
 }
 
+#c1_widget input:not([type=radio]),
+#c1_widget div {
+    float: left;
+    margin-right: 3em;
+}
+
+#c1_widget input[type=text] {
+    margin-right: 1em;
+    width: 38.15%;
+}
+
+#c1_widget div {
+    margin-right: 2em;
+}
+
+#c1_widget label {
+    margin-left: 0.75em;
+}
+
+.faceted-criteria span {
+    display: inline-block;
+}
+
 .subsection-biblioteca #content .widget-fieldset ul {
     margin-left: 0;
 }
@@ -1028,6 +1053,11 @@ section .title {
 #calendario h6 {
     color: rgb(79, 58, 96);
     font-size: 0.9375em;
+}
+
+#calendario .right {
+    font-size: 0.75em;
+    font-style: italic;
 }
 
 #enquete .button {
@@ -1159,6 +1189,13 @@ select {
     font-size: 100%;
 }
 
+#barra-brasil,
+#barra-brasil .barra,
+#barra-brasil .ai,
+#barra-brasil .brasilgov {
+    background-color: rgb(17, 17, 17);
+}
+
 #barra-brasil .brasilgov {
     width: 108px;
     text-indent: -99999px;
@@ -1194,7 +1231,7 @@ select {
 }
 
 .eea-preview-items .photoAlbumEntry {
-    background: none;
+    background: rgb(255, 255, 255);
     padding: 0 6px;
     margin: 0 0.5em 1em;
     outline: 1px solid #efefef;
@@ -1236,7 +1273,7 @@ input#contentchooser-content-trees[type="text"] {
     width: 110px;
 }
 
-#temas h5,
+#column-one #temas h5,
 #eixos h5,
 dl.portletNewsletterSubscriber dt {
     background: rgb(79, 57, 95);

@@ -2,16 +2,16 @@
     "use strict";
     $(document).ready(function() {
 
-//        // Carrega RespondJS para navegadores que nÃ£o suportam CSS3 media queries (ie: IE8)
-//        if (Modernizr) {
-//            Modernizr.load({
-//                test: Modernizr.mq('only all'),
-//                nope: 'js/respond.min.js'
-//            });
-//        }
-//        else {
-//            console.log("no modernizr!");
-//        }
+        // Carrega RespondJS para navegadores que não suportam CSS3 media queries (ie: IE8)
+        if (Modernizr) {
+            Modernizr.load({
+                test: Modernizr.mq('only all'),
+                nope: 'js/respond.min.js'
+            });
+        }
+        else {
+            console.log("no modernizr!");
+        }
 
         // TODO: Slider para areas tematicas
         // $(document).on({
@@ -86,13 +86,13 @@
         });
 
         // FALLBACK para animacao CSS3 da caixa de busca
-//        if(!Modernizr.csstransitions) {
-//          $("#search-box").focus(function() {
-//            $(this).stop().animate({width: "9em"});
-//          }).blur(function() {
-//            $(this).stop().animate({width: "5.5em"});
-//          });
-//        }
+        if(!Modernizr.csstransitions) {
+          $("#search-box").focus(function() {
+            $(this).stop().animate({width: "9em"});
+          }).blur(function() {
+            $(this).stop().animate({width: "5.5em"});
+          });
+        }
 
         // PARTICIPE (Enquete/Boletim/Contato)
         $("[data-match-height]").each(function() {
