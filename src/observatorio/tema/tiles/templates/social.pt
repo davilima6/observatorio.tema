@@ -5,19 +5,18 @@
       i18n:domain="observatorio.tema">
 
 <head>
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=551749828210587";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=551749828210587";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 
 <body>
     <div id="contato" class="large-4 columns"
-         tal:define="portal context/@@plone_portal_state/portal;
-                     portal_url portal/portal_url">
+        tal:define="portal_url context/@@plone_portal_state/portal_url">
         <div id="fb-root"></div>
         <div class="panel" data-height-watch>
             <h5>Entre em contato</h5>
