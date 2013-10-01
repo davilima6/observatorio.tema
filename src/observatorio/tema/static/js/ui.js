@@ -2,16 +2,16 @@
     "use strict";
     $(document).ready(function() {
 
-        // Carrega RespondJS para navegadores que não suportam CSS3 media queries (ie: IE8)
+        // RESPONDJS para navegadores que nÃ£o suportam CSS3 media queries (ie: IE8)
         if (Modernizr) {
             Modernizr.load({
                 test: Modernizr.mq('only all'),
                 nope: 'js/respond.min.js'
             });
         }
-        else {
-            console.log("no modernizr!");
-        }
+
+        // BARRA BRASIL
+        $("#barra-brasil").detach().prependTo(".fixed");
 
         // TODO: Slider para areas tematicas
         // $(document).on({
