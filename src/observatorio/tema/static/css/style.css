@@ -1189,20 +1189,8 @@ select {
     font-size: 100%;
 }
 
-#barra-brasil,
-#barra-brasil .barra,
-#barra-brasil .ai,
-#barra-brasil .brasilgov {
-    background-color: rgb(17, 17, 17);
-}
-
-#barra-brasil .brasilgov {
-    width: 108px;
-    text-indent: -99999px;
-}
-
-#barra-brasil .barra ul {
-    margin-bottom: 0;
+#barra-brasil .brasil-flag {
+    height: 26px;
 }
 
 #breadcrumbs-current {
