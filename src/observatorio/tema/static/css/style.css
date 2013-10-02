@@ -1189,8 +1189,13 @@ select {
     font-size: 100%;
 }
 
-#barra-brasil .brasil-flag {
+.fixed #barra-brasil .brasil-flag {
     height: 26px;
+    padding: 6px 0;
+}
+
+.fixed #barra-brasil .list {
+    top: 4px;
 }
 
 #breadcrumbs-current {
