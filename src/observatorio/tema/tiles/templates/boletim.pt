@@ -3,7 +3,6 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="observatorio.tema">
-
 <body>
 <div id="boletim" class="large-4 columns">
     <div class="panel" data-height-watch>
@@ -14,6 +13,7 @@
             <div class="row collapse">
                 <input type="hidden" name="newsletter"
                     tal:attributes="value view/get_newsletter" />
+                <input type="hidden" name="salutation" value="default">
                 <div class="small-10 columns">
                     <input type="text" placeholder="Cadastre seu e-mail" title="Cadastre seu e-mail" />
                 </div>
@@ -24,6 +24,5 @@
         </form>
     </div>
 </div>
-
 </body>
 </html>
