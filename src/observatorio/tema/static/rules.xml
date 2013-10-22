@@ -8,10 +8,9 @@
 
   <!-- Head -->
   <copy attributes="lang dir" css:content="html" css:theme="html" />
-  <!-- TODO: Considerar descartar linhas comentadas em substituicao as 2 posteriores -->
+  <!-- TODO: Descartar linhas comentadas quando resolver bug do registro dos resources: http://stackoverflow.com/questions/18877354/how-can-i-make-plone-portal-registries-find-and-cook-new-style-static-resources -->
   <!--before css:content="head base, head meta, head link, head style, head script" css:theme-children="head" /-->
   <!--replace css:content="head title" css:theme="head title" /-->
-  <drop css:theme="meta, title" />
   <replace css:content-children="head" css:theme-children="head" />
 
   <!-- Top -->
@@ -37,7 +36,7 @@
   <drop css:theme="#portal-column-two" />
 
   <!-- Footer -->
-  <replace css:content="#portal-footer-wrapper footer" theme="/html/body/footer" />
+  <replace css:content="#portal-footer-wrapper footer" css:theme="footer" />
 
   <!-- Without portlets -->
   <rules css:if-content="#portal-column-content.cell.width-full.position-0">
@@ -68,7 +67,7 @@
         <a id="logo" href="#" title="Acessar a página inicial">
           <xsl:attribute name="href">
             <xsl:value-of select="//*[@id='portal-logo']/@href" />
-          </xsl:attribute><xsl:apply-templates select="node()"/>
+          </xsl:attribute><xsl:apply-templates select="node()" />
           <img src="/++theme++observatorio/images/logo.png" width="220" height="160" alt="Logomarca Observatório Brasil da Igualdade de Gênero" />
         </a>
       </div>
@@ -76,8 +75,10 @@
   </rules>
 
   <!-- Enquete tile -->
-  <drop css:content="#enquete" />
-  <replace css:content-children="#enquete" css:theme-children="#enquete" />
+  <rules css:if-content="#enquete">
+    <drop css:content="#enquete" />
+    <replace css:content-children="#enquete" css:theme-children="#enquete" />
+  </rules>
 
   <!-- Boletim -->
   <drop css:content="#boletim" />
@@ -97,9 +98,7 @@
         <ul class="breadcrumbs">
           <xsl:for-each select="..//div[@id='portal-breadcrumbs']/span/*">
             <xsl:if css:test=":not(.breadcrumbSeparator)">
-              <li>
-                <xsl:copy-of select="."/>
-              </li>
+              <li><xsl:copy-of select="."/></li>
             </xsl:if>
           </xsl:for-each>
         </ul>
@@ -109,14 +108,19 @@
 
   <!-- Forms -->
   <replace css:content=".visualClear">
-    <div class="clearfix">
-      <xsl:apply-templates select="./text()" />
-    </div>
+    <div class="clearfix"><xsl:apply-templates select="./text()" /></div>
   </replace>
   <replace css:content=".documentDescription">
-    <h5 class="subheader">
-      <xsl:apply-templates select="./text()|./*"/>
-    </h5>
+    <h5 class="subheader"><xsl:apply-templates select="./text()|./*"/></h5>
   </replace>
 
+  <!-- Redes Sociais -->
+  <rules if-path="redes-sociais/">
+    <replace css:content="#content-core">
+      <xsl:copy-of select="//*[@class='portlet twitterProfilePortlet']" />
+      <xsl:copy-of select="." />
+    </replace>
+    <drop css:content=".twitterProfilePortlet" />
+  </rules>
+  
 </rules>

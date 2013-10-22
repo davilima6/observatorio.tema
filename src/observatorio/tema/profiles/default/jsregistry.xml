@@ -173,6 +173,44 @@
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++observatorio.tema/js/wasthisuseful.js"
     inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++observatorio.tema/js/foundation.min.js"
+    inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++eea.forms.edit.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="createversion.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++eea.sparql.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jquery.slickgrid.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jquery.ajaxfileupload.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jquery.bbq.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jquery.cookie.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jquery.jstree.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jquery.select2uislider.js" inline="False"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++collective.cover/bootstrap.min.js"
+    inline="False"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++jquery.colorpicker.js" inline="False"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="table_sorter.js" inline="False"/>
@@ -240,14 +278,38 @@
     compression="full-encode" conditionalcomment="" cookable="True"
     enabled="True" expression="" id="solgema_contextualcontentmenu.js"
     inline="False"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++collective.cover/contentchooser.js"
+    inline="False"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++collective.cover/jquery.endless-scroll.js"
+    inline="False"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="context/@@jqueryui-include-condition"
+    id="++resource++collective.js.colorpicker.js/eye.js" inline="False"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="context/@@jqueryui-include-condition"
+    id="++resource++collective.js.colorpicker.js/utils.js" inline="False"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="context/@@jqueryui-include-condition"
+    id="++resource++collective.js.colorpicker.js/colorpicker.js"
+    inline="False"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++analytics_config.js" inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python:'acompanhamento/eventos' in request.URL0"
+    expression="python:'/acompanhamento/eventos' in request.URL0"
     id="++resource++collective.js.fullcalendar/fullcalendar.min.js"
     inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python:'acompanhamento/eventos' in request.URL0"
+    expression="python:'/acompanhamento/eventos' in request.URL0"
     id="++resource++collective.js.fullcalendar/fullcalendar.gcal.js"
     inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
@@ -255,23 +317,6 @@
     expression="python: here.portal_type in ['EasyNewsletter', 'ENLIssue']"
     id="++resource++Products.EasyNewsletter.enl_edithelper.js"
     inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="context/@@jqueryui-include-condition"
-    id="++resource++collective.js.colorpicker.js/eye.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="context/@@jqueryui-include-condition"
-    id="++resource++collective.js.colorpicker.js/utils.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="context/@@jqueryui-include-condition"
-    id="++resource++collective.js.colorpicker.js/colorpicker.js"
-    inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python:portal['portal_membership'].checkPermission('Google Analytics: View Analytics Results', request.context)"
-    id="++resource++analytics_config.js" inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:context.portal_membership.checkPermission('simplesocial: Post to fan page', context)"
@@ -282,25 +327,6 @@
     id="++resource++collective.polls/js/excanvas.min.js" inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++observatorio.tema/js/foundation.min.js"
-    inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++observatorio.tema/js/ui.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++eea.forms.edit.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="createversion.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++eea.sparql.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.slickgrid.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:'daviz-view.html' in request.URL0" id="daviz-view.js"
     inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
@@ -308,29 +334,11 @@
     expression="python:'daviz-edit.html' in request.URL0" id="daviz-edit.js"
     inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.colorpicker.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.ajaxfileupload.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.bbq.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.cookie.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.jstree.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.select2uislider.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="++resource++jquery.tagcloud.js" inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: request.get('jsdisable','') != 'jquery'"
+    expression="python: request.get('jsdisable', '') != 'jquery' or '/biblioteca' in request.URL0"
     id="faceted_view.js" inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
@@ -347,40 +355,17 @@
  <javascript authenticated="False" bundle="tinymce" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="tiny_mce.js" inline="False"/>
- <javascript authenticated="False" bundle="tinymce" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="False"
-    expression="" id="tiny_mce_init.js" inline="False"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++collective.cover/contentchooser.js"
-    inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++collective.cover/bootstrap.min.js"
-    inline="False"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++collective.cover/jquery.endless-scroll.js"
-    inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="False"
     expression="python:context.restrictedTraverse('daviz_support').is_visualization and 'edit' in request.URL0"
     id="++resource++eea.jquery.js" inline="False"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++theme++observatorio/js/modernizr.min.js"
-    inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="jquery.autocomplete.min.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
-    expression="" id="++theme++observatorio/js/linguafaq.js" inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
-    expression="" id="++theme++observatorio/js/wasthisuseful.js"
-    inline="False"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="False"
-    expression="" id="++theme++observatorio/js/ui.js" inline="False"/>
+    expression="" id="++resource++observatorio.tema/js/ui.js" inline="False"/>
+ <!-- TODO: Avaliar performance utilizando CDN
+ <javascript bundle="default" id="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+ <javascript bundle="default" id="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js" />
+ <javascript bundle="default" id="//cdnjs.cloudflare.com/ajax/libs/foundation/4.3.2/js/foundation.min.js" />
+ <javascript bundle="default" id="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js" />
+ -->    
 </object>

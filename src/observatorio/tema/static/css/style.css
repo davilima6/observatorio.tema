@@ -93,7 +93,7 @@ dl.portlet a:hover {
     border-top: 1px dashed #000;
     border-bottom: 1px solid #000;
     display: block !important;
-    margin-top: 2em;
+    margin-top: 2.25em;
     padding: 0.375em;
     text-transform: uppercase;
     /* XXX: Fix me. */
@@ -199,31 +199,21 @@ footer a {
 #participe .panel {
     background: rgb(79, 57, 95);
     border: 0;
-    /*border-top: 1em solid rgb(121, 96, 143);*/
     margin-top: 0.75em;
 }
 
 #participe h5 {
     background: rgb(121, 96, 143);
     color: rgb(255, 255, 255);
-    margin: -3.05em 0 1.25em -0.25em;
+    margin-bottom: 1.25em;
+    /* XXX margin: -3.05em 0 1.25em -0.25em;*/
     padding: 0.75em 0.5em 0.5em 0.75em;
     width: 9.8em;
 }
 
-#participe > div > .panel:before {
-    content: "";
-    border-bottom: 1em solid rgb(70, 51, 83);
-    border-left: 1em solid rgba(0, 0, 0, 0);
-    height: 0;
-    left: -1.25em;
-    position: relative;
-    top: -3.4em;
-    width: 0;
-}
-
-#participe > #boletim > .panel:before {
-    left: -1.25em;
+#participe > div > .panel:before,
+.portletNewsletterSubscriber .portletHeader:before {
+    /* YYY position */
 }
 
 #participe p,
@@ -240,10 +230,6 @@ footer a {
     background: rgb(250, 177, 0);
     height: 10px;
     width: 10px;
-}
-
-#contato h5 {
-    margin: -3.05em 0 0 -0.25em;
 }
 
 #contato div div {
@@ -281,6 +267,8 @@ footer a {
 
 #noticias section .title {
     background: rgb(121, 95, 143);
+    border: 0;
+    margin-top: -8px;
 }
 
 #noticias section.active .title {
@@ -359,6 +347,10 @@ section .title {
 
 .contain-to-grid {
     opacity: 0.95;
+}
+
+.top-bar-section ul {
+    height: 45px !important;
 }
 
 .top-bar-section .right {
@@ -483,14 +475,23 @@ section .title {
 #calendario h5.retranca {
     background: rgb(79, 58, 96);
     color: rgb(255, 255, 255);
+    left: -0.75em;
     line-height: 1.25em;
     margin: 0;
     padding: 0.4em 0;
     position: absolute;
-    left: -0.75em;
     right: -0.75em;
     text-align: center;
 }
+
+#participe > div > .panel h5 {
+    background: rgb(121, 96, 143);
+    color: rgb(255, 255, 255);
+    left: 1.5em;
+    padding: 0.4em;
+    position: absolute;
+    top: -0.3em;
+}    
 
 #observatorio-e-voce h5 {
     font-size: 1.25em;
@@ -506,34 +507,48 @@ section .title {
 
 #observatorio-e-voce h5:after,
 #galeria-de-fotos h5:after,
+#noticias .title:after,
 #calendario h5.retranca:after,
+#temas h5:after,
+#eixos h5:after,
 #observatorio-e-voce h5:before,
 #galeria-de-fotos h5:before,
-#calendario h5.retranca:before {
-  border-color: transparent;
-  border-style: solid;
-  content: "";
-  display: block;
-  height: 0;
-  position: absolute;
-  top: 100%;
-  width: 0;
+#noticias .title:before,
+#calendario h5.retranca:before,
+#participe > div > .panel h5:before,
+#temas h5:before,
+#eixos h5:before,
+.portletNewsletterSubscriber .portletHeader:before {
+    border-color: transparent;
+    border-style: solid;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    top: 100%;
+    width: 0;
 }
 
 #observatorio-e-voce h5:before,
 #galeria-de-fotos h5:before,
-#calendario h5.retranca:before {
-  border-right-color: rgb(70, 51, 83);
-  border-width: 0 0.75em 0.75em 0;
-  left: 0;
+#noticias .active .title:before,
+#calendario h5.retranca:before,
+#participe > div > .panel h5:before,
+#temas h5:before,
+#eixos h5:before {
+    border-right-color: rgb(70, 51, 83);
+    border-width: 0 0.75em 0.75em 0;
+    left: 0;
 }
 
 #observatorio-e-voce h5:after,
 #galeria-de-fotos h5:after,
-#calendario h5.retranca:after {
-  border-top-color: rgb(70, 51, 83);
-  border-width: 0.75em 0.75em 0 0;
-  right: 0;
+#calendario h5.retranca:after,
+#temas h5:after,
+#eixos h5:after {
+    border-top-color: rgb(70, 51, 83);
+    border-width: 0.75em 0.75em 0 0;
+    right: 0;
 }
 
 #observatorio-e-voce > div {
@@ -546,6 +561,21 @@ section .title {
 #galeria-de-fotos > ul,
 #calendario .content {
     padding-top: 3.25em;
+}
+
+#participe > div > .panel h5:before {
+    border-bottom-color: rgb(70, 51, 83);
+    border-right-color: transparent;
+    border-width: 0 0 0.75em 0.75em;
+    left: -0.6em;
+    top: 0.25em;
+}
+
+#noticias .active .title:before {
+    border-right-color: rgb(70, 51, 83);
+    border-width: 0 0.75em 0.75em 0;
+    height: 2em;
+    left: 0;
 }
 
 #observatorio-e-voce select {
@@ -902,7 +932,8 @@ section .title {
     font-size: 0.875em;
 }
 
-/*#biblioteca form .postfix {
+/* XXX: Remove me
+#biblioteca form .postfix {
     display: inline-block;
     font-size: 10em;
     width: 0.4em;
@@ -1066,7 +1097,8 @@ section .title {
     margin: 0;
 }
 
-/*#enquete .button:hover,
+/* XXX: Remove me?
+#enquete .button:hover,
 #enquete .button:focus {
     background-color: rgb(250, 177, 0);
 }
@@ -1099,10 +1131,6 @@ div.row {
 .contain-to-grid .top-bar {
     margin: 0 auto;
 }
-
-/*.large-9 {*/
-/*width: 75%;*/
-/*}*/
 
 .column th,
 .columns th {
@@ -1263,6 +1291,7 @@ input#contentchooser-content-trees[type="text"] {
 }
 
 #column-one #temas li {
+    padding-left: 0.4em;
     width: 110px;
 }
 

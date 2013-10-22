@@ -35,13 +35,13 @@
   <i18n:registerTranslations directory="locales" />
 
   <plone:static directory="static" name="observatorio" type="theme" />
+
   <browser:resourceDirectory
       name="observatorio.tema"
       directory="static"
       layer=".interfaces.IObservatorioTemaLayer"
       />
 
-
-  <!-- <cmf:registerDirectory name="skins" directory="skins" recursive="True" /> -->
+  <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
 
 </configure>

@@ -1,8 +1,8 @@
-(function($) {
+(function($) {    
     "use strict";
     $(document).ready(function() {
 
-        // RESPONDJS para navegadores que nÃ£o suportam CSS3 media queries (ie: IE8)
+        // RESPONDJS para navegadores que não suportam CSS3 media queries (ie: IE8)
         if (Modernizr) {
             Modernizr.load({
                 test: Modernizr.mq('only all'),

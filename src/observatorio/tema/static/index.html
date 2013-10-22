@@ -3,6 +3,7 @@
 <head>
     <title>Observatório Brasil da Igualdade de Gênero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,600,700" rel="stylesheet" type="text/css">
     <!-- TODO: Avaliar performance utilizando CDN p/ jQuery, Normalize e Foundation </script>-->
     <link type="text/css" rel="stylesheet" href="css/normalize.css" />
@@ -43,7 +44,7 @@
             </div>
         </div>
     </div>
-
+    
     <div id="ultimas-noticias" class="row hide-for-small">
         <div class="large-2 columns">
             <p><a href="#" data-tooltip class="has-tip" title="Acessar todas as notícias do Observatório"><span>+</span> NOTÍCIAS</a></p>
@@ -54,7 +55,7 @@
             </div>
         </div>
     </div><br />
-
+    
     <div id="container" class="row">
         <div id="column-one" class="large-3 columns">
             <div id="apresentacao">
@@ -69,11 +70,44 @@
     </div>
 
     <div id="participe" class="row" data-match-height>
-        <div id="enquete" class="large-4 columns" />
+        <div id="enquete" class="large-4 columns">
+            <div class="panel" data-height-watch="" style="min-height: 403px;">
+                  <h5>Enquete</h5>
+                  <p>Sed sit amet posuere erat. Quisque in ipsum non augue euismod dapibus non et eros?</p>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <form method="post" class="custom" action="http://192.81.218.70:8081/observatorio/acompanhamento/participacao-publica/enquetes/sed-sit-amet-posuere-erat-quisque-in-ipsum-non-augue-euismod-dapibus-non-et-eros">
+                        <p>
+                          <label for="cpolls-opt-0">
+                            <input type="radio" name="options" id="cpolls-opt-0" value="0" class="hidden-field"><span class="custom radio"></span><span>Lorem</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label for="cpolls-opt-1">
+                            <input type="radio" name="options" id="cpolls-opt-1" value="1" class="hidden-field"><span class="custom radio"></span><span>Ipsum</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label for="cpolls-opt-2">
+                            <input type="radio" name="options" id="cpolls-opt-2" value="2" class="hidden-field"><span class="custom radio"></span><span>Dolor</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label for="cpolls-opt-3">
+                            <input type="radio" name="options" id="cpolls-opt-3" value="3" class="hidden-field"><span class="custom radio"></span><span>Amet</span>
+                          </label>
+                        </p>
+                        <input type="hidden" name="voting.from" value="http://192.81.218.70:8081/observatorio/pagina-inicial"><input type="hidden" name="poll.uuid" value="3a36854f665b47828ab9c5e198622ddf"><input type="submit" name="poll.submit" value="Enviar" class="small button right"></form>
+                      <div class="poll-spinner">
+                          <img alt="spiner" src="http://192.81.218.70:8081/observatorio/pagina-inicial/spinner.gif"></div>
+                    </div>
+                  </div>
+                </div>
+        </div>
         <div id="boletim" class="large-4 columns" />
         <div id="contato" class="large-4 columns" />
     </div>
-
+    
     <div id="banners" class="row"> </div>
 
     <footer class="row" />
